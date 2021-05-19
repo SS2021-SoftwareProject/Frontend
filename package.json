@@ -11,6 +11,8 @@
     "@popperjs/core": "^2.9.2",
     "bootstrap": "^5.0.0-beta3",
     "core-js": "^3.6.5",
+    "mdb-ui-kit": "^3.5.1",
+    "mdbvue": "^6.7.2",
     "vue": "^2.6.11",
     "vue-router": "^3.5.1"
   },
