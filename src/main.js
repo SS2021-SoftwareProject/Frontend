@@ -14,6 +14,9 @@ import Login from "./views/Login";
 import Register from "./views/Register";
 import ProjectView from "@/views/ProjectView";
 
+// requests
+//import {} from "@/scripts/requests";
+
 Vue.use(VueRouter, mdb, Input);
 
 const routes = [
