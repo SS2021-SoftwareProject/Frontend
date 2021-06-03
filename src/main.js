@@ -12,13 +12,15 @@ import { Input } from 'mdb-ui-kit'; // module
 import HomePage from "./views/HomePage";
 import Login from "./views/Login";
 import Register from "./views/Register";
+import ProjectView from "@/views/ProjectView";
 
 Vue.use(VueRouter, mdb, Input);
 
 const routes = [
   { path: "/", component: HomePage},
   { path: "/login", component: Login},
-  { path: "/register", component: Register}
+  { path: "/register", component: Register},
+  { path: "/project",component: ProjectView}
 ];
 
 const router = new VueRouter({

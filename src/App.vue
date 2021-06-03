@@ -16,9 +16,11 @@
             <li class="nav-item">
               <router-link class="nav-link active" aria-current="page" to="/">Home</router-link>
             </li>
+            <!--
             <li class="nav-item">
               <router-link class="nav-link active" aria-current="page" to="/Donate">Donate</router-link>
             </li>
+            -->
           </ul>
           <form class="d-flex">
             <router-link class="nav-link active" aria-current="page" to="/Login">Login</router-link>

@@ -19,8 +19,42 @@
         </li>
       </ul>
       <div class="card-body">
-        <button class="btn btn-primary ms-1 me-5" @click="$router.push('page001')">View</button>
-        <button class="btn btn-primary me-1 ms-4" @click="$router.push('Donate')">Donate</button>
+        <button class="btn btn-primary ms-1 me-5" @click="$router.push('/project')">View</button>
+        <button class="btn btn-primary me-1 ms-4" data-bs-toggle="modal" data-bs-target="#donatePopop">Donate</button>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="donatePopop" tabindex="-1" aria-labelledby="donatePopop" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Make Your Donation</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-bs-dismiss="modal">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+
+            <div class="input-group mb-3">
+              <input type="number" min="0.00" step="0.50" value="1.00" class="form-control mb-2 w-75" v-model="donationAmount">
+              <select class="form-select form-select-sm mb-2 btn-primary" aria-label=".form-select-sm example">
+                <option selected value="Euro">€</option>
+                <option value="Dollar">$</option>
+                <option value="Pound">£</option>
+                <option value="Yen">¥</option>
+              </select>
+            </div>
+
+            <input type="text" v-bind:value="donationAmount / 2075.94 + ' Ξ'"  class="form-control mb-2 w-100 text-center " aria-label="Text input with dropdown button"  disabled>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <a class="btn btn-primary" href="/Checkout" role="button">Donate</a>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -34,20 +68,19 @@
 
 <script>
 export default {
-
+  data(){
+    return {
+      message: '',
+      donationAmount: 0,
+    }
+  },
   created(){
 
   }
-
 }
 
 </script>
 
 <style scoped>
 
-.img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
 </style>

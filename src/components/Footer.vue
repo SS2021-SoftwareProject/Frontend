@@ -135,11 +135,5 @@ export default {
 }
 
 </script>
-<style scoped>
 
-.img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-</style>
+<style scoped></style>
