@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="display-6">Login</h1>
+    <h1 class="display-6">Register</h1>
     <br/>
     <br/>
 
@@ -12,11 +12,11 @@
       <div class="col-md-4">
         <form>
           <div class="mb-3">
-            <input type="password" class="form-control" id="firstName" placeholder="First Name">
+            <input type="text" class="form-control" id="firstName" placeholder="First Name">
           </div>
 
           <div class="mb-3">
-            <input type="password" class="form-control" id="lastName" placeholder="Last Name">
+            <input type="text" class="form-control" id="lastName" placeholder="Last Name">
           </div>
 
           <div class="mb-3">
