@@ -136,4 +136,8 @@ export default {
 
 </script>
 
-<style scoped></style>
+<style scoped>
+h6 {
+  color: #95d387;
+}
+</style>
