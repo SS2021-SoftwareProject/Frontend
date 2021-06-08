@@ -13,6 +13,10 @@ import HomePage from "./views/HomePage";
 import Login from "./views/Login";
 import Register from "./views/Register";
 import ProjectView from "@/views/ProjectView";
+import Faq from "./views/Faq";
+
+// requests
+//import {} from "@/scripts/requests";
 
 Vue.use(VueRouter, mdb, Input);
 
@@ -20,7 +24,8 @@ const routes = [
   { path: "/", component: HomePage},
   { path: "/login", component: Login},
   { path: "/register", component: Register},
-  { path: "/project",component: ProjectView}
+  { path: "/project",component: ProjectView},
+  { path: "/faq", component: Faq}
 ];
 
 const router = new VueRouter({
