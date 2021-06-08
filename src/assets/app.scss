@@ -1,4 +1,10 @@
+$theme-colors: (
+        "primary": #95d387 ,
+        "danger": #ff4136
+);
+
 @import "~bootstrap/scss/bootstrap";
+@import "./src/MDBscss/bootstrap/bootstrap";
 @import '~mdb-ui-kit/css/mdb.min.css';
 @import "./src/MDBscss/mdb.core";
-@import "./src/MDBscss/bootstrap/bootstrap";
+

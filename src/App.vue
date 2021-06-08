@@ -4,7 +4,8 @@
     <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">
-            <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24">
+            <!--<img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24">-->
+          <img src="./assets/logo_541x500.png" alt="" width="39" height="36">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,17 +15,23 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <router-link class="nav-link active" aria-current="page" to="/">Home</router-link>
+              <router-link class="nav-link active green" aria-current="page" to="/">
+                <a class="green">Home</a>
+              </router-link>
             </li>
-            <!--
             <li class="nav-item">
-              <router-link class="nav-link active" aria-current="page" to="/Donate">Donate</router-link>
+              <router-link class="nav-link active" aria-current="page" to="/About">
+                <a class="green">About</a>
+              </router-link>
             </li>
-            -->
           </ul>
           <form class="d-flex">
-            <router-link class="nav-link active" aria-current="page" to="/Login">Login</router-link>
-            <router-link class="nav-link active" aria-current="page" to="/Register">Register</router-link>
+            <router-link class="nav-link active" aria-current="page" to="/Login">
+              <a class="green">Login</a>
+            </router-link>
+            <router-link class="nav-link active" aria-current="page" to="/Register">
+              <a class="green">Register</a>
+            </router-link>
 
           </form>
         </div>
@@ -65,4 +72,16 @@ export default {
   color: #2c3e50;
   #margin-top: 60px;
 }
+
+ .green{
+   color: #95d387;
+   text-decoration: none;
+   outline: none;
+ }
+
+ .green:hover{
+   color: #5b8053;
+ }
+
+
 </style>

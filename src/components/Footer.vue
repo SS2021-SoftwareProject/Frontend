@@ -116,7 +116,7 @@
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
       © 2021 Copyright:
-      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Hier kommt Copyright hin</a>
+      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">CharitAble</a>
     </div>
     <!-- Copyright -->
   </footer>
@@ -137,7 +137,7 @@ export default {
 </script>
 
 <style scoped>
-h6 {
+h6{
   color: #95d387;
 }
 </style>
