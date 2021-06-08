@@ -14,6 +14,7 @@ import Login from "./views/Login";
 import Register from "./views/Register";
 import ProjectView from "@/views/ProjectView";
 import Faq from "./views/Faq";
+import RequestData from "@/views/RequestData";
 
 // requests
 //import {} from "@/scripts/requests";
@@ -25,7 +26,8 @@ const routes = [
   { path: "/login", component: Login},
   { path: "/register", component: Register},
   { path: "/project",component: ProjectView},
-  { path: "/faq", component: Faq}
+  { path: "/faq", component: Faq},
+  { path: "/dataTest", component: RequestData}
 ];
 
 const router = new VueRouter({
@@ -34,6 +36,15 @@ const router = new VueRouter({
 });
 
 Vue.config.productionTip = false
+
+const title = "CharitAble";
+
+//set title
+router.afterEach((to) => {
+  Vue.nextTick(() => {
+    document.title = to.meta.title || title;
+  });
+});
 
 new Vue({
   render: h => h(App),
