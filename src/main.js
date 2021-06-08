@@ -17,6 +17,8 @@ import Faq from "./views/Faq";
 import RequestData from "@/views/RequestData";
 
 // requests
+import VueAxios from "vue-axios";
+Vue.use(VueAxios);
 //import {} from "@/scripts/requests";
 
 Vue.use(VueRouter, mdb, Input);
