@@ -30,6 +30,15 @@ const router = new VueRouter({
 
 Vue.config.productionTip = false
 
+const title = "CharitAble";
+
+//set title
+router.afterEach((to) => {
+  Vue.nextTick(() => {
+    document.title = to.meta.title || title;
+  });
+});
+
 new Vue({
   render: h => h(App),
   router,
