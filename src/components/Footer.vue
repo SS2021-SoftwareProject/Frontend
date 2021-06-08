@@ -2,9 +2,7 @@
   <!-- Footer -->
   <footer class="text-center text-lg-start bg-light text-muted">
     <!-- Section: Social media -->
-    <section
-        class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
-    >
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
 
       <!-- Right -->
       <div>
@@ -40,6 +38,7 @@
           <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
             <!-- Content -->
             <h6 class="text-uppercase fw-bold mb-4">
+              <img id="logo" src="../assets/logo.png" alt="company logo">
               <i class="fas fa-gem me-3"></i>About CharitAble
             </h6>
             <p class="text-justify">
@@ -58,7 +57,7 @@
               <a href="/" class="text-decoration-none text-reset">Home</a>
             </p>
             <p>
-              <a href="/" class="text-decoration-none text-reset">Donate</a>
+              <a href=".#projects" class="text-decoration-none text-reset">Donate</a>
             </p>
             <p>
               <a href="/" class="text-decoration-none text-reset">Profile</a>
@@ -94,7 +93,7 @@
             Contact us
             </h6>
             <p>
-              <i>420  Hoooker Ave, <br>New York NY 10012</i>
+              <i>420  Hooker Ave, <br>New York NY 10012</i>
             </p>
             <p>
               <i>contact@charitable.com</i>
@@ -139,5 +138,9 @@ export default {
 <style scoped>
 h6 {
   color: #95d387;
+}
+
+img#logo {
+  width: 20px;
 }
 </style>
