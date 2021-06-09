@@ -15,13 +15,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <router-link class="nav-link active green" aria-current="page" to="/">
+              <router-link class="nav-link active" aria-current="page" to="/">
                 <a class="green">Home</a>
               </router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link active" aria-current="page" to="/About">
                 <a class="green">About</a>
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link active" aria-current="page" to="/Faq">
+                <a class="green">FAQ</a>
               </router-link>
             </li>
           </ul>
@@ -32,7 +37,9 @@
             <router-link class="nav-link active" aria-current="page" to="/Register">
               <a class="green">Register</a>
             </router-link>
-
+            <router-link class="nav-link active" aria-current="page" to="/Profile">
+              <a class="green">Profile</a>
+            </router-link>
           </form>
         </div>
       </div>
@@ -72,16 +79,4 @@ export default {
   color: #2c3e50;
   #margin-top: 60px;
 }
-
- .green{
-   color: #95d387;
-   text-decoration: none;
-   outline: none;
- }
-
- .green:hover{
-   color: #5b8053;
- }
-
-
 </style>
