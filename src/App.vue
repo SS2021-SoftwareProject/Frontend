@@ -3,6 +3,8 @@
   <div id="app">
     <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
       <div class="container-fluid">
+
+        <!-- The website icon -->
         <a class="navbar-brand" href="/">
             <!--<img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24">-->
           <img src="./assets/logo_541x500.png" alt="" width="39" height="36">
@@ -12,13 +14,17 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- Left area with home and about pages-->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
             <li class="nav-item">
-              <router-link class="nav-link active" aria-current="page" to="/">
+              <router-link class="nav-link active green" aria-current="page" to="/">
                 <a class="green">Home</a>
               </router-link>
             </li>
+
             <li class="nav-item">
               <router-link class="nav-link active" aria-current="page" to="/About">
                 <a class="green">About</a>
@@ -30,29 +36,93 @@
               </router-link>
             </li>
           </ul>
-          <form class="d-flex">
-            <router-link class="nav-link active" aria-current="page" to="/Login">
-              <a class="green">Login</a>
-            </router-link>
-            <router-link class="nav-link active" aria-current="page" to="/Register">
-              <a class="green">Register</a>
-            </router-link>
-            <router-link class="nav-link active" aria-current="page" to="/Profile">
-              <a class="green">Profile</a>
-            </router-link>
-          </form>
+
+          <!-- Right flex area with login and register links -->
+          <div class="d-flex">
+
+            <button class="btn btn-link green text-capitalize" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+            <button class="btn btn-link green text-capitalize" data-bs-toggle="modal" data-bs-target="#testModal">Register</button>
+
+          </div>
         </div>
       </div>
     </nav>
+
     <br>
 
     <router-view></router-view>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-login">
+        <div class="modal-content">
+          <div class="modal-body">
+
+            <div class="container">
+              <h1 class="display-6" style="margin: 10%">Login</h1>
+
+              <div class="row">
+
+                  <form>
+                    <div class="mb-4">
+                      <input type="email" class="form-control" id="loginInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email Adress...">
+                    </div>
+                    <div class="mb-4">
+                      <input type="password" class="form-control" id="registerInputPassword1" placeholder="Enter Password...">
+                    </div>
+                    <div class="mb-4">
+                      <button type="submit" class="btn btn-primary" style="width: 100%">Login</button>
+                    </div>
+                  </form>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Regiser Modal -->
+    <div class="modal fade" id="testModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-login">
+        <div class="modal-content">
+          <div class="modal-body">
+
+            <div class="container">
+              <h1 class="display-6" style="margin: 10%">Register</h1>
+
+              <div class="row">
+
+                  <form>
+                    <div class="mb-3">
+                      <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                    </div>
+
+                    <div class="mb-3">
+                      <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                    </div>
+
+                    <div class="mb-3">
+                      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
+                    </div>
+                    <div class="mb-3">
+                      <input type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%">Login</button>
+                  </form>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-
     <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br>
-
-
 
   <Footer></Footer>
   </div>
@@ -79,4 +149,5 @@ export default {
   color: #2c3e50;
   #margin-top: 60px;
 }
+
 </style>

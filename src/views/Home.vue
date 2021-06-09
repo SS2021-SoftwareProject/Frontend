@@ -1,7 +1,7 @@
 <template>
   <div class="container">
 
-    <p class="fs-1">Kinder in Afrika... leiden unter Hunger und seinen Folgen</p>
+    <p class="fs-1">Kinder in Afrika haben halt einfach pech, sorry</p>
     <p class="text-start">Die Weltbank schätzt, dass zwischen 45 und 50 Prozent der Bewohner in den Staaten südlich
       der Sahara unter der Armutsgrenze leben, d. h., sie müssen mit weniger als 1,25 Dollar am Tag auskommen.
       Damit gilt die Subsahara-Region als ärmste Region der Welt. Der afrikanische Kontinent hat mit 24,8 Prozent
