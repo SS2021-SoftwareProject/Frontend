@@ -54,18 +54,18 @@
               More
             </h6>
             <p>
-              <a href="/" class="text-decoration-none text-reset">Home</a>
+              <a href="/" class="text-decoration-none text-reset text-muted">Home</a>
             </p>
             <p>
-              <a href=".#projects" class="text-decoration-none text-reset">Donate</a>
+              <a href=".#projects" class="text-decoration-none text-reset text-muted">Donate</a>
             </p>
             <p>
-              <router-link aria-current="page" to="/Profile">
+              <router-link class="text-muted" aria-current="page" to="/Profile">
                 <a class="text-decoration-none text-reset">Profile</a>
               </router-link>
             </p>
             <p>
-              <router-link aria-current="page" to="/Faq">
+              <router-link class="text-muted" aria-current="page" to="/Faq">
                 <a class="text-decoration-none text-reset">FAQ</a>
               </router-link>
             </p>
@@ -73,7 +73,7 @@
           <!-- Grid column -->
 
           <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 lh-lg">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">
               Find us on
