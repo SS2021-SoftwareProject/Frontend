@@ -11,11 +11,11 @@ import App from './App.vue'
  * @param url name of resource on server
  * @returns {data} as JSON
  */
-function fetch_data(url) {
+function fetch_data() {
     const config = {
-        url: url,
-        method: 'get',
-        baseURL: 'localhost:8080/'
+        url: 'https://api.coindesk.com/v1/bpi/currentprice.json',
+        method: 'get'
+        //baseURL: 'localhost:8080/'
     };
 
     Vue.axios.request(config).then((response) => {
