@@ -30,6 +30,11 @@
                 <a class="green">About</a>
               </router-link>
             </li>
+            <li class="nav-item">
+              <router-link class="nav-link active" aria-current="page" to="/Faq">
+                <a class="green">FAQ</a>
+              </router-link>
+            </li>
           </ul>
 
           <!-- Right flex area with login and register links -->

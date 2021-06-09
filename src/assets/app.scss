@@ -1,7 +1,12 @@
-$theme-colors: (
-        "primary": #95d387 ,
-        "danger": #ff4136
-);
+/* custom theme map colors */
+$primary: #95d387;
+$secondary: #d8eaab;
+$success: #98c9a3;
+$info: #bfd8bd;
+$warning: #efcd5d;
+$danger: #ff4136;
+$light: #f8f9fa;
+$dark: #77bfa3;
 
 @import "~bootstrap/scss/bootstrap";
 @import "./src/MDBscss/bootstrap/bootstrap";
@@ -9,3 +14,13 @@ $theme-colors: (
 @import "./src/MDBscss/mdb.core";
 @import "./src/MDBscss/custom/styles";
 
+/* custom css */
+.green {
+  color: #95d387;
+  text-decoration: none;
+  outline: none;
+}
+
+.green:hover {
+  color: #5b8053;
+}

@@ -57,12 +57,11 @@
 
 <script>
 export default {
-
-  created() {
-
-  }
-
+  name: 'Faq'
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+
+
+</style>

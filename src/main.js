@@ -13,8 +13,9 @@ import HomePage from "./views/HomePage";
 import Login from "./views/Login";
 import Register from "./views/Register";
 import ProjectView from "@/views/ProjectView";
-import Faq from "./views/Faq";
+import Faq from "@/views/Faq";
 import RequestData from "@/views/RequestData";
+import UserProfile from "@/views/UserProfile";
 
 // requests
 import axios from 'axios';
@@ -27,9 +28,10 @@ const routes = [
   { path: "/", component: HomePage},
   { path: "/login", component: Login},
   { path: "/register", component: Register},
-  { path: "/project",component: ProjectView},
+  { path: "/project", component: ProjectView},
   { path: "/faq", component: Faq},
-  { path: "/dataTest", component: RequestData}
+  { path: "/dataTest", component: RequestData},
+  { path: "/profile", component: UserProfile}
 ];
 
 const router = new VueRouter({
