@@ -20,7 +20,6 @@ import RequestData from "@/views/RequestData";
 import axios from 'axios';
 import VueAxios from "vue-axios";
 Vue.use(VueAxios, axios);
-//import {} from "@/scripts/requests";
 
 Vue.use(VueRouter, mdb, Input);
 
