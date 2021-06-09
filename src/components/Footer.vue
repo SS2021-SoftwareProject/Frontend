@@ -37,7 +37,7 @@
           <!-- Grid column -->
           <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
             <!-- Content -->
-            <h6 class="text-uppercase fw-bold mb-4">
+            <h6 class="text-uppercase text-primary fw-bold mb-4">
               <img id="logo" class="img-thumbnail" src="../assets/logo_541x500.png" alt="company logo">
               <i class="fas fa-gem me-3"></i>About CharitAble
             </h6>
@@ -50,7 +50,7 @@
           <!-- Grid column -->
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
+            <h6 class="text-uppercase text-primary fw-bold mb-4">
               More
             </h6>
             <p>
@@ -75,7 +75,7 @@
           <!-- Grid column -->
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 lh-lg">
             <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
+            <h6 class="text-uppercase text-primary fw-bold mb-4">
               Find us on
             </h6>
 
@@ -109,7 +109,7 @@
           <!-- Grid column -->
           <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
+            <h6 class="text-uppercase text-primary fw-bold mb-4">
             Contact us
             </h6>
             <p>
@@ -156,10 +156,6 @@ export default {
 </script>
 
 <style scoped>
-h6{
-  color: #95d387;
-}
-
 img#logo {
   width: 30px;
 }
