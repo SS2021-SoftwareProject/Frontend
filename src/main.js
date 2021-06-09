@@ -12,13 +12,24 @@ import { Input } from 'mdb-ui-kit'; // module
 import HomePage from "./views/HomePage";
 import Login from "./views/Login";
 import Register from "./views/Register";
+import ProjectView from "@/views/ProjectView";
+import Faq from "./views/Faq";
+import RequestData from "@/views/RequestData";
+
+// requests
+import axios from 'axios';
+import VueAxios from "vue-axios";
+Vue.use(VueAxios, axios);
 
 Vue.use(VueRouter, mdb, Input);
 
 const routes = [
   { path: "/", component: HomePage},
   { path: "/login", component: Login},
-  { path: "/register", component: Register}
+  { path: "/register", component: Register},
+  { path: "/project",component: ProjectView},
+  { path: "/faq", component: Faq},
+  { path: "/dataTest", component: RequestData}
 ];
 
 const router = new VueRouter({
@@ -27,6 +38,15 @@ const router = new VueRouter({
 });
 
 Vue.config.productionTip = false
+
+const title = "CharitAble";
+
+//set title
+router.afterEach((to) => {
+  Vue.nextTick(() => {
+    document.title = to.meta.title || title;
+  });
+});
 
 new Vue({
   render: h => h(App),

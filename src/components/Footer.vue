@@ -9,7 +9,7 @@
       <!-- Right -->
       <div>
         <a href="" class="me-4 text-reset">
-          <i class="fab fa-facebook-f"></i>
+          <i class="bi bi-facebook"></i>
         </a>
         <a href="" class="me-4 text-reset">
           <i class="fab fa-twitter"></i>
@@ -37,13 +37,13 @@
         <!-- Grid row -->
         <div class="row mt-3">
           <!-- Grid column -->
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
             <!-- Content -->
             <h6 class="text-uppercase fw-bold mb-4">
-              <i class="fas fa-gem me-3"></i>Cooler Firmen Name
+              <i class="fas fa-gem me-3"></i>About CharitAble
             </h6>
-            <p>
-              Hier könnte ihre Werbung stehen! Oder eine Beschreibung der Firma, wie auch immer... :c
+            <p class="text-justify">
+              CharitAble aims to make donating to charity more transparent and accessible for everyone and thus, help those who need it the most.
             </p>
           </div>
           <!-- Grid column -->
@@ -55,55 +55,55 @@
               Sites
             </h6>
             <p>
-              <a href="#!" class="text-reset">Home</a>
+              <a href="/" class="text-decoration-none text-reset">Home</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Donate</a>
+              <a href="/" class="text-decoration-none text-reset">Donate</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Profile</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Useful links
-            </h6>
-            <p>
-              <a href="#!" class="text-reset">Pricing</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Settings</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Orders</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Help</a>
+              <a href="/" class="text-decoration-none text-reset">Profile</a>
             </p>
           </div>
           <!-- Grid column -->
 
           <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-3 mx-auto mb-md-0 mb-4">
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">
-            Contact
+              Find us on
             </h6>
             <p>
-              <i> New York, NY 10012, US</i>
+              <a href="https://www.facebook.com/rickroll548" class="text-decoration-none text-reset">Facebook</a>
             </p>
             <p>
-              <i>info@example.com</i>
+              <a href="https://twitter.com/rickroll" class="text-decoration-none text-reset">Twitter</a>
             </p>
             <p>
-              <i> + 01 234 567 88</i>
+              <a href="https://www.instagram.com/rick_astley_memes" class="text-decoration-none text-reset">Instagram</a>
             </p>
             <p>
-              <i> + 01 234 567 89</i>
+              <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="text-decoration-none text-reset">YouTube</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+            Contact us
+            </h6>
+            <p>
+              <i>420  Hoooker Ave, <br>New York NY 10012</i>
+            </p>
+            <p>
+              <i>contact@charitable.com</i>
+            </p>
+            <p>
+              <i>Phone:  + 01 234 567 88</i>
+            </p>
+            <p>
+              <i>Fax:  + 01 234 567 89</i>
             </p>
           </div>
           <!-- Grid column -->
@@ -116,7 +116,7 @@
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
       © 2021 Copyright:
-      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Hier kommt Copyright hin</a>
+      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">CharitAble</a>
     </div>
     <!-- Copyright -->
   </footer>
@@ -135,11 +135,9 @@ export default {
 }
 
 </script>
-<style scoped>
 
-.img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+<style scoped>
+h6{
+  color: #95d387;
 }
 </style>
