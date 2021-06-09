@@ -60,10 +60,14 @@
               <a href=".#projects" class="text-decoration-none text-reset">Donate</a>
             </p>
             <p>
-              <a href="/" class="text-decoration-none text-reset">Profile</a>
+              <router-link aria-current="page" to="/Profile">
+                <a class="text-decoration-none text-reset">Profile</a>
+              </router-link>
             </p>
             <p>
-              <a href="/faq" class="text-decoration-none text-reset">FAQ</a>
+              <router-link aria-current="page" to="/Faq">
+                <a class="text-decoration-none text-reset">FAQ</a>
+              </router-link>
             </p>
           </div>
           <!-- Grid column -->
