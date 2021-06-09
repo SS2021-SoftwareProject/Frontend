@@ -18,7 +18,9 @@ import RequestData from "@/views/RequestData";
 import UserProfile from "@/views/UserProfile";
 
 // requests
-//import {} from "@/scripts/requests";
+import axios from 'axios';
+import VueAxios from "vue-axios";
+Vue.use(VueAxios, axios);
 
 Vue.use(VueRouter, mdb, Input);
 
