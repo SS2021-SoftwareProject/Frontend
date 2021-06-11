@@ -4,7 +4,7 @@
     <div class="row mb-4">
       <div class="col-auto align-self-end">
         <div class="text-start">
-          <img src="../assets/logo.png" alt="user avatar" class="p-3">
+          <img id="avatar" src="../assets/logo.png" alt="user avatar" class="p-3">
         </div>
       </div>
       <div class="col-auto align-self-end">
@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style scoped>
-img {
+img#avatar {
   width: 150px;
   height: auto;
 }
