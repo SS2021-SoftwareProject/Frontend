@@ -1,5 +1,5 @@
 <template>
-  <div class="container-lg mx-4" id="top">
+  <div class="container-lg mx-4">
 
     <div class="row mb-4">
       <div class="col-auto align-self-end">
