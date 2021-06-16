@@ -37,7 +37,7 @@
       <h1 class="font-monospace">Funds Raised : </h1>
       <br><br><br><br>
       <div class="progress" style="height: 20px;">
-        <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
       </div>
     </div>
 
