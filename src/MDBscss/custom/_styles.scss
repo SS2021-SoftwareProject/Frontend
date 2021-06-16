@@ -1,1 +1,18 @@
-// Your custom variables
+// Your custom styles
+
+.green{
+  color: #95d387;
+  text-decoration: none;
+  outline: none;
+}
+
+.green:hover{
+  color: #5b8053;
+}
+
+.modal-login {
+  width: 20%;
+  height: auto;
+  max-height: 100%;
+  margin: auto;
+}

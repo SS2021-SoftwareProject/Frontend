@@ -4,12 +4,22 @@
     <div class="row">
 
       <div class="col-md-5">
+
         <br><br><br><br><br><br>
+
+        <!-- Eycatcher -->
         <h1 class="font-monospace">Donate Money with Blockchain</h1>
         <h5>Simple to use Blockchain Donations</h5>
-        <br><br>
-        <button class="btn btn-primary ms-1 me-3" data-spy="scroll" data-bs-target="#projects">Explore</button>
 
+        <br><br>
+
+        <button class="btn btn-primary ms-1 me-3" data-spy="scroll" data-bs-target="#projects">Explore</button>
+        <button class="btn btn-primary ms-1 me-3" data-bs-toggle="modal" data-bs-target="#videoModal">Watch Video</button>
+
+        <!-- Video Modal -->
+        <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content ">
         <button class="btn btn-primary ms-1 me-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Watch Video</button>
 
         <!-- Modal -->
@@ -64,6 +74,7 @@
 
 
 <script>
+
 import HomeCard from "@/components/HomeCard";
 export default {
   components: {HomeCard},

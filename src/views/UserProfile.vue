@@ -1,0 +1,105 @@
+<template>
+  <div class="container">
+
+    <div class="row mb-4">
+      <div class="col-auto align-self-end">
+        <div class="text-start">
+          <img id="avatar" src="../assets/logo.png" alt="user avatar" class="p-3">
+        </div>
+      </div>
+      <div class="col-auto align-self-end">
+        <h1 class="font-monospace fw-bolder display-4">TheLegend27</h1>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-start">
+      <div class="nav flex-column nav-pills me-5" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <button class="nav-link active fs-6" id="v-pills-overview-tab" data-bs-toggle="pill" data-bs-target="#v-pills-overview" type="button" role="tab" aria-controls="v-pills-overview" aria-selected="true">Overview</button>
+        <button class="nav-link fs-6" id="v-pills-contributions-tab" data-bs-toggle="pill" data-bs-target="#v-pills-contributions" type="button" role="tab" aria-controls="v-pills-contributions" aria-selected="false">Contributions</button>
+        <button class="nav-link fs-6" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
+        <button class="nav-link fs-6" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+      </div>
+
+      <div class="tab-content" id="v-pills-tabContent">
+        <div class="tab-pane fade show active" id="v-pills-overview" role="tabpanel" aria-labelledby="v-pills-overview-tab">
+          <p class="text-start">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+
+        <div class="tab-pane fade" id="v-pills-contributions" role="tabpanel" aria-labelledby="v-pills-contributions-tab">
+          <table class="table table-responsive-sm align-middle" id="donations">
+            <thead class="table-primary font-monospace h6">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Date</th>
+                <th scope="col">Project</th>
+                <th scope="col">Amount</th>
+              </tr>
+            </thead>
+            <tbody class="text-start">
+              <tr>
+                <th scope="row">1</th>
+                <td>01/01/2021</td>
+                <td>Sample Project 1</td>
+                <td>0.0004817094906403846 Ξ</td>
+              </tr>
+              <tr class="table-secondary">
+                <th scope="row">2</th>
+                <td>01/01/2021</td>
+                <td>Sample Project 2</td>
+                <td>0.002408547453201923 Ξ</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>01/01/2021</td>
+                <td>Sample Project 3</td>
+                <td>0.0012042737266009615 Ξ</td>
+              </tr>
+              <tr class="table-secondary">
+                <th scope="row">4</th>
+                <td>01/01/2021</td>
+                <td>Sample Project 2</td>
+                <td>0.002408547453201923 Ξ</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="text-start text-muted">You made <span id="total"></span> donations.</p>
+        </div>
+
+        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+          <p class="text-start">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+
+        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+          <p class="text-start">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</template>
+
+<script>
+
+export default {
+  name: 'UserProfile'
+}
+
+/* counts rows in the table, excluding the header */
+window.onload = function (){
+  var table = document.getElementById("donations");
+  document.getElementById('total').innerHTML = String(table.tBodies[0].rows.length);
+};
+
+</script>
+
+<style scoped>
+img#avatar {
+  width: 150px;
+  height: auto;
+}
+
+td, th {
+  padding: 15px;
+}
+</style>
