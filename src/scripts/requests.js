@@ -1,9 +1,15 @@
-const axios = require('axios');
+//const axios = require('axios');
 
-function fetch_data() {
-    return data;
+
+/**
+ * Method for general data fetching.
+ * @param url name of resource on server
+ * @returns {data} as JSON
+ */
+
+let test = {
+    foo(){return "foo"}
 }
 
-function post_data(data){
-}
 
+export default test

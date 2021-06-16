@@ -118,8 +118,9 @@
       © 2021 Copyright:
       <a class="text-reset fw-bold" href="https://mdbootstrap.com/">CharitAble</a>
     </div>
-    <!-- Copyright -->
+    <!-- Copyright -->\
   </footer>
+
   <!-- Footer -->
 </template>
 

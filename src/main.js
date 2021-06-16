@@ -15,6 +15,10 @@ import Register from "./views/Register";
 import ProjectView from "@/views/ProjectView";
 import Faq from "./views/Faq";
 import RequestData from "@/views/RequestData";
+import test from "@/scripts/requests";
+
+console.log(test.foo())
+
 
 // requests
 //import {} from "@/scripts/requests";
