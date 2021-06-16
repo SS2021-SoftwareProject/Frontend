@@ -58,7 +58,7 @@
               <a href="/" class="text-decoration-none text-reset">Home</a>
             </p>
             <p>
-              <a href="/" class="text-decoration-none text-reset">Donate</a>
+              <a href="#projects" class="text-decoration-none text-reset">Donate</a>
             </p>
             <p>
               <a href="/" class="text-decoration-none text-reset">Profile</a>
@@ -118,7 +118,7 @@
       © 2021 Copyright:
       <a class="text-reset fw-bold" href="https://mdbootstrap.com/">CharitAble</a>
     </div>
-    <!-- Copyright -->\
+    <!-- Copyright -->
   </footer>
 
   <!-- Footer -->
