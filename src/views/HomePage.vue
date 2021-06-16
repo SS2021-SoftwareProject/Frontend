@@ -21,23 +21,24 @@
           <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content ">
         <button class="btn btn-primary ms-1 me-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Watch Video</button>
+            </div>
+          </div>
+        </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog PopupDialog">
-            <div class="modal-content">
-              <div class="modal-body">
-
-                <div class="embed-responsive embed-responsive-16by9 Video">
-                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ" id="video"  allowscriptaccess="always" allow="autoplay" allowfullscreen="always"
-                          style="width:100%; height:100%; border:none;">></iframe>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog PopupDialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="embed-responsive embed-responsive-16by9 Video">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ" id="video"  allowscriptaccess="always" allow="autoplay" allowfullscreen="always"
+                            style="width:100%; height:100%; border:none;">></iframe>
+                  </div>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
-      </div>
 
       <div class="col-md-7">
         <img src="./../assets/homeWithout.png" class="img-fluid" alt="..." height="1280" width="1920">
@@ -45,30 +46,32 @@
     </div>
   </div>
 
+
+  <section id="explore"></section>
   <br><br><br><br>
 
 
     <div class="container" id="projects">
-    <div class="row">
-      <div class="col-md-4"> <HomeCard></HomeCard> </div>
-      <div class="col-md-4"> <HomeCard></HomeCard> </div>
-      <div class="col-md-4"> <HomeCard></HomeCard> </div>
-    </div>
+      <div class="row">
+        <div class="col-md-4"> <HomeCard></HomeCard> </div>
+        <div class="col-md-4"> <HomeCard></HomeCard> </div>
+        <div class="col-md-4"> <HomeCard></HomeCard> </div>
+      </div>
 
-    <div class="row">
-      <div class="col-md-4"> <HomeCard></HomeCard> </div>
-      <div class="col-md-4"> <HomeCard></HomeCard> </div>
-      <div class="col-md-4"> <HomeCard></HomeCard> </div>
-    </div>
+      <div class="row">
+        <div class="col-md-4"> <HomeCard></HomeCard> </div>
+        <div class="col-md-4"> <HomeCard></HomeCard> </div>
+        <div class="col-md-4"> <HomeCard></HomeCard> </div>
+      </div>
 
-    <div class="row">
-      <div class="col-md-4"> <HomeCard></HomeCard> </div>
-      <div class="col-md-4"> <HomeCard></HomeCard> </div>
-      <div class="col-md-4"> <HomeCard></HomeCard> </div>
+      <div class="row">
+        <div class="col-md-4"> <HomeCard></HomeCard> </div>
+        <div class="col-md-4"> <HomeCard></HomeCard> </div>
+        <div class="col-md-4"> <HomeCard></HomeCard> </div>
+      </div>
     </div>
   </div>
 
-  </div>
 </template>
 
 
