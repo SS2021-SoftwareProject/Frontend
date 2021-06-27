@@ -60,7 +60,7 @@
               <a href="/#explore" class="text-decoration-none text-reset text-muted">Donate</a>
             </p>
             <p>
-              <router-link class="text-muted" aria-current="page" to="/Profile">
+              <router-link class="text-muted" data-bs-toggle="modal" data-bs-target="#userModal" aria-current="page" to="">
                 <a href="#" class="text-decoration-none text-reset">Profile</a>
               </router-link>
             </p>

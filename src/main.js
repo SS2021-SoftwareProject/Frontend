@@ -10,12 +10,12 @@ import { Input } from 'mdb-ui-kit'; // module
 
 //import Home from "./views/Home"
 import HomePage from "./views/HomePage";
+import About from "@/views/About";
 import Login from "./views/Login";
 import Register from "./views/Register";
 import ProjectView from "@/views/ProjectView";
 import Faq from "@/views/Faq";
 import RequestData from "@/views/RequestData";
-import UserProfile from "@/views/UserProfile";
 
 // requests
 import axios from 'axios';
@@ -25,13 +25,13 @@ Vue.use(VueAxios, axios);
 Vue.use(VueRouter, mdb, Input);
 
 const routes = [
-  { path: "/", component: HomePage},
-  { path: "/login", component: Login},
-  { path: "/register", component: Register},
-  { path: "/project", component: ProjectView},
-  { path: "/faq", component: Faq},
-  { path: "/dataTest", component: RequestData},
-  { path: "/profile", component: UserProfile}
+  { path: "/", component: HomePage },
+  { path: "/about", component: About },
+  { path: "/login", component: Login },
+  { path: "/register", component: Register },
+  { path: "/project", component: ProjectView },
+  { path: "/faq", component: Faq },
+  { path: "/dataTest", component: RequestData }
 ];
 
 const router = new VueRouter({

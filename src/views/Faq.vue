@@ -50,6 +50,39 @@
       </div>
       <!--- item end --->
 
+      <!--- item start --->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            What is Blockchain?
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+          <div class="accordion-body text-start">
+            Blockchain is a specific type of database that differs from regular ones in the way it stores information.
+            With Blockchain, information is stored in blocks that are chained together within the database. We use this techonology to keep track of every donation made through our website.
+            New transactions are stored in a fresh block in the database. Once this block is full, it is linked to its predecessor which causes data to be stored and linked in chronological order.
+          </div>
+        </div>
+      </div>
+      <!--- item end --->
+
+      <!--- item start --->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            What happens if a project isn't fully funded?
+          </button>
+        </h2>
+        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+          <div class="accordion-body text-start">
+            Even if a project isn't fully funded, the money will still be available to the respective organisation.
+            It's up to them if they want to proceed and try to implement the project or use the money for a different one.
+          </div>
+        </div>
+      </div>
+      <!--- item end --->
+
     </div>
   </div>
 

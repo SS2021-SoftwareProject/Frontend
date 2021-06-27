@@ -36,7 +36,8 @@
             <div class="d-flex">
 
               <button class="btn btn-link green text-capitalize" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-              <button class="btn btn-link green text-capitalize" data-bs-toggle="modal" data-bs-target="#testModal">Register</button>
+              <button class="btn btn-link green text-capitalize" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+              <button class="btn btn-link green text-capitalize" data-bs-toggle="modal" data-bs-target="#userModal">Profile</button>
 
             </div>
           </div>
@@ -79,7 +80,7 @@
       </div>
 
       <!-- Regiser Modal -->
-      <div class="modal fade" id="testModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-login">
           <div class="modal-content">
             <div class="modal-body">
@@ -115,6 +116,17 @@
           </div>
         </div>
       </div>
+
+      <!-- User Modal -->
+      <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-body">
+              <UserProfile></UserProfile>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br>
@@ -126,9 +138,11 @@
 <script>
 //import HelloWorld from './components/HelloWorld.vue'
 import Footer from "@/components/Footer";
+import UserProfile from "@/components/UserProfile";
 export default {
   name: 'App',
   components: {
+    UserProfile,
     Footer
   }
 }
