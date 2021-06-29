@@ -20,16 +20,12 @@ import RequestData from "@/views/RequestData";
 // requests & auth
 import axios from 'axios';
 import VueAxios from "vue-axios";
+import store from './store';
 Vue.use(VueAxios, axios);
 
-import Vuex from 'vuex';
-import createPersistedState from "vuex-persistedstate";
-
-//load vuex
-Vue.use(Vuex);
-//load plugin
-Vue.use(createPersistedState);
-
+// cookies = on (default in axios is off)
+axios.defaults.withCredentials = true;
+axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com'
 
 Vue.use(VueRouter, mdb, Input);
 
@@ -69,4 +65,5 @@ router.afterEach((to) => {
 new Vue({
   render: h => h(App),
   router,
+  store
 }).$mount('#app')
