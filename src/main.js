@@ -17,10 +17,19 @@ import ProjectView from "@/views/ProjectView";
 import Faq from "@/views/Faq";
 import RequestData from "@/views/RequestData";
 
-// requests
+// requests & auth
 import axios from 'axios';
 import VueAxios from "vue-axios";
 Vue.use(VueAxios, axios);
+
+import Vuex from 'vuex';
+import createPersistedState from "vuex-persistedstate";
+
+//load vuex
+Vue.use(Vuex);
+//load plugin
+Vue.use(createPersistedState);
+
 
 Vue.use(VueRouter, mdb, Input);
 
