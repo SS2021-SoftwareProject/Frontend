@@ -1,58 +1,185 @@
 <template>
   <div class="container">
+    <br><br>
+
+
     <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-8">
+      <div class="col-md-5">
         <img class="thumbnail img-responsive" src="../assets/afrika2.jpg" alt=""/>
       </div>
-      <div class="col-md-2"></div>
+
+      <div class="col-md-1"></div>
+
+      <div class="col-md-6">
+        <h2 class="text-start">Fresh Water for Children in Nigeria</h2>
+        <h5 class="text-start">Provide water for up to 200 ChildVoice students living in Nigeria</h5>
+
+        <br>
+
+        <p class="fs-6 text-start text-primary">Funds Raised</p>
+        <div class="progress" style="height: 20px;">
+          <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">75%</div>
+        </div>
+
+        <br><br>
+
+        <h6 class="text-start">Status</h6>
+        <h6 class="text-start text-primary">Funding</h6>
+
+        <br>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-primary me-md-2" type="button">Milestones</button>
+          <a class="btn btn-primary" href="/Checkout" role="button">Donate</a>
+        </div>
+
+      </div>
     </div>
     <br><br><br><br><br><br><br><br>
+
+    <h1 class="font-monospace">Project Overview</h1>
+    <br><br><br><br><br><br>
+
 
     <div class="row" >
       <div class="col-md-7">
         <br>
-        <h1 class="font-monospace">Summary</h1>
-        <h5 >Kriege, Konflikte, Hungersnöte: Der Alltag von Kindern in Afrika ist schwer. Es fehlt nicht nur an
-          medizinischer Versorgung, sondern auch an Bildungsmöglichkeiten. Viele Kinder wachsen ohne Eltern auf
-          und jedes zehnte Kind erlebt nicht einmal seinen fünften Geburtstag. Deshalb spendet der SOS-Kinderdorf e.V.
-          in zahlreichen Ländern Afrikas Hoffnung und sorgt dafür, dass Kinder wieder lachen können.
-          <br><br>
-          Wir kümmern uns um ein richtiges Zuhause, eine richtige Schulausbildung und bereiten die Kinder anschließend
-          in einer SOS-Jugendeinrichtung auf ein selbstständiges Leben vor. So erhalten junge Menschen die echte Chance
-          auf eine unbeschwerte Zukunft.</h5>
+        <h2 class="font-monospace">Summary</h2>
+        <br>
+        <h5 class="text-start">The Malkohi internally displaced persons (IDP) camp in Adamawa State, Nigeria,
+          currently has just one hand-pump water borehole (well and hand pump). <br><br>
+
+          It serves a population of 2,000-plus IDPs, most of whom are children and adolescents.
+          ChildVoice is building a new Youth Empowerment Center to
+          provide rehabilitative and skills training services for up to 200 ChildVoice students living in the camp.<br><br>
+
+
+          <b>But this one existing well is simply not sufficient to meet the needs a skills training facility.</b>
+          To meet those needs, <b>ChildVoice seeks to raise $5,600 to drill a
+          new water well for its new Youth Empowerment Center.</b></h5>
         <br><br>
       </div>
 
       <div class="col-md-2"></div>
 
       <div class="col-md-3">
+        <br>
         <img class="thumbnail img-responsive" src="../assets/africa.jpg" alt=""/>
       </div>
     </div>
 
     <br><br><br><br><br><br><br><br>
 
-    <div class="row">
-      <h1 class="font-monospace">Funds Raised : </h1>
-      <br><br><br><br>
-      <div class="progress" style="height: 20px;">
-        <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+
+    <div class="row" >
+      <div class="col-md-7">
+        <br>
+        <h2 class="font-monospace">Problems to Address</h2>
+        <br>
+        <h5 class="text-start">ChildVoice has been providing counseling, skills training,
+          and related services to traumatized adolescent girls and their children in Nigeria for three years now.
+          The organization is now on the verge of solidifying their presence in the Malkohi IDP camp with a new
+          Youth Empowerment Center, making their students’ dreams of having expanded agricultural and other
+          vocational training programs a reality.<br><br>
+
+          While this is an amazing development, the fact is <b>without a reliable water source to supply the new center,
+            these enhanced programs will simply remain dreams.</b><br><br>
+
+          A reliable water well is a critical part of the new Youth Empowerment Center. Last year, the camp’s only
+          borehole pump failed -- a life-threatening problem in a country where the temperatures can exceed 100 degrees
+          Fahrenheit during the dry season. The NGO responsible for its installation was unable to effect repairs due
+          to the COVID-19 pandemic. Residents became increasingly desperate for this single source of fresh water
+          to be restored. Because ChildVoice continued to maintain a presence in the camp during the pandemic,
+          it handled the repairs.<br><br>
+
+          But as ChildVoice began planning the construction of a new training center,
+          a stark reality quickly became clear: <b>the camp’s single hand-pump well simply can’t
+          produce enough water to meet the needs of their expanded agriculture program and
+            other vocational programs that require water.</b><br><br>
+
+          The agriculture program is especially important given ongoing hunger issues in the camp and beyond.
+          One of the most important features of the program that requires a reliable water source will be drip
+          irrigation, which will allow ChildVoice to teach dry season farming. Demonstration plots
+          will also rely heavily on water. Because water is essential for these agriculture programs to
+          be successful, it’s no understatement that for ChildVoice's students living in the IDP camp,
+          <b>water is life.</b><br><br>
+
+        </h5>
+        <br><br>
+      </div>
+
+      <div class="col-md-2"></div>
+
+      <div class="col-md-3">
+        <br><br><br><br><br><br>
+        <img class="thumbnail img-responsive" src="../assets/afrika3.jpg" alt=""/>
       </div>
     </div>
 
     <br><br><br><br><br><br><br><br>
+
+
+
+
+
+    <div class="row" >
+      <div class="col-md-7">
+        <br>
+        <h2 class="font-monospace">Solution</h2>
+        <br>
+        <h5 class="text-start">ChildVoice has solidified plans to expand its presence in the camp, and recently
+          received a grant to build a new Youth Empowerment Center.
+          For ChildVoice's students living in the Malkohi IDP camp – many of whom are victims of Boko Haram
+          and other violent insurgent groups – <b>water is a vital component of the programs they have developed
+          to help war-affected youth recover from trauma and overwhelming loss. Without reliable access to water,
+          ChildVoice simply will not be able to run their agriculture, culinary, and other water-dependent
+            skills training programs.</b><br><br>
+
+          As a crucial part of their new Youth Empowerment Center in the IDP camp, a new water well -- consisting of a
+          borehole, solar-powered pump, storage tank, and taps -- will address a fundamental rehabilitative and economic
+          development need that will otherwise go unmet. <b>Water is essential for ChildVoice to provide life-changing
+            agricultural and other vocational training programs for hundreds of their students.</b><br><br>
+
+        </h5>
+        <br><br>
+      </div>
+
+      <div class="col-md-2"></div>
+
+      <div class="col-md-3">
+        <br><br><br><br>
+        <img class="thumbnail img-responsive" src="../assets/africa.jpg" alt=""/>
+      </div>
+    </div>
+
     <br><br><br><br><br><br><br><br>
 
-  <div class="row">
-    <h1 class="font-monospace">Milestones : </h1>
-    <br><br><br><br>
-    <div class="progress" style="height: 20px">
-      <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">Milestone 1</div>
-      <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">Milestone 2</div>
-      <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">Milestone 3</div>
+
+    <div class="row" >
+      <h1 class="font-monospace">The Milestones</h1>
+      <div class="col-md-7">
+        <br>
+
+        <div class="d-grid gap-4 d-md-block">
+          <button class="btn btn-primary me-md-4" type="button">M1</button>
+          <button class="btn btn-primary me-md-4" type="button">M2</button>
+          <button class="btn btn-primary me-md-4" type="button">M3</button>
+        </div>
+        <br>
+        <hr class="dropdown-divider">
+
+        <h1>M1</h1>
+
+        <br><br>
+      </div>
+
+      <div class="col-md-2"></div>
+
+      <div class="col-md-3">
+
+
+      </div>
     </div>
-  </div>
 
 
   </div>
