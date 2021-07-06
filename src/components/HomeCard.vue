@@ -2,20 +2,21 @@
   <div class="container">
 
     <div class="card" style="width: 23rem;">
+
       <img src="../assets/afrika2.jpg" class="card-img-top" alt="...">
+
       <div class="card-body">
-        <h5 class="card-title">Save the Children</h5>
-        <p class="card-text">Hier könnte ihre Werbung stehen! Hier könnte ihre Werbung stehen!Hier könnte ihre Werbung stehen!</p>
+        <h5 class="card-title">{{titleText}}</h5>
+        <p class="card-text">{{descText}}</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item"><b>Status : </b> Funding (42 Days Left)</li>
-        <li class="list-group-item"><b>Progress : </b> $5.000 / $10.000</li>
+        <li class="list-group-item"><b>Status : </b> {{statusText}}</li>
+        <li class="list-group-item"><b>Progress : </b> ${{progressCurrent}} / $ {{progressMax}}</li>
         <li class="list-group-item">
 
           <div class="progress">
-            <div class="progress-bar bg-primary" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+            <div class="progress-bar bg-primary" role="progressbar" :style="{width: percent+'%'}" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">{{percent}}%</div>
           </div>
-
         </li>
       </ul>
       <div class="card-body">
@@ -68,14 +69,19 @@
 
 <script>
 export default {
+  props: ['id','titleText',"imageName", 'descText', 'statusText', 'progressCurrent', 'progressMax'],
   data(){
     return {
+      percent : ((100 * this.progressCurrent)/this.progressMax).toFixed(2),
+      path : '../assets/' + this.imageName + ".jpg",
       message: '',
       donationAmount: 0,
     }
   },
   created(){
-
+      //window.alert(this.path)
+    console.log(this.path)
+    console.log(this.percent)
   }
 }
 
