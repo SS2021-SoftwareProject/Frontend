@@ -85,9 +85,6 @@ export default {
       //window.alert(this.path)
     console.log(this.path)
     console.log(this.percent)
-    if(this.id !== undefined){
-      //window.alert("id : "+this.id)
-    }
   }
 }
 
