@@ -20,7 +20,10 @@
         </li>
       </ul>
       <div class="card-body">
-        <button class="btn btn-primary ms-1 me-5" @click="$router.push('/project')">View</button>
+
+        <button class="btn btn-primary ms-1 me-5"
+                @click="$router.push({ name: 'project', params: {id :  id }})">View</button>
+
         <button class="btn btn-primary me-1 ms-4" data-bs-toggle="modal" data-bs-target="#donatePopop">Donate</button>
       </div>
     </div>
@@ -82,6 +85,9 @@ export default {
       //window.alert(this.path)
     console.log(this.path)
     console.log(this.percent)
+    if(this.id !== undefined){
+      //window.alert("id : "+this.id)
+    }
   }
 }
 

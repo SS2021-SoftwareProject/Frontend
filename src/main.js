@@ -34,7 +34,7 @@ const routes = [
   { path: "/about", component: About },
   { path: "/login", component: Login },
   { path: "/register", component: Register },
-  { path: "/project", component: ProjectView },
+  { path: "/project/:id",name : "project", component: ProjectView },
   { path: "/faq", component: Faq },
   { path: "/dataTest", component: RequestData }
 ];
