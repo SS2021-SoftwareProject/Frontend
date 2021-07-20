@@ -105,10 +105,27 @@
 
 <script>
 import HomeCard from "@/components/HomeCard";
+import Vue from 'vue'
+
 export default {
   components: {HomeCard},
-  created(){
-  }
+  data () {
+    return {
+      projects: [],
+      project: ''}},
+  created: function () {
+    const baseURI = 'http://localhost:8081/projects'
+    Vue.axios.get(baseURI,{
+      crossdomain: true,
+      header: "access"
+    }).then((response) =>{
+      console.log(response.data)
+      this.users = response.data;
+    }).catch(err => {
+      console.log(err.response);
+    });
+
+    },
 }
 </script>
 

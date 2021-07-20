@@ -25,7 +25,7 @@ Vue.use(VueAxios, axios);
 
 // cookies = on (default in axios is off)
 axios.defaults.withCredentials = true;
-axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com'
+axios.defaults.baseURL = ''
 
 Vue.use(VueRouter, mdb, Input);
 
