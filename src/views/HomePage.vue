@@ -130,9 +130,11 @@ export default {
   created: function () {
     const baseURI = 'http://localhost:8081/projects'
     Vue.axios.get(baseURI, {
+
     }).then((response) => {
       console.log(response.data)
       this.users = response.data;
+
     }).catch(err => {
       console.log(err.response);
     });
