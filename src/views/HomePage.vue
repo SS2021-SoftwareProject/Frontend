@@ -14,7 +14,8 @@
           <br><br>
 
           <button class="btn btn-primary ms-1 me-3" data-spy="scroll" data-bs-target="#projects">Explore</button>
-          <button class="btn btn-primary ms-1 me-3" data-bs-toggle="modal" data-bs-target="#videoModal">Watch Video</button>
+          <button class="btn btn-primary ms-1 me-3" data-bs-toggle="modal" data-bs-target="#videoModal">Watch Video
+          </button>
 
           <!-- Video Modal -->
           <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -23,7 +24,8 @@
                 <div class="modal-body">
 
                   <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ" id="video"
+                            allowscriptaccess="always" allow="autoplay"></iframe>
                   </div>
 
                 </div>
@@ -82,25 +84,35 @@
         </div>
 
 
-
       </div>
 
       <div class="row">
-        <div class="col-md-4"> <HomeCard></HomeCard> </div>
-        <div class="col-md-4"> <HomeCard></HomeCard> </div>
-        <div class="col-md-4"> <HomeCard></HomeCard> </div>
+        <div class="col-md-4">
+          <HomeCard></HomeCard>
+        </div>
+        <div class="col-md-4">
+          <HomeCard></HomeCard>
+        </div>
+        <div class="col-md-4">
+          <HomeCard></HomeCard>
+        </div>
       </div>
 
       <div class="row">
-        <div class="col-md-4"> <HomeCard></HomeCard> </div>
-        <div class="col-md-4"> <HomeCard></HomeCard> </div>
-        <div class="col-md-4"> <HomeCard></HomeCard> </div>
+        <div class="col-md-4">
+          <HomeCard></HomeCard>
+        </div>
+        <div class="col-md-4">
+          <HomeCard></HomeCard>
+        </div>
+        <div class="col-md-4">
+          <HomeCard></HomeCard>
+        </div>
       </div>
     </div>
 
   </div>
 </template>
-
 
 
 <script>
@@ -109,23 +121,22 @@ import Vue from 'vue'
 
 export default {
   components: {HomeCard},
-  data () {
+  data() {
     return {
       projects: [],
-      project: ''}},
+      project: ''
+    }
+  },
   created: function () {
     const baseURI = 'http://localhost:8081/projects'
-    Vue.axios.get(baseURI,{
-      crossdomain: true,
-      header: "access"
-    }).then((response) =>{
+    Vue.axios.get(baseURI, {
+    }).then((response) => {
       console.log(response.data)
       this.users = response.data;
     }).catch(err => {
       console.log(err.response);
     });
-
-    },
+  },
 }
 </script>
 
