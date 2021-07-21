@@ -23,7 +23,8 @@ Vue.use(VueAxios, axios);
 
 // cookies = on (default in axios is off)
 axios.defaults.withCredentials = true;
-axios.defaults.baseURL = ''
+// base url to be used for every http request
+axios.defaults.baseURL = 'http://localhost:8081'
 
 Vue.use(VueRouter, mdb, Input);
 
