@@ -37,7 +37,7 @@
 
               <button class="btn btn-link green text-capitalize" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
               <button class="btn btn-link green text-capitalize" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
-              <button class="btn btn-link green text-capitalize" data-bs-toggle="modal" data-bs-target="#userModal">Profile</button>
+              <button ref="profileButton" class="btn btn-link green text-capitalize" data-bs-toggle="modal" data-bs-target="#userModal">Profile</button>
 
             </div>
           </div>
@@ -53,65 +53,18 @@
         <div class="modal-dialog modal-dialog-centered modal-login">
           <div class="modal-content">
             <div class="modal-body">
-
-              <div class="container">
-                <h1 class="display-6" style="margin: 10%">Login</h1>
-
-                <div class="row">
-
-                  <form>
-                    <div class="mb-4">
-                      <input type="email" class="form-control" id="loginInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email Adress...">
-                    </div>
-                    <div class="mb-4">
-                      <input type="password" class="form-control" id="registerInputPassword1" placeholder="Enter Password...">
-                    </div>
-                    <div class="mb-4">
-                      <button type="submit" class="btn btn-primary" style="width: 100%">Login</button>
-                    </div>
-                  </form>
-
-                </div>
-              </div>
-
+              <LoginModal></LoginModal>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Regiser Modal -->
+      <!-- Register Modal -->
       <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-login">
           <div class="modal-content">
             <div class="modal-body">
-
-              <div class="container">
-                <h1 class="display-6" style="margin: 10%">Register</h1>
-
-                <div class="row">
-
-                  <form>
-                    <div class="mb-3">
-                      <input type="text" class="form-control" id="firstName" placeholder="First Name">
-                    </div>
-
-                    <div class="mb-3">
-                      <input type="text" class="form-control" id="lastName" placeholder="Last Name">
-                    </div>
-
-                    <div class="mb-3">
-                      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
-                    </div>
-                    <div class="mb-3">
-                      <input type="password" class="form-control" id="password" placeholder="Password">
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%">Login</button>
-                  </form>
-
-                </div>
-
-              </div>
-
+              <RegisterModal></RegisterModal>
             </div>
           </div>
         </div>
@@ -119,7 +72,7 @@
 
       <!-- User Modal -->
       <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
           <div class="modal-content">
             <div class="modal-body">
               <UserProfile></UserProfile>
@@ -136,16 +89,44 @@
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld.vue'
+
 import Footer from "@/components/Footer";
+import LoginModal from "@/components/LoginModal";
+import RegisterModal from "@/components/RegisterModal";
 import UserProfile from "@/components/UserProfile";
+
+
+// Logic
 export default {
+
   name: 'App',
   components: {
+    LoginModal,
+    RegisterModal,
     UserProfile,
     Footer
+  },
+
+  // define methods under the `methods` object
+  methods: {
+
+    // Toggles an element by modifieng its style
+    show(el, state){
+      el.style.display = state === true ? "inline" : "none";
+    }
+  },
+  mounted(){
+
+    // Disable the profile button for viewing the profile
+    let el = this.$refs['profileButton']
+    el.style.display = 'none'
+
+    // Register event to show up the profile button once the user loged in or registered
+    this.$root.$on('LoginEvent', (event) => this.show(el, event))
+    this.$root.$on('RegisterEvent', (event) => this.show(el, event))
   }
 }
+
 </script>
 
 <style>
