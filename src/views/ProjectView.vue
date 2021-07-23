@@ -29,16 +29,21 @@
         <br>
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button class="btn btn-primary me-md-2" type="button">Milestones</button>
+          <a href="#milestone">
+            <button class="btn btn-primary me-md-2" type="button">
+                Milestones
+            </button>
+          </a>
           <a class="btn btn-primary" href="/Checkout" role="button">Donate</a>
         </div>
 
       </div>
     </div>
     <br><br><br><br><br><br><br><br>
+    <br><br><br>
 
     <h1 class="font-monospace">Project Overview</h1>
-    <br><br><br><br><br><br>
+    <br><br><br>
 
 
     <div class="row" >
@@ -153,32 +158,65 @@
     </div>
 
     <br><br><br><br><br><br><br><br>
+    <br><br><br><br>
 
+  <section id="milestone"></section>
+    <br><br><br><br>
 
-    <div class="row" >
-      <h1 class="font-monospace">The Milestones</h1>
-      <div class="col-md-7">
-        <br>
+    <h1 class="font-monospace">The Milestones</h1>
+    <br><br><br><br><br><br>
 
-        <div class="d-grid gap-4 d-md-block">
-          <button class="btn btn-primary me-md-4" type="button">M1</button>
-          <button class="btn btn-primary me-md-4" type="button">M2</button>
-          <button class="btn btn-primary me-md-4" type="button">M3</button>
-        </div>
-        <br>
-        <hr class="dropdown-divider">
-
-        <h1>M1</h1>
-
-        <br><br>
+    <div class="row">
+      <div class="col-md-4">
+        <MilestoneCard
+          milestoneNumber="1"
+          title="Water for the people"
+          desc="Poor access to improved water and sanitation in Nigeria remains a major
+                contributing factor to high morbidity and mortality rates among children under five.
+                 Only 26.5 per cent of the population"
+          >
+        </MilestoneCard>
       </div>
 
-      <div class="col-md-2"></div>
-
-      <div class="col-md-3">
-
-
+      <div class="col-md-4">
+        <MilestoneCard
+            milestoneNumber="2"
+            title="Nigeria crisis briefing"
+            desc="Nigeria, the most populous country in Africa, has endured decades of political instability
+            and economic inequality. Ongoing violence continues to force people to flee their homes in the
+            northeast and other conflict zones to seek safety in other parts of the country"
+        >
+        </MilestoneCard>
       </div>
+
+
+      <div class="col-md-4">
+        <MilestoneCard
+            milestoneNumber="3"
+            title="Women in Nigeria"
+            desc="Their motivations are personal. “I looked at the little opportunity I had compared to the men around
+            me,” 29-year-old Catherine explains. “I had limited time to study, because I was responsible for all the
+            chores as a woman. I always had high expectations on my shoulders — but looking at where I am now,
+            I’ve been able to overcome all of this."
+        >
+        </MilestoneCard>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="col-md-4">
+        <MilestoneCard
+            milestoneNumber="4"
+            title="Hunger in Nigeria"
+            desc="n Nigeria's Borno state, 300,000 children are expected to suffer from severe acute malnutrition
+             over the coming year. ... Long-term conflict is the common factor linking the hunger crises in Yemen,
+              South Sudan, Somalia and Nigeria; the emergency is man-made"
+        >
+        </MilestoneCard>
+      </div>
+
     </div>
 
 
@@ -188,8 +226,9 @@
 
 
 <script>
+import MilestoneCard from "../components/MilestoneCard";
 export default {
-
+  components: {MilestoneCard},
   created(){
 
   }
