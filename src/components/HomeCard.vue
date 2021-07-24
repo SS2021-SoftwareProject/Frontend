@@ -3,7 +3,7 @@
 
     <div class="card" style="width: 23rem;">
 
-      <img src="../assets/afrika2.jpg" class="card-img-top" alt="...">
+      <img :src=imageUrl class="card-img-top" alt="...">
 
       <div class="card-body">
         <h5 class="card-title">{{titleText}}</h5>
@@ -72,18 +72,17 @@
 
 <script>
 export default {
-  props: ['id','titleText',"imageName", 'descText', 'statusText', 'progressCurrent', 'progressMax'],
+  props: ['id','titleText', 'descText', 'statusText', 'progressCurrent', 'progressMax', "imageUrl"],
   data(){
     return {
       percent : ((100 * this.progressCurrent)/this.progressMax).toFixed(2),
-      path : '../assets/' + this.imageName + ".jpg",
+      //path : '../assets/' + this.imageName + ".jpg",
       message: '',
       donationAmount: 0,
     }
   },
   created(){
-      //window.alert(this.path)
-    console.log(this.path)
+    //window.alert(this.imageUrl)
     console.log(this.percent)
   }
 }

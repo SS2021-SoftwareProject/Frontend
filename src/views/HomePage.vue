@@ -42,71 +42,18 @@
 
     <br><br><br><br>
 
-
     <div class="container" id="projects">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4" v-for="project in projects" :key="project.id">
           <HomeCard
-              id="0"
-              title-text="Fresh Water for Children"
-              desc-text="Provide water for up to 200 ChildVoice students living in Nigeria’s Malkohi Internally Displaced Persons (IDP) camp"
-              status-text="Funding (42 Days Left)"
-              progress-current="4.000"
-              progress-max="7.000"
+              :title-text=project.name
+              :desc-text=project.beschreibung
+              :status-text=project.status
+              :progress-current=project.istBetrag
+              :progress-max=project.sollBetrag
+              :imageUrl=project.bild
           >
           </HomeCard>
-        </div>
-
-        <div class="col-md-4">
-          <HomeCard
-              id="1"
-              title-text="Dirty Water for Children"
-              image-name="afrika2"
-              desc-text="Lets Provide Children with Dirty Water!"
-              status-text="Funding (442 Days Left)"
-              progress-current="6.000"
-              progress-max="7.000"
-          >
-          </HomeCard>
-        </div>
-
-
-        <div class="col-md-4">
-          <HomeCard
-              id="2"
-              title-text="No Water for Children"
-              desc-text="no Water :("
-              status-text="Funding (2 Days Left)"
-              progress-current="7.000"
-              progress-max="7.000"
-          >
-          </HomeCard>
-        </div>
-
-
-      </div>
-
-      <div class="row">
-        <div class="col-md-4">
-          <HomeCard></HomeCard>
-        </div>
-        <div class="col-md-4">
-          <HomeCard></HomeCard>
-        </div>
-        <div class="col-md-4">
-          <HomeCard></HomeCard>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-4">
-          <HomeCard></HomeCard>
-        </div>
-        <div class="col-md-4">
-          <HomeCard></HomeCard>
-        </div>
-        <div class="col-md-4">
-          <HomeCard></HomeCard>
         </div>
       </div>
     </div>
@@ -132,8 +79,14 @@ export default {
     Vue.axios.get(baseURI, {
 
     }).then((response) => {
-      console.log(response.data)
-      this.projects = response.data;
+      let MAX_PROJECT_COUNT = 9;
+      for(let i = 0; i < MAX_PROJECT_COUNT; i++){
+        if(i < response.data.projects.length)
+        {
+          this.projects.push(response.data.projects[i]);
+        }
+      }
+      console.log(this.projects);
 
     }).catch(err => {
       console.log(err.response);

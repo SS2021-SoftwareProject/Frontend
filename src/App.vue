@@ -110,7 +110,7 @@ export default {
   // define methods under the `methods` object
   methods: {
 
-    // Toggles an element by modifieng its style
+    // Toggles an element by modifying its style
     show(el, state){
       el.style.display = state === true ? "inline" : "none";
     }
