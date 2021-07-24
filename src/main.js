@@ -11,6 +11,7 @@ import { Input } from 'mdb-ui-kit'; // module
 //import Home from "./views/Home"
 import HomePage from "./views/HomePage";
 import About from "@/views/About";
+import Explore from "@/views/Explore"
 import ProjectView from "@/views/ProjectView";
 import Faq from "@/views/Faq";
 import RequestData from "@/views/RequestData";
@@ -31,6 +32,7 @@ Vue.use(VueRouter, mdb, Input);
 const routes = [
   { path: "/", component: HomePage },
   { path: "/about", component: About },
+  { path: "/Explore", name: "Explore", component: Explore },
   { path: "/project/:id",name : "project", component: ProjectView },
   { path: "/faq", component: Faq },
   { path: "/dataTest", component: RequestData }

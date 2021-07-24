@@ -13,7 +13,7 @@
 
           <br><br>
 
-          <button class="btn btn-primary ms-1 me-3" data-spy="scroll" data-bs-target="#projects">Explore</button>
+          <button class="btn btn-primary ms-1 me-3" data-spy="scroll" @click="$router.push({name : 'Explore' })">Explore</button>
           <button class="btn btn-primary ms-1 me-3" data-bs-toggle="modal" data-bs-target="#videoModal">Watch Video
           </button>
 
@@ -43,6 +43,7 @@
     <br><br><br><br>
 
     <div class="container" id="projects">
+
       <div class="row">
         <div class="col-md-4" v-for="project in projects" :key="project.id">
           <HomeCard
