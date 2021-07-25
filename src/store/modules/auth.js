@@ -21,6 +21,14 @@ const actions = {
     async LogOut({commit}){
         let user = null;
         commit('logout', user);
+    },
+
+    async Register({dispatch}, form){
+        await axios.post('register', form);
+        let UserForm = new FormData();
+        UserForm.append('username', form.username);
+        UserForm.append('password', form.password);
+        await dispatch("LogIn", UserForm);
     }
 };
 

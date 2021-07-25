@@ -25,15 +25,19 @@
                 </router-link>
               </li>
             </ul>
-            <form class="d-flex">
-              <router-link class="nav-link active" aria-current="page" to="/Login">
-                <a class="green">Login</a>
-              </router-link>
-              <router-link class="nav-link active" aria-current="page" to="/Register">
-                <a class="green">Register</a>
-              </router-link>
-
-            </form>
+            <span v-if="isLoggedIn">
+              <a @click="logout">Logout</a>
+            </span>
+            <span v-else>
+              <form class="d-flex">
+                <router-link class="nav-link active" aria-current="page" to="/Login">
+                  <a class="green">Login</a>
+                </router-link>
+                <router-link class="nav-link active" aria-current="page" to="/Register">
+                  <a class="green">Register</a>
+                </router-link>
+              </form>
+            </span>
           </div>
         </div>
       </nav>
@@ -47,7 +51,16 @@
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  computed: {
+    isLoggedIn: function() { return this.$store.getters.isAuthenticated}
+  },
+  methods: {
+    async logout(){
+      await this.$store.dispatch('LogOut');
+      this.$router.push('/login');
+    }
+  },
 }
 </script>
 
