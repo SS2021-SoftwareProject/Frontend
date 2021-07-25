@@ -21,21 +21,43 @@
 </template>
 
 <script>
+import {mapActions} from "vuex";
 
 // The logic for this template
 export default {
 
   name: "LoginModal",
+  components:{},
+  data(){
+    return {
+      form: {
+        username: "",
+        password: "",
+      },
+      showError:false
+    };
+  },
 
   // define methods under the `methods` object
   methods: {
+  ...mapActions(["LogIn"]),
 
     // Gets called upon login click to login and refresh the page
-    login() {
-
+    async login() {
+      const User = new FormData();
+      User.append("username", this.form.username);
+      User.append("password", this.form.password);
+      try {
+        await this.LogIn(User);
+        this.$router.push("Explore");
+        this.showError = false;
+      } catch(error){
+        this.showError = true;
+      }
+      /**
       // `this` inside methods points to the Vue instance
       alert('Simulating login...')
-      this.$root.$emit('LoginEvent', true);
+      this.$root.$emit('LoginEvent', true); **/
     },
   },
 }
