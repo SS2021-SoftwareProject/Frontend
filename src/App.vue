@@ -19,16 +19,21 @@
 
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-
+              <li class="nav-item">
+                <router-link class="nav-link active" aria-current="page" to="/about">
+                  <a class="green">About</a>
+                </router-link>
+              </li>
               <li class="nav-item">
                 <router-link class="nav-link active" aria-current="page" to="/Explore">
                   <a class="green">Explore</a>
                 </router-link>
               </li>
+
             </ul>
 
             <!-- Right flex area with login and register links -->
-            <div class="d-flex">
+            <div class="d-flex flex-row">
 
               <button class="btn btn-link green text-capitalize" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
               <button class="btn btn-link green text-capitalize" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
