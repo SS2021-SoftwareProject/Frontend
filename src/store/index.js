@@ -6,10 +6,13 @@ import auth from './modules/auth';
 // Load Vuex
 Vue.use(Vuex);
 
-// Create store
+// Create store which contains the global attributes of our application
 export default new Vuex.Store({
     modules: {
        auth
+    },
+    state: {
+        user: null
     },
     plugins: [createPersistedState()]
 });

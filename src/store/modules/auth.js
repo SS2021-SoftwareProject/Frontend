@@ -1,17 +1,34 @@
 import axios from 'axios';
+import store from '../index'
 
-// data
-const state = {
-    user: null
-};
 // calculate data based on store state
 const getters = {
-    isAuthenticated: state => !!state.user,
-    StateUser: state => state.user,
+    isAuthenticated: () => true
 };
 
 //function to commit or dispatch a mutation
 const actions = {
+
+    // Save to localstorage
+    async save(store, {name, item}){
+        localStorage.setItem(name, item)
+        return true
+    },
+
+    // Returns true or false if theres an object saved with that name
+    async saved(store, name){
+        return localStorage.getItem(name) !== null
+    },
+
+    // Loads an object from the localstorage by its name
+    async load(store, name){
+        return localStorage.getItem(name)
+    },
+
+    // Removes an object from the localstorage by its name
+    async unsave(store, name){
+        return localStorage.removeItem(name)
+    },
 
     async LogIn({commit}, User){
         await axios.post('login', User);
@@ -35,18 +52,16 @@ const actions = {
 //event that changes the state
 const mutations = {
 
-    setUser(state, username){
-        state.user = username;
+    setUser(username){
+        store.state.user = username;
     },
 
-    LogOut(state){
-        state.user = null;
+    LogOut(){
+        store.state.user = null;
     }
 };
 
-
 export default {
-    state,
     getters,
     actions,
     mutations
