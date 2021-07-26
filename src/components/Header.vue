@@ -5,7 +5,7 @@
         <div class="container-fluid">
           <a class="navbar-brand" href="/">
             <!--<img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24">-->
-            <img src="../assets/logo_541x500.png" alt="" width="39" height="36">
+            <img src="../assets/logo_592x557.png" alt="" width="39" height="36">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                   aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

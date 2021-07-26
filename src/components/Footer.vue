@@ -38,7 +38,7 @@
           <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
             <!-- Content -->
             <h6 class="text-uppercase text-primary fw-bold mb-4">
-              <img id="logo" class="img-thumbnail" src="../assets/logo_541x500.png" alt="company logo">
+              <img id="logo" class="img-thumbnail" src="../assets/logo_592x557.png" alt="company logo">
               <i class="fas fa-gem me-3"></i>About CharitAble
             </h6>
             <p class="text-justify">
