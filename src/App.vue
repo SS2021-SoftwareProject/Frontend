@@ -7,7 +7,7 @@
           <!-- The website icon -->
           <a class="navbar-brand" href="/">
             <!--<img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24">-->
-            <img src="./assets/logo_541x500.png" alt="" width="39" height="36">
+            <img src="./assets/logo_592x557.png" alt="" width="39" height="36">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                   aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,20 +19,26 @@
 
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-
+              <li class="nav-item">
+                <router-link class="nav-link active" aria-current="page" to="/about">
+                  <a class="green">About</a>
+                </router-link>
+              </li>
               <li class="nav-item">
                 <router-link class="nav-link active" aria-current="page" to="/Explore">
                   <a class="green">Explore</a>
                 </router-link>
               </li>
+
             </ul>
 
             <!-- Right flex area with login and register links -->
-            <div class="d-flex">
+            <div class="d-flex flex-row">
 
-              <button class="btn btn-link green text-capitalize" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-              <button class="btn btn-link green text-capitalize" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
-              <button ref="profileButton" class="btn btn-link green text-capitalize" data-bs-toggle="modal" data-bs-target="#userModal">Profile</button>
+              <button class="btn btn-link green text-capitalize" v-if="!this.global.state.user" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+              <button class="btn btn-link green text-capitalize" v-if="!this.global.state.user" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+              <button class="btn btn-link green text-capitalize" v-if="this.global.state.user" @click="logout">Logout</button>
+              <button ref="profileButton" class="btn btn-link green text-capitalize" v-if="this.global.state.user" data-bs-toggle="modal" data-bs-target="#userModal">Profile</button>
 
             </div>
           </div>
@@ -79,6 +85,8 @@
 
     <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br>
 
+    <p>Hi {{global.state.user}}</p>
+
     <Footer></Footer>
   </div>
 </template>
@@ -90,11 +98,11 @@ import LoginModal from "@/components/LoginModal";
 import RegisterModal from "@/components/RegisterModal";
 import UserProfile from "@/components/UserProfile";
 
-
 // Logic
 export default {
 
   name: 'App',
+
   components: {
     LoginModal,
     RegisterModal,
@@ -102,23 +110,31 @@ export default {
     Footer
   },
 
+  data(){
+    return {
+      global: this.$store
+    }
+  },
+
   // define methods under the `methods` object
   methods: {
 
-    // Toggles an element by modifying its style
-    show(el, state){
-      el.style.display = state === true ? "inline" : "none";
+    // Function to logout
+    async logout(){
+
+      this.global.state.user = null
+      this.global.dispatch('unsave', 'user')
+      //await this.$store.dispatch('LogOut');
+      //this.$router.push('/login');
     }
   },
-  mounted(){
 
-    // Disable the profile button for viewing the profile
-    let el = this.$refs['profileButton']
-    el.style.display = 'none'
+  async mounted(){
 
-    // Register event to show up the profile button once the user loged in or registered
-    this.$root.$on('LoginEvent', (event) => this.show(el, event))
-    this.$root.$on('RegisterEvent', (event) => this.show(el, event))
+    // Check if user is still loged in... if so, load the user
+    let logedIn = await this.global.dispatch('saved','user')
+    if(logedIn)
+      this.global.state.user = await this.global.dispatch('load', 'user')
   }
 }
 

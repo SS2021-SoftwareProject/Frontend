@@ -38,7 +38,7 @@
           <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
             <!-- Content -->
             <h6 class="text-uppercase text-primary fw-bold mb-4">
-              <img id="logo" class="img-thumbnail" src="../assets/logo_541x500.png" alt="company logo">
+              <img id="logo" class="img-thumbnail" src="../assets/logo_592x557.png" alt="company logo">
               <i class="fas fa-gem me-3"></i>About CharitAble
             </h6>
             <p class="text-justify">
@@ -54,18 +54,17 @@
               More
             </h6>
             <p>
-              <a href="/" class="text-decoration-none text-reset text-muted">Home</a>
-            </p>
-            <p>
-              <a href="/#explore" class="text-decoration-none text-reset text-muted">Donate</a>
-            </p>
-            <p>
-              <router-link class="text-muted" data-bs-toggle="modal" data-bs-target="#userModal" aria-current="page" to="">
-                <a href="#" class="text-decoration-none text-reset">Profile</a>
+              <router-link class="text-muted" aria-current="page" to="/">
+                <a href="#" class="text-decoration-none text-reset">Home</a>
               </router-link>
             </p>
             <p>
-             <router-link class="text-muted" aria-current="page" to="/Faq">
+              <router-link class="text-muted" data-bs-toggle="modal" data-bs-target="#userModal" aria-current="page" to="">
+                <a href="#" class="text-decoration-none text-reset">Your Profile</a>
+              </router-link>
+            </p>
+            <p>
+             <router-link class="text-muted" aria-current="page" to="/faq">
                <a href="#" class="text-decoration-none text-reset">FAQ</a>
              </router-link>
            </p>

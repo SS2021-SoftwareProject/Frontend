@@ -28,20 +28,42 @@
 
 <script>
 
+import { mapActions} from "vuex";
+
 // The logic for this template
 export default {
 
   name: "RegisterModal",
-
+  components: {},
+  data(){
+    return {
+      form: {
+        first_name: "",
+        last_name: "",
+        email: "",
+        password: "",
+      },
+      showError: false
+    };
+  },
   // define methods under the `methods` object
   methods: {
+    ...mapActions(["Register"]),
 
     // Gets called upon register click to register and refresh the page
-    register() {
+    async register() {
+      try {
+        await this.Register(this.form);
+        this.$router.push("/Explore");
+        this.showError = false;
+      } catch(error){
+        this.showError = true;
+      }
 
+      /**
       // `this` inside methods points to the Vue instance
       alert('Simulating registration...')
-      this.$root.$emit('RegisterEvent', true);
+      this.$root.$emit('RegisterEvent', true); **/
     },
   },
 }

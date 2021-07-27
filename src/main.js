@@ -34,7 +34,7 @@ const routes = [
   { path: "/",name: "Home", component: HomePage },
   { path: "/about", component: About },
   { path: "/Explore", name: "Explore", component: Explore },
-  { path: "/project/:id",name : "project", component: ProjectView },
+  { path: "/project/:id", name : "project", component: ProjectView },
   { path: "/faq", component: Faq },
   { path: "/dataTest", component: RequestData },
   { path: "/Checkout/:id", name: "Checkout", component: Checkout }
@@ -45,9 +45,9 @@ const router = new VueRouter({
   mode: "history",
   scrollBehavior(){
     return{
-      x :0,
+      x:0,
       y:0,
-      behavior : 'smooth',
+      behavior: 'smooth',
     };
   }
 });
