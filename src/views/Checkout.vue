@@ -102,12 +102,12 @@
           <div class="form-group">
             <label for="firstName">Amount</label>
             <input type="text"
-                   v-bind:value="donationAmount / ethPrice + ' Ξ'"
+                   v-bind:value="checkout_form.amount / ethPrice + ' Ξ'"
                    class="form-control mb-2 w-100 text-center "
                    aria-label="Text input with dropdown button"  disabled>
           </div>
 
-          <input :value=donationAmount/ethPrice class="form-control" name="DonationAmount" id="donationAmount" style="display: none">
+          <input :value=checkout_form.amount/ethPrice class="form-control" name="DonationAmount" id="donationAmount" style="display: none">
 
           <br><br>
         </div>
@@ -180,7 +180,7 @@ export default {
         .then(response => {
           this.cryptos = response.data
           console.log(response.data['ETH']['USD'])
-          //window.alert(response.data['ETH']['USD']) // This will give you access to the full object
+          window.alert(response.data['ETH']['USD']) // This will give you access to the full object
           this.ethPrice = response.data['ETH']['USD']
         })
         .catch(e => {
