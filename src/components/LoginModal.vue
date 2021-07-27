@@ -48,8 +48,7 @@ export default {
       User.append("password", this.form.password);*/
 
       // Assign valid user object and save it to the localstorage
-      this.global.state.user = 'WUHU'
-      this.global.dispatch('save', {name: 'user', item: this.global.state.user})
+      this.global.dispatch('login', {name: 'user', item: 'WUHU'})
 
       /*
       try {

@@ -37,7 +37,7 @@
 
               <button class="btn btn-link green text-capitalize" v-if="!this.global.state.user" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
               <button class="btn btn-link green text-capitalize" v-if="!this.global.state.user" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
-              <button class="btn btn-link green text-capitalize" v-if="this.global.state.user" @click="logout">Logout</button>
+              <button class="btn btn-link green text-capitalize" v-if="this.global.state.user" @click="this.logout">Logout</button>
               <button ref="profileButton" class="btn btn-link green text-capitalize" v-if="this.global.state.user" data-bs-toggle="modal" data-bs-target="#userModal">Profile</button>
 
             </div>
@@ -85,8 +85,6 @@
 
     <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br>
 
-    <p>Hi {{global.state.user}}</p>
-
     <Footer></Footer>
   </div>
 </template>
@@ -97,6 +95,7 @@ import Footer from "@/components/Footer";
 import LoginModal from "@/components/LoginModal";
 import RegisterModal from "@/components/RegisterModal";
 import UserProfile from "@/components/UserProfile";
+import { mapActions } from 'vuex'
 
 // Logic
 export default {
@@ -116,17 +115,8 @@ export default {
     }
   },
 
-  // define methods under the `methods` object
-  methods: {
-
-    // Function to logout
-    async logout(){
-
-      this.global.state.user = null
-      this.global.dispatch('unsave', 'user')
-      //await this.$store.dispatch('LogOut');
-      //this.$router.push('/login');
-    }
+  method:{
+    ...mapActions(['logout']),
   },
 
   async mounted(){
