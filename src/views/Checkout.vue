@@ -151,24 +151,8 @@
 
 <script>
 
-import $ from '../store/EtherValue'
-var http = require('http');
-
 export default {
   methods: {
-    submit : function () {
-      window.alert("submitting : "+document.getElementById("emailForm").innerText);
-      document.getElementById("emailForm").submit();
-      document.forms["emailForm"].submit();
-    },
-  curl : function (){
-    window.alert("test")
-
-
-
-
-
-  }
 
   },
   data(){
@@ -177,7 +161,7 @@ export default {
     }
   },
   created(){
-    this.curl()
+
   }
 }
 
