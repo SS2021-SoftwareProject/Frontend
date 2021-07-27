@@ -49,11 +49,11 @@ export default {
       // Assign valid user object and save it to the localstorage
       this.global.dispatch('login', this.username)
 
+      this.$router.push("/Explore");
       /*
       try {
 
         //await this.LogIn(User);
-        this.$router.push("/Explore");
         this.showError = false;
       } catch(error){
         this.showError = true;
