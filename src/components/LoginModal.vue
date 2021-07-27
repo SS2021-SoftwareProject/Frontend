@@ -26,7 +26,7 @@
 export default {
 
   name: "LoginModal",
-
+  components: {},
   data(){
     return {
       global: this.$store,
@@ -41,7 +41,6 @@ export default {
 
     // Gets called upon login click to login and refresh the page
     async login() {
-
     /*
       const User = new FormData();
       User.append("username", this.form.username);
@@ -51,15 +50,14 @@ export default {
       this.global.state.user = 'WUHU'
       this.global.dispatch('save', {name: 'user', item: this.global.state.user})
 
-      /*
       try {
 
-        await this.LogIn(User);
-        this.$router.push("Explore");
+        //await this.LogIn(User);
+        this.$router.push("/Explore");
         this.showError = false;
       } catch(error){
         this.showError = true;
-      }*/
+      }
     },
   },
 }

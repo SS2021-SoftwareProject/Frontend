@@ -1,7 +1,6 @@
 <template>
   <div>
 
-
     <!--
     <p>Donating to Project : {{$route.params.id}}</p>
 
@@ -39,6 +38,7 @@
         </div>
       </div>
     </div>
+                          @click="$router.push({ name: 'Home'})"
     -->
 
     <div class="container">
@@ -46,16 +46,16 @@
         <h2>Checkout</h2>
       </div>
 
+      <form  method="get" action="">
+
       <div class="row">
         <div class="col-md-3"></div>
 
         <div class="col-md-6">
-          <form>
             <div class="form-group">
               <label for="email">Email address</label>
-              <input class="form-control" type="text" placeholder="max.mustermann@gmail.com" readonly id="email">
+              <input class="form-control" type="text" value="max.mustermann@gmail.com" readonly id="email" name="email">
             </div><br><br>
-          </form>
         </div>
 
         <div class="col-md-3"></div>
@@ -65,21 +65,17 @@
         <div class="col-md-3"></div>
 
         <div class="col-md-3">
-          <form>
-            <div class="form-group">
-              <label for="firstName">First Name</label>
-              <input class="form-control" type="text" placeholder="Max" readonly id="firstName">
-            </div><br><br>
-          </form>
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input class="form-control" type="text" value="Max" readonly id="firstName" name="firstName">
+          </div><br><br>
         </div>
 
         <div class="col-md-3">
-          <form>
-            <div class="form-group">
-              <label for="lastName">Last Name</label>
-              <input class="form-control" type="text" placeholder="Mustermann" readonly id="lastName">
-            </div><br><br>
-          </form>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input class="form-control" type="text" value="Mustermann" readonly id="lastName" name="lastName">
+          </div><br><br>
         </div>
 
         <div class="col-md-3"></div>
@@ -89,32 +85,35 @@
         <div class="col-md-3"></div>
 
         <div class="col-md-3">
-          <form>
-            <div class="form-group">
-              <label for="lastName">Choose Amount</label>
+          <div class="form-group">
+            <label for="lastName">Choose Amount</label>
 
-              <div class="input-group mb-3">
-                <input type="number" min="0.00" step="0.50" value="1.00" class="form-control mb-2 w-75" v-model="donationAmount">
-                <select class="form-select form-select-sm mb-2 btn-primary" aria-label=".form-select-sm example">
-                  <option selected value="Euro">€</option>
-                  <option value="Dollar">$</option>
-                  <option value="Pound">£</option>
-                  <option value="Yen">¥</option>
-                </select>
-              </div>
+            <div class="input-group mb-3">
+              <input type="number" min="0.00" step="0.50" value="1.00" class="form-control mb-2 w-75" v-model="donationAmount">
+              <select class="form-select form-select-sm mb-2 btn-primary" aria-label=".form-select-sm example">
+                <option selected value="Euro">€</option>
+                <option value="Dollar">$</option>
+                <option value="Pound">£</option>
+                <option value="Yen">¥</option>
+              </select>
+            </div>
 
-            </div><br><br>
-          </form>
+          </div><br><br>
         </div>
 
         <div class="col-md-3">
-          <form>
-            <div class="form-group">
-              <label for="firstName">Amount</label>
-              <input type="text" v-bind:value="donationAmount / 2075.94 + ' Ξ'"  class="form-control mb-2 w-100 text-center " aria-label="Text input with dropdown button"  disabled>
+          <div class="form-group">
+            <label for="firstName">Amount</label>
+            <input type="text"
+                   v-bind:value="donationAmount / 2075.94 + ' Ξ'"
+                   class="form-control mb-2 w-100 text-center "
+                   aria-label="Text input with dropdown button"  disabled>
+          </div>
 
-            </div><br><br>
-          </form>
+
+          <input :value=donationAmount/2075.94 class="form-control" name="DonationAmount" id="donationAmount" style="display: none">
+
+          <br><br>
         </div>
 
         <div class="col-md-3"></div>
@@ -129,21 +128,18 @@
         <div class="col-md-3"></div>
 
         <div class="col-md-3">
-          <form>
             <div class="form-group">
-
               <button class="btn btn-primary btn-block"
-                      @click="$router.push({ name: 'Home'})"
-                      type="submit">
-                Donate
+                      type="submit"
+                      @click="submit()">Donate
               </button>
-
-            </div><br><br>
-          </form>
+            </div>
+          <br><br>
         </div>
 
         <div class="col-md-3"></div>
       </div>
+      </form>
 
     </div>
 
@@ -152,14 +148,36 @@
 
 
 
+
 <script>
+
+import $ from '../store/EtherValue'
+var http = require('http');
+
 export default {
+  methods: {
+    submit : function () {
+      window.alert("submitting : "+document.getElementById("emailForm").innerText);
+      document.getElementById("emailForm").submit();
+      document.forms["emailForm"].submit();
+    },
+  curl : function (){
+    window.alert("test")
+
+
+
+
+
+  }
+
+  },
   data(){
     return {
       donationAmount: 0,
     }
   },
   created(){
+    this.curl()
   }
 }
 
