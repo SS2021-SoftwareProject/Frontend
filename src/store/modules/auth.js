@@ -13,7 +13,6 @@ const actions = {
 
     // Checks if user is still loged in and relogs him in
     async relog(commit){
-
         if(localStorage.getItem(userKey) !== null) {
             store.state.user = localStorage.getItem(userKey)
             return true
