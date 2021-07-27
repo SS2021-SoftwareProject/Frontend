@@ -6,10 +6,10 @@
 
 
         <div class="mb-4">
-          <input type="email" class="form-control" id="loginInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email Adress...">
+          <input type="email" class="form-control" id="loginInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email Adress..." v-model="username">
         </div>
         <div class="mb-4">
-          <input type="password" class="form-control" id="registerInputPassword1" placeholder="Enter Password...">
+          <input type="password" class="form-control" id="registerInputPassword1" placeholder="Enter Password..." v-model="password">
         </div>
         <div class="mb-4">
           <button type="submit" class="btn btn-primary" style="width: 100%" v-on:click="login">Login</button>
@@ -47,17 +47,17 @@ export default {
       User.append("password", this.form.password);*/
 
       // Assign valid user object and save it to the localstorage
-      this.global.state.user = 'WUHU'
-      this.global.dispatch('save', {name: 'user', item: this.global.state.user})
+      this.global.dispatch('login', this.username)
 
+      this.$router.push("/Explore");
+      /*
       try {
 
         //await this.LogIn(User);
-        this.$router.push("/Explore");
         this.showError = false;
       } catch(error){
         this.showError = true;
-      }
+      }*/
     },
   },
 }

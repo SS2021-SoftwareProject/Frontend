@@ -37,7 +37,7 @@
 
               <button class="btn btn-link green text-capitalize" v-if="!this.global.state.user" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
               <button class="btn btn-link green text-capitalize" v-if="!this.global.state.user" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
-              <button class="btn btn-link green text-capitalize" v-if="this.global.state.user" @click="logout">Logout</button>
+              <button class="btn btn-link green text-capitalize" v-if="this.global.state.user" @click="this.logout">Logout</button>
               <button ref="profileButton" class="btn btn-link green text-capitalize" v-if="this.global.state.user" data-bs-toggle="modal" data-bs-target="#userModal">Profile</button>
 
             </div>
@@ -85,8 +85,6 @@
 
     <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br>
 
-    <p>Hi {{global.state.user}}</p>
-
     <Footer></Footer>
   </div>
 </template>
@@ -97,12 +95,12 @@ import Footer from "@/components/Footer";
 import LoginModal from "@/components/LoginModal";
 import RegisterModal from "@/components/RegisterModal";
 import UserProfile from "@/components/UserProfile";
+import { mapActions } from 'vuex'
 
 // Logic
 export default {
 
   name: 'App',
-
   components: {
     LoginModal,
     RegisterModal,
@@ -116,25 +114,14 @@ export default {
     }
   },
 
-  // define methods under the `methods` object
-  methods: {
-
-    // Function to logout
-    async logout(){
-
-      this.global.state.user = null
-      this.global.dispatch('unsave', 'user')
-      //await this.$store.dispatch('LogOut');
-      //this.$router.push('/login');
-    }
+  // Clone method from auth.js into app for being used in html
+  methods:{
+    ...mapActions(['logout']),
   },
 
+  // Relog user if previous loged in and still valid
   async mounted(){
-
-    // Check if user is still loged in... if so, load the user
-    let logedIn = await this.global.dispatch('saved','user')
-    if(logedIn)
-      this.global.state.user = await this.global.dispatch('load', 'user')
+    this.global.dispatch('relog')
   }
 }
 
