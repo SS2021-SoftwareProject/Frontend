@@ -107,7 +107,6 @@
                    aria-label="Text input with dropdown button"  disabled>
           </div>
 
-
           <input :value=donationAmount/ethPrice class="form-control" name="DonationAmount" id="donationAmount" style="display: none">
 
           <br><br>
@@ -166,7 +165,6 @@ export default {
         .then(response => {
           this.cryptos = response.data
           console.log(response.data['ETH']['USD'])
-          window.alert(response.data['ETH']['USD']) // This will give you access to the full object
           this.ethPrice = response.data['ETH']['USD']
         })
         .catch(e => {
