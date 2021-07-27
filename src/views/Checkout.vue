@@ -46,7 +46,7 @@
         <h2>Checkout</h2>
       </div>
 
-      <form  method="get" action="">
+      <form v-on:submit.prevent="submit">
 
       <div class="row">
         <div class="col-md-3"></div>
@@ -153,10 +153,13 @@
 
 export default {
   methods: {
-
+    submit(){
+      console.log("submit donation form");
+    }
   },
   data(){
     return {
+
       donationAmount: 0,
     }
   },
