@@ -46,7 +46,7 @@
         <h2>Checkout</h2>
       </div>
 
-      <form  method="get" action="">
+      <form v-on:submit.prevent="submit">
 
       <div class="row">
         <div class="col-md-3"></div>
@@ -89,12 +89,9 @@
             <label for="lastName">Choose Amount</label>
 
             <div class="input-group mb-3">
-              <input type="number" min="0.00" step="0.50" value="1.00" class="form-control mb-2 w-75" v-model="donationAmount">
-              <select class="form-select form-select-sm mb-2 btn-primary" aria-label=".form-select-sm example">
-                <option selected value="Euro">€</option>
+              <input type="number" min="0.00" step="0.50" value="1.00" class="form-control mb-2 w-75" v-model="checkout_form.amount">
+              <select class="form-select form-select-sm mb-2 btn-primary" aria-label=".form-select-sm example" disabled>
                 <option value="Dollar">$</option>
-                <option value="Pound">£</option>
-                <option value="Yen">¥</option>
               </select>
             </div>
 
@@ -105,13 +102,12 @@
           <div class="form-group">
             <label for="firstName">Amount</label>
             <input type="text"
-                   v-bind:value="donationAmount / 2075.94 + ' Ξ'"
+                   v-bind:value="checkout_form.amount / ethPrice + ' Ξ'"
                    class="form-control mb-2 w-100 text-center "
                    aria-label="Text input with dropdown button"  disabled>
           </div>
 
-
-          <input :value=donationAmount/2075.94 class="form-control" name="DonationAmount" id="donationAmount" style="display: none">
+          <input :value=checkout_form.amount/ethPrice class="form-control" name="DonationAmount" id="donationAmount" style="display: none">
 
           <br><br>
         </div>
@@ -151,16 +147,45 @@
 
 <script>
 
+import axios from 'axios'
+
 export default {
   methods: {
-
+    submit(){
+      axios.post("checkout", this.checkout_form)
+      .then((response) => {
+        //perform success action
+        console.log(response)
+      })
+      .catch((error) => {
+      })
+      .finally(() => {
+        //perform action always
+      })
+    }
   },
   data(){
     return {
+      checkout_form:{
+        //no idea which amount
+        amount: ""
+      },
       donationAmount: 0,
+      ethPrice: 0,
     }
   },
   created(){
+
+    axios.get('https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,IOT&tsyms=USD')
+        .then(response => {
+          this.cryptos = response.data
+          console.log(response.data['ETH']['USD'])
+          window.alert(response.data['ETH']['USD']) // This will give you access to the full object
+          this.ethPrice = response.data['ETH']['USD']
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
 
   }
 }

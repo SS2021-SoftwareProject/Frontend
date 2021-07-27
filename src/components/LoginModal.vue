@@ -50,11 +50,11 @@ export default {
       let result = await this.global.dispatch('login', {user: this.username, password: this.password})
       if(!result) alert('Could not login... wrong username or password')
 
+      this.$router.push("/Explore");
       /*
       try {
 
         //await this.LogIn(User);
-        this.$router.push("/Explore");
         this.showError = false;
       } catch(error){
         this.showError = true;
