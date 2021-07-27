@@ -1,6 +1,7 @@
 <template>
   <div class="container d-flex flex-column">
     <div id="intro" class="container mb-5">
+      <br><br>
       <h1 class="font-monospace mb-5">About Us</h1>
 
       <div class="container-lg d-flex flex-row justify-content-evenly">

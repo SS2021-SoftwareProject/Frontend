@@ -24,7 +24,11 @@
         <button class="btn btn-primary ms-1 me-5"
                 @click="$router.push({ name: 'project', params: {id :  id }})">View</button>
 
-        <button class="btn btn-primary me-1 ms-4" data-bs-toggle="modal" data-bs-target="#donatePopop">Donate</button>
+
+        <button class="btn btn-primary ms-4 me-1"
+                @click="$router.push({ name: 'Checkout', params: {id : id }})">Donate</button>
+
+        <!--<button class="btn btn-primary me-1 ms-4" data-bs-toggle="modal" data-bs-target="#donatePopop">Donate</button> -->
       </div>
     </div>
 
@@ -82,7 +86,7 @@ export default {
     }
   },
   created(){
-    //window.alert(this.imageUrl)
+    //window.alert(this.id)
     console.log(this.percent)
   }
 }
