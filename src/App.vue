@@ -101,7 +101,6 @@ import { mapActions } from 'vuex'
 export default {
 
   name: 'App',
-
   components: {
     LoginModal,
     RegisterModal,
@@ -115,16 +114,14 @@ export default {
     }
   },
 
-  method:{
+  // Clone method from auth.js into app for being used in html
+  methods:{
     ...mapActions(['logout']),
   },
 
+  // Relog user if previous loged in and still valid
   async mounted(){
-
-    // Check if user is still loged in... if so, load the user
-    let logedIn = await this.global.dispatch('saved','user')
-    if(logedIn)
-      this.global.state.user = await this.global.dispatch('load', 'user')
+    this.global.dispatch('relog')
   }
 }
 

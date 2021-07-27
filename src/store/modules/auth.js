@@ -1,5 +1,8 @@
 import store from '../index'
 
+// User-Key for the localStorage
+const userKey = 'user'
+
 // calculate data based on store state
 const getters = {
     isAuthenticated: () => true
@@ -8,31 +11,30 @@ const getters = {
 //function to commit or dispatch a mutation
 const actions = {
 
-    // Returns true or false if theres an object saved with that name
-    async saved(store, name){
-        return localStorage.getItem(name) !== null
+    // Checks if user is still loged in and relogs him in
+    async relog(commit){
+
+        if(localStorage.getItem(userKey) !== null) {
+            store.state.user = localStorage.getItem(userKey)
+            return true
+        }
+
+        return false
     },
 
     // Logs in the user
-    async login(store, {name, item}){
+    async login(commit, user){
 
-        console.log('test : '+name+" "+item)
-        store.state.user = item
-        localStorage.setItem(name, item)
+        store.state.user = user
+        localStorage.setItem(userKey, user)
         return true
     },
 
-    async logout(store){
+    // Registers the user
+    async register(commit, user){
 
-        console.log('Outlog : ')
-        store.state.user = null
-        return localStorage.removeItem('user')
-    },
-
-    async register(store, {name, item}){
-
-        store.state.user = item
-        localStorage.setItem(name, item)
+        store.state.user = user
+        localStorage.setItem(userKey, user)
         return true
         /*
         await axios.post('register', form);
@@ -41,23 +43,18 @@ const actions = {
         UserForm.append('password', form.password);
         await dispatch("LogIn", UserForm);
         */
-    }
-};
-
-//event that changes the state
-const mutations = {
-
-    setUser(username){
-        store.state.user = username;
     },
 
-    LogOut(){
-        store.state.user = null;
+    // Logs the user out
+    async logout(){
+
+        store.state.user = null
+        return localStorage.removeItem('user')
     }
 };
 
 export default {
+    userKey,
     getters,
     actions,
-    mutations
 };
