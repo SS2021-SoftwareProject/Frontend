@@ -89,7 +89,7 @@
             <label for="lastName">Choose Amount</label>
 
             <div class="input-group mb-3">
-              <input type="number" min="0.00" step="0.50" value="1.00" class="form-control mb-2 w-75" v-model="donationAmount">
+              <input type="number" min="0.00" step="0.50" value="1.00" class="form-control mb-2 w-75" v-model="checkout_form.amount">
               <select class="form-select form-select-sm mb-2 btn-primary" aria-label=".form-select-sm example" disabled>
                 <option value="Dollar">$</option>
               </select>
@@ -153,12 +153,24 @@ import axios from 'axios'
 export default {
   methods: {
     submit(){
-      console.log("submit donation form");
+      axios.post("checkout", this.checkout_form)
+      .then((response) => {
+        //perform success action
+        console.log(response)
+      })
+      .catch((error) => {
+      })
+      .finally(() => {
+        //perform action always
+      })
     }
   },
   data(){
     return {
-
+      checkout_form:{
+        //no idea which amount
+        amount: ""
+      },
       donationAmount: 0,
       ethPrice: 0,
     }
@@ -169,7 +181,7 @@ export default {
         .then(response => {
           this.cryptos = response.data
           console.log(response.data['ETH']['USD'])
-          window.alert(response.data['ETH']['USD']) // This will give you access to the full object
+          //window.alert(response.data['ETH']['USD']) // This will give you access to the full object
           this.ethPrice = response.data['ETH']['USD']
         })
         .catch(e => {
