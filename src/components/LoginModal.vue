@@ -47,7 +47,8 @@ export default {
       User.append("password", this.form.password);*/
 
       // Assign valid user object and save it to the localstorage
-      this.global.dispatch('login', this.username)
+      let result = await this.global.dispatch('login', {user: this.username, password: this.password})
+      if(!result) alert('Could not login... wrong username or password')
 
       /*
       try {
