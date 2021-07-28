@@ -7,7 +7,7 @@
         </div>
       </div>
       <div class="col-auto align-self-end">
-        <h1 class="font-monospace fw-bolder display-4">TheLegend27</h1>
+        <h1 class="font-monospace fw-bolder display-4"></h1>
       </div>
     </div>
 
@@ -21,11 +21,29 @@
       <div class="tab-content" id="v-pills-tabContent">
         <div class="tab-pane fade show active" id="v-pills-overview" role="tabpanel" aria-labelledby="v-pills-overview-tab">
           <h3 class="mb-4 text-start">Profile Info</h3>
-          <p class="text-start">test</p>
+          <table class="table table-lg align-middle text-start">
+            <tbody>
+              <tr>
+                <th scope="row"><strong>First Name</strong></th>
+                <td id="firstName">{{this.user.firstname}}</td>
+              </tr>
+              <tr class="table-secondary">
+                <th scope="row"><strong>Last Name</strong></th>
+                <td id="lastName">{{this.user.lastname}}</td>
+              </tr>
+              <tr>
+                <th scope="row"><strong>Email</strong></th>
+                <td id="email">{{this.user.email}}</td>
+              </tr>
+              <tr class="table-secondary">
+                <th scope="row"><strong>Registered since</strong></th>
+                <td id="registrationDate">{{this.user.RegisterDate}}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
         <div class="tab-pane fade" id="v-pills-contributions" role="tabpanel" aria-labelledby="v-pills-contributions-tab">
-          <!-- TODO: add database functionality (pulling user donation history data from db) -->
           <h3 class="mb-4 text-start">Your Donation History</h3>
           <table class="table table-responsive-sm align-middle" id="donations">
             <thead class="table-primary font-monospace h5">
@@ -82,8 +100,33 @@
 </template>
 
 <script>
+import Vue from "vue";
+
 export default {
-  name: "UserProfile"
+  name: "UserProfile",
+  data() {
+    return {
+      users: [],
+      user: {
+        firstname: '',
+        lastname: '',
+        email: '',
+        RegisterDate: ''
+      }
+    }
+  },
+  created: function () {
+    const baseURI = 'users'
+    Vue.axios.get(baseURI, {
+
+    }).then((response) => {
+      this.users = response.data.users;
+      this.user = response.data.users[1];
+
+    }).catch(err => {
+      console.log(err.response);
+    });
+  },
 }
 
 /* counts rows in the table, excluding the header */
@@ -101,5 +144,9 @@ img#avatar {
 
 td, th {
   padding: 15px;
+}
+
+th {
+  font-weight: bolder;
 }
 </style>
