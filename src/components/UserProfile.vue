@@ -92,7 +92,34 @@
 
         <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
           <h3 class="mb-4 text-start">Settings</h3>
-          <p class="text-start">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+          <form class="text-start">
+            <div class="form-group row mb-3">
+              <label for="emailField" class="col-sm-4 col-form-label">Email</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="emailField" placeholder="email@example.com">
+              </div>
+            </div>
+            <div class="form-group row mb-3">
+              <label for="inputOldPassword" class="col-sm-4 col-form-label">Old Password</label>
+              <div class="col-sm-8">
+                <input type="password" class="form-control" id="inputOldPassword" placeholder="Password">
+              </div>
+            </div>
+            <div class="form-group row mb-3">
+              <label for="inputNewPassword" class="col-sm-4 col-form-label">New Password</label>
+              <div class="col-sm-8">
+                <input type="password" class="form-control" id="inputNewPassword" placeholder="Password">
+              </div>
+            </div>
+            <div class="form-group row mb-3">
+              <label for="confirmNewPassword" class="col-sm-4 col-form-label">Confirm Password</label>
+              <div class="col-sm-8">
+                <input type="password" class="form-control" id="confirmNewPassword" placeholder="Password">
+              </div>
+            </div>
+          </form>
+
         </div>
       </div>
     </div>
