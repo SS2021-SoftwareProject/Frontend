@@ -31,8 +31,6 @@ axios.defaults.withCredentials = true;
 //POSTMAN URL
 axios.defaults.baseURL = 'https://58d84f83-22c2-4082-ab3c-7a086035bf35.mock.pstmn.io';
 
-axios.defaults.headers.common
-
 Vue.use(VueRouter, mdb, Input);
 
 const routes = [

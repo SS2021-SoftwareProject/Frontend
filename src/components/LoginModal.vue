@@ -6,7 +6,7 @@
 
 
         <div class="mb-4">
-          <input type="email" class="form-control" id="loginInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email Adress..." v-model="username">
+          <input type="email" class="form-control" id="loginInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email Adress..." v-model="email">
         </div>
         <div class="mb-4">
           <input type="password" class="form-control" id="registerInputPassword1" placeholder="Enter Password..." v-model="password">
@@ -30,7 +30,7 @@ export default {
   data(){
     return {
       global: this.$store,
-      username: "",
+      email: "",
       password: "",
       showError:false
     };
@@ -47,10 +47,11 @@ export default {
       User.append("password", this.form.password);*/
 
       // Assign valid user object and save it to the localstorage
-      let result = await this.global.dispatch('login', {user: this.username, password: this.password})
+      let result = await this.global.dispatch('login', {mail: this.email, password: this.password})
       if(!result) alert('Could not login... wrong username or password')
-
-      this.$router.push("/Explore");
+      else {
+        this.$router.push("/Explore");
+      }
       /*
       try {
 
