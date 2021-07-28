@@ -6,10 +6,10 @@
 
 
         <div class="mb-4">
-          <input type="email" class="form-control" id="loginInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email Adress...">
+          <input type="email" class="form-control" id="loginInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email Adress..." v-model="username">
         </div>
         <div class="mb-4">
-          <input type="password" class="form-control" id="registerInputPassword1" placeholder="Enter Password...">
+          <input type="password" class="form-control" id="registerInputPassword1" placeholder="Enter Password..." v-model="password">
         </div>
         <div class="mb-4">
           <button type="submit" class="btn btn-primary" style="width: 100%" v-on:click="login">Login</button>
@@ -26,7 +26,7 @@
 export default {
 
   name: "LoginModal",
-
+  components: {},
   data(){
     return {
       global: this.$store,
@@ -41,21 +41,20 @@ export default {
 
     // Gets called upon login click to login and refresh the page
     async login() {
-
     /*
       const User = new FormData();
       User.append("username", this.form.username);
       User.append("password", this.form.password);*/
 
       // Assign valid user object and save it to the localstorage
-      this.global.state.user = 'WUHU'
-      this.global.dispatch('save', {name: 'user', item: this.global.state.user})
+      let result = await this.global.dispatch('login', {user: this.username, password: this.password})
+      if(!result) alert('Could not login... wrong username or password')
 
+      this.$router.push("/Explore");
       /*
       try {
 
-        await this.LogIn(User);
-        this.$router.push("Explore");
+        //await this.LogIn(User);
         this.showError = false;
       } catch(error){
         this.showError = true;

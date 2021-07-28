@@ -12,6 +12,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^5.0.0-beta3",
     "core-js": "^3.6.5",
+    "cors": "^2.8.5",
     "mdb-ui-kit": "^3.5.1",
     "mdbvue": "^6.7.2",
     "vue": "^2.6.11",
@@ -43,7 +44,9 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "no-unused-vars": "off"
+    }
   },
   "browserslist": [
     "> 1%",

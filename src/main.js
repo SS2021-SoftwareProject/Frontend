@@ -11,6 +11,7 @@ import { Input } from 'mdb-ui-kit'; // module
 //import Home from "./views/Home"
 import HomePage from "./views/HomePage";
 import About from "@/views/About";
+import Checkout from "@/views/Checkout";
 import Explore from "@/views/Explore"
 import ProjectView from "@/views/ProjectView";
 import Faq from "@/views/Faq";
@@ -25,17 +26,23 @@ Vue.use(VueAxios, axios);
 // cookies = on (default in axios is off)
 axios.defaults.withCredentials = true;
 // base url to be used for every http request
-axios.defaults.baseURL = 'http://localhost:8081'
+//SOAPUI URL
+//axios.defaults.baseURL = 'http://localhost:8081'
+//POSTMAN URL
+axios.default.baseURL = 'https://544f7b7d-4577-4e8c-aa15-dd41b93c7311.mock.pstmn.io';
+
+axios.defaults.headers.common
 
 Vue.use(VueRouter, mdb, Input);
 
 const routes = [
-  { path: "/", component: HomePage },
+  { path: "/",name: "Home", component: HomePage },
   { path: "/about", component: About },
   { path: "/Explore", name: "Explore", component: Explore },
   { path: "/project/:id", name : "project", component: ProjectView },
   { path: "/faq", component: Faq },
-  { path: "/dataTest", component: RequestData }
+  { path: "/dataTest", component: RequestData },
+  { path: "/Checkout/:id", name: "Checkout", component: Checkout }
 ];
 
 const router = new VueRouter({

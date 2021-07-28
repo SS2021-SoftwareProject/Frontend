@@ -29,12 +29,15 @@
         <br>
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <a href="#milestone">
+          <a href="#milestones">
             <button class="btn btn-primary me-md-2" type="button">
                 Milestones
             </button>
           </a>
           <a class="btn btn-primary" href="/Checkout" role="button">Donate</a>
+
+          <!-- <button class="btn btn-primary ms-4 me-1" @click="$router.push({ name: 'Checkout', params: {id : id }})">Donate</button> -->
+
         </div>
 
       </div>
@@ -160,10 +163,10 @@
     <br><br><br><br><br><br><br><br>
     <br><br><br><br>
 
-  <section id="milestone"></section>
+  <section id="milestones"></section>
     <br><br><br><br>
 
-    <h1 class="font-monospace">The Milestones</h1>
+    <h1 class="font-monospace" >The Milestones</h1>
     <br><br><br><br><br><br>
 
     <div class="row">
