@@ -1,4 +1,5 @@
 import store from '../index'
+import Vue from 'vue'
 
 // User-Key for the localStorage
 const userKey = 'user'
@@ -22,26 +23,36 @@ const actions = {
     },
 
     // Logs in the user
-    async login(commit, user){
+    async login(commit, {user, password}){
 
-        store.state.user = user
-        localStorage.setItem(userKey, user)
-        return true
+        // If login is possible, login otherwhise return false
+        try {
+
+            let res = await Vue.axios.post('login', {user, password})
+            if (res.status == 200) {
+
+                store.state.user = user
+                localStorage.setItem(userKey, user)
+                return true
+            } else return false;
+
+        } catch(error){ return false }
     },
 
     // Registers the user
-    async register(commit, user){
+    async register(commit, {user, password}){
 
-        store.state.user = user
-        localStorage.setItem(userKey, user)
-        return true
-        /*
-        await axios.post('register', form);
-        let UserForm = new FormData();
-        UserForm.append('username', form.username);
-        UserForm.append('password', form.password);
-        await dispatch("LogIn", UserForm);
-        */
+        // If login is possible, login otherwhise return false
+        try {
+
+            let res = await Vue.axios.post('register', {user, password})
+            if (res.status == 200) {
+                store.state.user = user
+                localStorage.setItem(userKey, user)
+                return true
+            } else return false;
+
+        } catch(error){ return false }
     },
 
     // Logs the user out

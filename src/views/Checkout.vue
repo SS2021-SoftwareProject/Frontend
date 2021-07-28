@@ -154,13 +154,14 @@
 
 
 <script>
-
 import axios from 'axios'
 
 export default {
   methods: {
     submit(){
-      axios.post("checkout", this.checkout_form)
+      axios.post("checkout", this.checkout_form,
+
+      )
       .then((response) => {
         //perform success action
         console.log(response)
@@ -176,10 +177,15 @@ export default {
     return {
       checkout_form:{
         //no idea which amount
-        amount: ""
+        email: "test@mail.com",
+        fname: "vn",
+        lname: 'ln',
+        amount: "",
+
       },
       donationAmount: 0,
       ethPrice: 0,
+      user: "",
     }
   },
   created(){
@@ -194,6 +200,9 @@ export default {
         .catch(e => {
           this.errors.push(e)
         })
+
+    // getting userdata
+
 
   }
 }

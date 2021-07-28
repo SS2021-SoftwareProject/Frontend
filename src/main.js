@@ -26,7 +26,12 @@ Vue.use(VueAxios, axios);
 // cookies = on (default in axios is off)
 axios.defaults.withCredentials = true;
 // base url to be used for every http request
-axios.defaults.baseURL = 'http://localhost:8081'
+//SOAPUI URL
+//axios.defaults.baseURL = 'http://localhost:8081'
+//POSTMAN URL
+axios.default.baseURL = 'https://544f7b7d-4577-4e8c-aa15-dd41b93c7311.mock.pstmn.io';
+
+axios.defaults.headers.common
 
 Vue.use(VueRouter, mdb, Input);
 
