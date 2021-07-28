@@ -95,30 +95,47 @@
 
           <form class="text-start">
             <div class="form-group row mb-3">
-              <label for="emailField" class="col-sm-4 col-form-label">Email</label>
-              <div class="col-sm-8">
+              <label for="firstNameField" class="col-sm-5 col-form-label">First Name</label>
+              <div class="col-sm-7">
+                <input type="text" class="form-control" id="firstNameField">
+              </div>
+            </div>
+            <div class="form-group row mb-3">
+              <label for="lastNameField" class="col-sm-5 col-form-label">Last Name</label>
+              <div class="col-sm-7">
+                <input type="text" class="form-control" id="lastNameField">
+              </div>
+            </div>
+            <div class="form-group row mb-3">
+              <label for="emailField" class="col-sm-5 col-form-label">Email</label>
+              <div class="col-sm-7">
                 <input type="text" class="form-control" id="emailField" placeholder="email@example.com">
               </div>
             </div>
             <div class="form-group row mb-3">
-              <label for="inputOldPassword" class="col-sm-4 col-form-label">Old Password</label>
-              <div class="col-sm-8">
+              <label for="inputOldPassword" class="col-sm-5 col-form-label">Old Password</label>
+              <div class="col-sm-7">
                 <input type="password" class="form-control" id="inputOldPassword" placeholder="Password">
               </div>
             </div>
             <div class="form-group row mb-3">
-              <label for="inputNewPassword" class="col-sm-4 col-form-label">New Password</label>
-              <div class="col-sm-8">
+              <label for="inputNewPassword" class="col-sm-5 col-form-label">New Password</label>
+              <div class="col-sm-7">
                 <input type="password" class="form-control" id="inputNewPassword" placeholder="Password">
               </div>
             </div>
             <div class="form-group row mb-3">
-              <label for="confirmNewPassword" class="col-sm-4 col-form-label">Confirm Password</label>
-              <div class="col-sm-8">
+              <label for="confirmNewPassword" class="col-sm-5 col-form-label">Confirm Password</label>
+              <div class="col-sm-7">
                 <input type="password" class="form-control" id="confirmNewPassword" placeholder="Password">
               </div>
             </div>
+
+            <div class="col text-end">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
           </form>
+
 
         </div>
       </div>
