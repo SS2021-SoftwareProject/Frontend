@@ -2,8 +2,6 @@
   <div class="container">
     <br><br>
 
-    <p>{{$route.params.id}}</p>
-
     <div class="row">
       <div class="col-md-5">
         <img class="thumbnail img-responsive" src="../assets/afrika2.jpg" alt=""/>
