@@ -95,18 +95,6 @@
 
           <form class="text-start">
             <div class="form-group row mb-3">
-              <label for="firstNameField" class="col-sm-5 col-form-label">First Name</label>
-              <div class="col-sm-7">
-                <input type="text" class="form-control" id="firstNameField">
-              </div>
-            </div>
-            <div class="form-group row mb-3">
-              <label for="lastNameField" class="col-sm-5 col-form-label">Last Name</label>
-              <div class="col-sm-7">
-                <input type="text" class="form-control" id="lastNameField">
-              </div>
-            </div>
-            <div class="form-group row mb-3">
               <label for="emailField" class="col-sm-5 col-form-label">Email</label>
               <div class="col-sm-7">
                 <input type="text" class="form-control" id="emailField" placeholder="email@example.com">
