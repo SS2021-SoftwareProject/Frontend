@@ -29,7 +29,7 @@ axios.defaults.withCredentials = true;
 //SOAPUI URL
 //axios.defaults.baseURL = 'http://localhost:8081'
 //POSTMAN URL
-axios.default.baseURL = 'https://544f7b7d-4577-4e8c-aa15-dd41b93c7311.mock.pstmn.io';
+axios.defaults.baseURL = 'https://58d84f83-22c2-4082-ab3c-7a086035bf35.mock.pstmn.io';
 
 axios.defaults.headers.common
 
