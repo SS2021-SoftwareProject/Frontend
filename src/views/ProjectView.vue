@@ -2,6 +2,7 @@
   <div class="container">
     <br><br>
 
+    <p>{{$route.params.id}}</p>
 
     <div class="row">
       <div class="col-md-5">
@@ -11,20 +12,20 @@
       <div class="col-md-1"></div>
 
       <div class="col-md-6">
-        <h2 class="text-start">Fresh Water for Children in Nigeria</h2>
-        <h5 class="text-start">Provide water for up to 200 ChildVoice students living in Nigeria</h5>
+        <h2 class="text-start">{{this.title}}</h2>
+        <h5 class="text-start">{{desc}}</h5>
 
         <br>
 
         <p class="fs-6 text-start text-primary">Funds Raised</p>
         <div class="progress" style="height: 20px;">
-          <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">75%</div>
+          <div class="progress-bar" role="progressbar" :style="{width: percent+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{percent}}%</div>
         </div>
 
         <br><br>
 
         <h6 class="text-start">Status</h6>
-        <h6 class="text-start text-primary">Funding</h6>
+        <h6 class="text-start text-primary">{{status}}</h6>
 
         <br>
 
@@ -126,10 +127,6 @@
 
     <br><br><br><br><br><br><br><br>
 
-
-
-
-
     <div class="row" >
       <div class="col-md-7">
         <br>
@@ -229,13 +226,51 @@
 
 
 <script>
+import Vue from 'vue'
 import MilestoneCard from "../components/MilestoneCard";
+
+import { useRouter, useRoute } from 'vue-router'
+
 export default {
+
+  props: ['id'],
+
   components: {MilestoneCard},
-  created(){
+  data() {
+    return {
+      project: '',
+      title: '',
+      desc: '',
+      status: '',
+      percent: '',
 
-  }
+    }
+  },
+  created() {
 
+    let projectID = this.$route.params.id-1;
+
+    //window.alert(this.$route.params.id)
+
+    const baseURI = 'projects'
+
+    Vue.axios.get(baseURI, {}).then((response) => {
+
+      this.project = response.data.projects[projectID];
+
+      this.title = this.project.name
+      this.desc = this.project.beschreibung;
+      this.status = this.project.status;
+
+      this.percent = ((100 * this.project.istBetrag)/this.project.sollBetrag).toFixed(2)
+
+      //window.alert(this.project) Provide water for up to 200 ChildVoice students living in Nigeria
+      console.log(this.project)
+
+    }).catch(err => {
+      console.log(err.response);
+    });
+  },
 }
 
 </script>
