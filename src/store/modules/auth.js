@@ -29,22 +29,21 @@ const actions = {
         // If login is possible, login otherwhise return false
         try {
 
-            let res = await Vue.axios.post('https://f1853f87-28ef-4c6a-8923-41e04f56c8a7.mock.pstmn.io/login', null, { params: { mail, password}, headers: {'Acess-Control-Allow-Origin': 'http://localhost:8080'}})
-            console.log('res : '+res)
+            let res = await Vue.axios.post('login', null, { params: { mail, password}})
+            console.log(res)
             if (res.status == 200) {
-
+                console.log(res.status);
                 // Construct user from response
                 let user = {
-                    id: res.response.User_ID,
-                    fname: res.response.User_Vorname,
-                    lname: res.response.User_Nachname,
-                    email: res.response.User_Email,
-                    password: res.response.Password
+                    id: res.data.users[0].id,
+                    fname: res.data.users[0].firstname,
+                    lname: res.data.users[0].lastname,
+                    email: res.data.users[0].email,
                 }
 
                 store.state.user = user
                 localStorage.setItem(userKey, user)
-                return true
+                return true;
             } else return false;
 
         } catch(error){ return false }

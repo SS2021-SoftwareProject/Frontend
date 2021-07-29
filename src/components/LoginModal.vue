@@ -46,9 +46,11 @@ export default {
       User.append("username", this.form.username);
       User.append("password", this.form.password);*/
 
+
       // Assign valid user object and save it to the localstorage
       let result = await this.global.dispatch('login', {mail: this.email, password: this.password})
-      if(!result) alert('Could not login... wrong username or password')
+      console.log(result);
+      if(result == false) alert('Could not login... wrong username or password')
       else {
         this.$router.push("/Explore");
       }
