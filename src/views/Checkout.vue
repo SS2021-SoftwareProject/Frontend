@@ -109,6 +109,14 @@
 
           <input :value=checkout_form.amount/ethPrice class="form-control" name="DonationAmount" id="donationAmount" style="display: none">
 
+          <div class="col-md-3" style="display: block">
+            <div class="form-group">
+              <label for="lastName">ID</label>
+              <input class="form-control" type="text" v-bind:value=$route.params.id readonly id="projectID" name="project_ID">
+            </div><br><br>
+          </div>
+
+
           <br><br>
         </div>
 

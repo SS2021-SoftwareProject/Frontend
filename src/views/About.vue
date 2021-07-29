@@ -24,7 +24,7 @@
           <strong>CharitAble</strong> consists of several teams of skilled developers, programmers and designers, among other professions, who strive to improve and keep the technology behind our website up-to-date.<br><br>
           Encouraging them to always keep up with the latest state of knowledge in their respective fields, we offer plenty of resources to our employees for acquiring new while also refreshing their already existing knowledge.
         </p>
-        <img src="../assets/team_2.jpg" class="rounded-pill ms-5" height="auto" width="500">
+        <img src="../assets/team_2.jpg" class="img-fluid rounded-pill col-5 ms-5" alt="Working people">
       </div>
     </div>
 
@@ -32,7 +32,7 @@
       <h2 class="font-monospace text-end text-primary mb-4">Our Work</h2>
 
       <div class="container d-flex flex-row justify-content-evenly">
-        <img src="../assets/js_sample.jpg" class="rounded-pill me-5" height="auto" width="500">
+        <img src="../assets/js_sample.jpg" class="img-fluid rounded-pill col-5 me-5" alt="JavaScript Code Example">
         <p class="text-center align-self-center ms-5">
           With several years of experience and expertise and a diverse staff, <strong>CharitAble</strong> provides quality service influenced by unique points of view and with full transparency not only to a project's contributors but also the organisation behind it.<br><br>
           We work tirelessly to ensure it stays that way by continuously maintaining, updating and improving our website and the technology behind it.<br><br>

@@ -15,7 +15,6 @@
       <div class="nav flex-column nav-pills me-5" id="v-pills-tab" role="tablist" aria-orientation="vertical">
         <button class="nav-link active fs-6" id="v-pills-overview-tab" data-bs-toggle="pill" data-bs-target="#v-pills-overview" type="button" role="tab" aria-controls="v-pills-overview" aria-selected="true">Overview</button>
         <button class="nav-link fs-6" id="v-pills-contributions-tab" data-bs-toggle="pill" data-bs-target="#v-pills-contributions" type="button" role="tab" aria-controls="v-pills-contributions" aria-selected="false">Contributions</button>
-        <button class="nav-link fs-6" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
       </div>
 
       <div class="tab-content" id="v-pills-tabContent">
@@ -90,10 +89,6 @@
           <p class="text-start text-muted">You made <span id="total"></span> donations.</p>
         </div>
 
-        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-          <h3 class="mb-4 text-start">Settings</h3>
-          <p class="text-start">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-        </div>
       </div>
     </div>
   </div>

@@ -24,12 +24,17 @@ import store from './store';
 Vue.use(VueAxios, axios);
 
 // cookies = on (default in axios is off)
-axios.defaults.withCredentials = true;
+//axios.defaults.withCredentials = true;
 // base url to be used for every http request
 //SOAPUI URL
 //axios.defaults.baseURL = 'http://localhost:8081'
 //POSTMAN URL
-axios.defaults.baseURL = 'https://544f7b7d-4577-4e8c-aa15-dd41b93c7311.mock.pstmn.io';
+axios.defaults.baseURL = 'https://4e6061f8-3b93-4970-9583-2eb1c17e0485.mock.pstmn.io';
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = 'https://4e6061f8-3b93-4970-9583-2eb1c17e0485.mock.pstmn.io';
+axios.defaults.headers.post['Access-Control-Allow-Methods'] = 'GET,PUT,POST,DELETE,PATCH,OPTIONS';
+
+
+
 
 Vue.use(VueRouter, mdb, Input);
 
