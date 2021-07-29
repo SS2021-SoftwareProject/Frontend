@@ -29,7 +29,7 @@ const actions = {
         // If login is possible, login otherwhise return false
         try {
 
-            let res = await Vue.axios.post('https://f1853f87-28ef-4c6a-8923-41e04f56c8a7.mock.pstmn.io/login', null, { params: { mail, password}, headers: {'Acess-Control-Allow-Origin': 'http://localhost:8080'}})
+            let res = await Vue.axios.post('/login', null, { params: { mail, password}})
             console.log('res : '+res)
             if (res.status == 200) {
 
