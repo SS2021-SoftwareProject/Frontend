@@ -16,7 +16,7 @@ const actions = {
     async relog(commit){
 
         if(localStorage.getItem(userKey) !== null) {
-            store.state.user = localStorage.getItem(userKey)
+            store.state.user = JSON.parse(localStorage.getItem(userKey))
             return true
         }
 
@@ -30,9 +30,8 @@ const actions = {
         try {
 
             let res = await Vue.axios.post('login', null, { params: { mail, password}})
-            console.log(res)
             if (res.status == 200) {
-                console.log(res.status);
+
                 // Construct user from response
                 let user = {
                     id: res.data.users[0].id,
@@ -42,7 +41,7 @@ const actions = {
                 }
 
                 store.state.user = user
-                localStorage.setItem(userKey, user)
+                localStorage.setItem(userKey, JSON.stringify(user))
                 return true;
             } else return false;
 
@@ -57,8 +56,17 @@ const actions = {
 
             let res = await Vue.axios.post('register', {mail, password})
             if (res.status == 200) {
-                store.state.user = mail
-                localStorage.setItem(userKey, mail)
+
+                // Construct user from response
+                let user = {
+                    id: res.data.users[0].id,
+                    fname: res.data.users[0].firstname,
+                    lname: res.data.users[0].lastname,
+                    email: res.data.users[0].email,
+                }
+
+                store.state.user = user
+                localStorage.setItem(userKey, JSON.stringify(user))
                 return true
             } else return false;
 
