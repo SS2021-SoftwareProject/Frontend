@@ -15,7 +15,6 @@
       <div class="nav flex-column nav-pills me-5" id="v-pills-tab" role="tablist" aria-orientation="vertical">
         <button class="nav-link active fs-6" id="v-pills-overview-tab" data-bs-toggle="pill" data-bs-target="#v-pills-overview" type="button" role="tab" aria-controls="v-pills-overview" aria-selected="true">Overview</button>
         <button class="nav-link fs-6" id="v-pills-contributions-tab" data-bs-toggle="pill" data-bs-target="#v-pills-contributions" type="button" role="tab" aria-controls="v-pills-contributions" aria-selected="false">Contributions</button>
-        <button class="nav-link fs-6" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
       </div>
 
       <div class="tab-content" id="v-pills-tabContent">
@@ -90,42 +89,6 @@
           <p class="text-start text-muted">You made <span id="total"></span> donations.</p>
         </div>
 
-        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-          <h3 class="mb-4 text-start">Settings</h3>
-
-          <form class="text-start">
-            <div class="form-group row mb-3">
-              <label for="emailField" class="col-sm-5 col-form-label">Email</label>
-              <div class="col-sm-7">
-                <input type="text" class="form-control" id="emailField" placeholder="email@example.com">
-              </div>
-            </div>
-            <div class="form-group row mb-3">
-              <label for="inputOldPassword" class="col-sm-5 col-form-label">Old Password</label>
-              <div class="col-sm-7">
-                <input type="password" class="form-control" id="inputOldPassword" placeholder="Password">
-              </div>
-            </div>
-            <div class="form-group row mb-3">
-              <label for="inputNewPassword" class="col-sm-5 col-form-label">New Password</label>
-              <div class="col-sm-7">
-                <input type="password" class="form-control" id="inputNewPassword" placeholder="Password">
-              </div>
-            </div>
-            <div class="form-group row mb-3">
-              <label for="confirmNewPassword" class="col-sm-5 col-form-label">Confirm Password</label>
-              <div class="col-sm-7">
-                <input type="password" class="form-control" id="confirmNewPassword" placeholder="Password">
-              </div>
-            </div>
-
-            <div class="col text-end">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-          </form>
-
-
-        </div>
       </div>
     </div>
   </div>
