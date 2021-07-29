@@ -38,7 +38,7 @@
 
       <div class="col-md-6">
         <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4iBpWwvD_Hc" allowfullscreen height="400" width="700"></iframe>
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4iBpWwvD_Hc" allowfullscreen height="400" width="700" allow="autoplay"></iframe>
         </div>
       </div>
     </div>
