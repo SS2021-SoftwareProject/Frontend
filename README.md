@@ -29,7 +29,7 @@ npm run build
 
 # Getting started
 The Frontend part of this web application is super easy to set up.
-After the frontend data is fetched into an IDE of your choice, (we used webstorm but every other IDE should do aswell)
+After the frontend data is fetched into an IDE of your choice, (we used webstorm but every other IDE should do as well)
 all necessary dependencies can be installed by using the project setup ````npm install````.
 
 To run the application use the development compilation target ````npm run serve````.
