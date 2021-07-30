@@ -7,7 +7,7 @@
         </div>
       </div>
       <div class="col-auto align-self-end">
-        <h1 class="font-monospace fw-bolder display-4">{{this.global.state.user.firstname}} {{this.global.state.user.lastname}}</h1>
+        <h1 class="font-monospace fw-bolder display-4" v-if="this.global.state.user">{{this.global.state.user.firstname}} {{this.global.state.user.lastname}}</h1>
       </div>
     </div>
 
@@ -24,19 +24,19 @@
             <tbody>
               <tr>
                 <th scope="row"><strong>First Name</strong></th>
-                <td id="firstName">{{this.global.state.user.firstname}}</td>
+                <td id="firstName" v-if="this.global.state.user">{{this.global.state.user.firstname}}</td>
               </tr>
               <tr class="table-secondary">
                 <th scope="row"><strong>Last Name</strong></th>
-                <td id="lastName">{{this.global.state.user.lastname}}</td>
+                <td id="lastName" v-if="this.global.state.user">{{this.global.state.user.lastname}}</td>
               </tr>
               <tr>
                 <th scope="row"><strong>Email</strong></th>
-                <td id="email">{{this.global.state.user.email}}</td>
+                <td id="email" v-if="this.global.state.user">{{this.global.state.user.email}}</td>
               </tr>
               <tr class="table-secondary">
                 <th scope="row"><strong>Registered since</strong></th>
-                <td id="registrationDate">{{this.global.state.user.RegisterDate}}</td>
+                <td id="registrationDate" v-if="this.global.state.user">{{this.global.state.user.RegisterDate}}</td>
               </tr>
             </tbody>
           </table>
