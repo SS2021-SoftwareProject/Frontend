@@ -1,7 +1,7 @@
 # Description
 Software repository for artefacts referring towards the frontend part of our project "Charitable".
 
-#Team
+# Team
 Name | Github | Role
 ------------ | ------------ | ------------
 Jan Ehreke | Epixware | Project lead
@@ -10,14 +10,14 @@ Franziska Niemeyer | pflanzi | Frontend Developer
 Paul Fortmann | pfortmann | Frontend Developer
 Stephan Dresselmann | rettetDieWale | Frontend Developer
 
-#NPM
+# NPM
 
-###Project setup
+### Project setup
 ```
 npm install
 ```
 
-###Compilation and updating dependencies in *development*
+### Compilation and updating dependencies in *development*
 ```
 npm run serve
 ```
@@ -27,7 +27,7 @@ npm run serve
 npm run build
 ```
 
-#Getting started
+# Getting started
 The Frontend part of this web application is super easy to set up.
 After the frontend data is fetched into an IDE of your choice, (we used webstorm but every other IDE should do aswell)
 all necessary dependencies can be installed by using the project setup ````npm install````.
