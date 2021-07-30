@@ -1,15 +1,21 @@
 <template>
-  <div class="container">
-    <div class="row mb-5">
-      <div class="col-auto align-self-end">
-        <div class="text-start">
-          <img id="avatar" src="../assets/logo.png" alt="user avatar" class="p-3">
-        </div>
-      </div>
-      <div class="col-auto align-self-end">
-        <h1 class="font-monospace fw-bolder display-4"></h1>
-      </div>
-    </div>
+
+  <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-body">
+
+          <div class="container">
+            <div class="row mb-5">
+              <div class="col-auto align-self-end">
+                <div class="text-start">
+                  <img id="avatar" src="../assets/logo.png" alt="user avatar" class="p-3">
+                </div>
+              </div>
+              <div class="col-auto align-self-end">
+                <h1 class="font-monospace fw-bolder display-4"></h1>
+              </div>
+            </div>
 
             <div class="d-flex align-items-start">
               <div class="nav flex-column nav-pills me-5" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -17,30 +23,30 @@
                 <button class="nav-link fs-6" id="v-pills-contributions-tab" data-bs-toggle="pill" data-bs-target="#v-pills-contributions" type="button" role="tab" aria-controls="v-pills-contributions" aria-selected="false">Contributions</button>
               </div>
 
-      <div class="tab-content" id="v-pills-tabContent">
-        <div class="tab-pane fade show active" id="v-pills-overview" role="tabpanel" aria-labelledby="v-pills-overview-tab">
-          <h3 class="mb-4 text-start">Profile Info</h3>
-          <table class="table table-lg align-middle text-start">
-            <tbody>
-              <tr>
-                <th scope="row"><strong>First Name</strong></th>
-                <td id="firstName">{{this.user.firstname}}</td>
-              </tr>
-              <tr class="table-secondary">
-                <th scope="row"><strong>Last Name</strong></th>
-                <td id="lastName">{{this.user.lastname}}</td>
-              </tr>
-              <tr>
-                <th scope="row"><strong>Email</strong></th>
-                <td id="email">{{this.user.email}}</td>
-              </tr>
-              <tr class="table-secondary">
-                <th scope="row"><strong>Registered since</strong></th>
-                <td id="registrationDate">{{this.user.RegisterDate}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+              <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-overview" role="tabpanel" aria-labelledby="v-pills-overview-tab">
+                  <h3 class="mb-4 text-start">Profile Info</h3>
+                  <table class="table table-lg align-middle text-start">
+                    <tbody>
+                      <tr>
+                        <th scope="row"><strong>First Name</strong></th>
+                        <td id="firstName">{{this.user.firstname}}</td>
+                      </tr>
+                      <tr class="table-secondary">
+                        <th scope="row"><strong>Last Name</strong></th>
+                        <td id="lastName">{{this.user.lastname}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><strong>Email</strong></th>
+                        <td id="email">{{this.user.email}}</td>
+                      </tr>
+                      <tr class="table-secondary">
+                        <th scope="row"><strong>Registered since</strong></th>
+                        <td id="registrationDate">{{this.user.RegisterDate}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
 
                 <div class="tab-pane fade" id="v-pills-contributions" role="tabpanel" aria-labelledby="v-pills-contributions-tab">
                   <h3 class="mb-4 text-start">Your Donation History</h3>
@@ -88,16 +94,13 @@
 
                   <p class="text-start text-muted">You made <span id="total"></span> donations.</p>
                 </div>
-
-              </div>
             </div>
           </div>
-
         </div>
-
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
