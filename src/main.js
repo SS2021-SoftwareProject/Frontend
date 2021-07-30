@@ -28,6 +28,7 @@ Vue.use(VueAxios, axios);
 // base url to be used for every http request
 //SOAPUI URL
 //axios.defaults.baseURL = 'http://localhost:8081'
+
 //POSTMAN URL
 axios.defaults.baseURL = 'https://4e6061f8-3b93-4970-9583-2eb1c17e0485.mock.pstmn.io';
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = 'https://4e6061f8-3b93-4970-9583-2eb1c17e0485.mock.pstmn.io';
