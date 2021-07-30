@@ -9,6 +9,7 @@ Lars Matthaeus | Lars | Lead Frontend Developer
 Franziska Niemeyer | pflanzi | Frontend Developer
 Paul Fortmann | pfortmann | Frontend Developer
 Stephan Dresselmann | rettetDieWale | Frontend Developer
+Michelle Windhorn | mwindhorn | Frontend Developer
 
 # NPM
 
