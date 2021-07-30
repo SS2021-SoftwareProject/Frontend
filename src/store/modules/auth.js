@@ -49,12 +49,12 @@ const actions = {
     },
 
     // Registers the user
-    async register(commit, {mail, password}){
+    async register(commit, {fname, lname, mail, password}){
 
         // If login is possible, login otherwhise return false
         try {
 
-            let res = await Vue.axios.post('register', {mail, password})
+            let res = await Vue.axios.post('register', null, { params: { fname, lname, mail, password}})
             if (res.status == 200) {
 
                 // Construct user from response

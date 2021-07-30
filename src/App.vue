@@ -52,41 +52,16 @@
       </nav>
 
       <br>
-
       <router-view></router-view>
 
       <!-- Login Modal -->
-      <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-login">
-          <div class="modal-content">
-            <div class="modal-body">
-              <LoginModal></LoginModal>
-            </div>
-          </div>
-        </div>
-      </div>
+      <LoginModal></LoginModal>
 
       <!-- Register Modal -->
-      <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-login">
-          <div class="modal-content">
-            <div class="modal-body">
-              <RegisterModal></RegisterModal>
-            </div>
-          </div>
-        </div>
-      </div>
+      <RegisterModal></RegisterModal>
 
       <!-- User Modal -->
-      <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
-          <div class="modal-content">
-            <div class="modal-body">
-              <UserProfile></UserProfile>
-            </div>
-          </div>
-        </div>
-      </div>
+      <UserProfile></UserProfile>
     </div>
 
     <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br>
