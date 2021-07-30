@@ -27,6 +27,11 @@ npm run serve
 npm run build
 ```
 
+### Code linting
+````
+npm run lint
+````
+
 # Getting started
 The Frontend part of this web application is super easy to set up.
 After the frontend data is fetched into an IDE of your choice, (we used webstorm but every other IDE should do as well)
