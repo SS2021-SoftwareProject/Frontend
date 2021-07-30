@@ -58,11 +58,11 @@
                 <a href="#" class="text-decoration-none text-reset">Home</a>
               </router-link>
             </p>
-            <p>
+            <!--<p>
               <router-link class="text-muted" data-bs-toggle="modal" data-bs-target="#userModal" aria-current="page" to="">
                 <a href="#" class="text-decoration-none text-reset">Your Profile</a>
               </router-link>
-            </p>
+            </p> -->
             <p>
              <router-link class="text-muted" aria-current="page" to="/faq">
                <a href="#" class="text-decoration-none text-reset">FAQ</a>

@@ -54,7 +54,7 @@
         <div class="col-md-6">
             <div class="form-group">
               <label for="email">Email address</label>
-              <input class="form-control" type="text" value="max.mustermann@gmail.com" readonly id="email" name="email">
+              <input class="form-control" type="text" :value=this.global.state.user.email readonly id="email" name="email">
             </div><br><br>
         </div>
 
@@ -67,14 +67,14 @@
         <div class="col-md-3">
           <div class="form-group">
             <label for="firstName">First Name</label>
-            <input class="form-control" type="text" value="Max" readonly id="firstName" name="firstName">
+            <input class="form-control" type="text" :value=this.global.state.user.fname readonly id="firstName" name="firstName">
           </div><br><br>
         </div>
 
         <div class="col-md-3">
           <div class="form-group">
             <label for="lastName">Last Name</label>
-            <input class="form-control" type="text" value="Mustermann" readonly id="lastName" name="lastName">
+            <input class="form-control" type="text" :value=this.global.state.user.lname readonly id="lastName" name="lastName">
           </div><br><br>
         </div>
 
@@ -109,13 +109,15 @@
 
           <input :value=checkout_form.amount/ethPrice class="form-control" name="DonationAmount" id="donationAmount" style="display: none">
 
+
+          <!-- ID for debug purpose only
           <div class="col-md-3" style="display: block">
             <div class="form-group">
               <label for="lastName">ID</label>
               <input class="form-control" type="text" v-bind:value=$route.params.id readonly id="projectID" name="project_ID">
             </div><br><br>
           </div>
-
+          -->
 
           <br><br>
         </div>
@@ -175,6 +177,7 @@ export default {
   },
   data(){
     return {
+      global : this.$store,
       checkout_form:{
         //no idea which amount
         email: "test@mail.com",
@@ -201,6 +204,12 @@ export default {
           this.errors.push(e)
         })
 
+    if(!this.global.state.user){
+      window.alert("Bitte Loggen Sie sich erst ein!")
+      window.alert(this.global.state.user)
+
+      //$router.go(-1)
+    }
     // getting userdata
 
 
