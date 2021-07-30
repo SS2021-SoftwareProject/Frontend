@@ -30,8 +30,12 @@ Vue.use(VueAxios, axios);
 //axios.defaults.baseURL = 'http://localhost:8081'
 
 //POSTMAN URL
-axios.defaults.baseURL = 'https://4e6061f8-3b93-4970-9583-2eb1c17e0485.mock.pstmn.io';
-axios.defaults.headers.post['Access-Control-Allow-Origin'] = 'https://4e6061f8-3b93-4970-9583-2eb1c17e0485.mock.pstmn.io';
+//axios.defaults.baseURL = 'https://4e6061f8-3b93-4970-9583-2eb1c17e0485.mock.pstmn.io';
+//axios.defaults.headers.post['Access-Control-Allow-Origin'] = 'https://4e6061f8-3b93-4970-9583-2eb1c17e0485.mock.pstmn.io';
+
+axios.defaults.baseURL = 'http://localhost:8081//';
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+
 axios.defaults.headers.post['Access-Control-Allow-Methods'] = 'GET,PUT,POST,DELETE,PATCH,OPTIONS';
 
 
