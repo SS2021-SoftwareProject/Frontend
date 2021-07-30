@@ -21,6 +21,7 @@
       <div class="row">
         <div class="col-md-4" v-for="project in projects" :key="project.id">
           <HomeCard
+              :id="project.id"
               :title-text=project.name
               :desc-text=project.beschreibung
               :status-text=project.status

@@ -4,7 +4,8 @@
 
     <div class="row">
       <div class="col-md-5">
-        <img class="thumbnail img-responsive" src="../assets/afrika2.jpg" alt=""/>
+        <!-- <img class="thumbnail img-responsive" src="../assets/afrika2.jpg" alt=""/> -->
+        <img class="thumbnail img-responsive" :src=bild alt=""/>
       </div>
 
       <div class="col-md-1"></div>
@@ -15,7 +16,7 @@
 
         <br>
 
-        <p class="fs-6 text-start text-primary">Funds Raised</p>
+        <p class="fs-6 text-start ">Funds Raised : {{this.istBetrag}}$ / {{this.sollBetrag}} $</p>
         <div class="progress" style="height: 20px;">
           <div class="progress-bar" role="progressbar" :style="{width: percent+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{percent}}%</div>
         </div>
@@ -29,13 +30,17 @@
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
           <a href="#milestones">
-            <button class="btn btn-primary me-md-2" type="button">
-                Milestones
+            <button class="btn btn-primary me-md-2" type="button" value="Milestones">Milestones
             </button>
           </a>
+
+          <!--
           <a class="btn btn-primary" href="/Checkout" role="button">Donate</a>
 
-          <!-- <button class="btn btn-primary ms-4 me-1" @click="$router.push({ name: 'Checkout', params: {id : id }})">Donate</button> -->
+          <button class="btn btn-primary ms-4 me-1"
+                  @click="$router.push({ name: 'Checkout', params: {id : this.id  }})">Donate</button>
+          -->
+          <button class="btn btn-primary ms-4 me-1" @click="$router.push({ name: 'Checkout', params: {id : id }})">Donate</button>
 
         </div>
 
@@ -231,16 +236,20 @@ import { useRouter, useRoute } from 'vue-router'
 
 export default {
 
-  props: ['id'],
+ // props: ['id'],
 
   components: {MilestoneCard},
   data() {
     return {
+      id: '',
+      bild: '',
       project: '',
       title: '',
       desc: '',
       status: '',
       percent: '',
+      istBetrag: '',
+      sollBetrag: ''
 
     }
   },
@@ -248,7 +257,9 @@ export default {
 
     let projectID = this.$route.params.id-1;
 
-    //window.alert(this.$route.params.id)
+    this.id = this.$route.params.id;
+
+    //window.alert(this.id)
 
     const baseURI = 'projects'
 
@@ -257,8 +268,11 @@ export default {
       this.project = response.data.projects[projectID];
 
       this.title = this.project.name
-      this.desc = this.project.beschreibung;
-      this.status = this.project.status;
+      this.desc = this.project.beschreibung
+      this.status = this.project.status
+      this.istBetrag = this.project.istBetrag
+      this.sollBetrag = this.project.sollBetrag
+      this.bild = this.project.bild
 
       this.percent = ((100 * this.project.istBetrag)/this.project.sollBetrag).toFixed(2)
 
