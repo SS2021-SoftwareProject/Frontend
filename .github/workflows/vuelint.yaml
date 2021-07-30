@@ -1,0 +1,24 @@
+name: Vue CLI
+
+on:
+  push:
+
+jobs:
+  lint:
+    name: vue-lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v1
+
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
+      - name: Install development dependencies
+        run: npm install --also=dev
+
+      -name: Perform static analysis
+       run: npm run lint
