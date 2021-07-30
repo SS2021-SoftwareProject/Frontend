@@ -3,11 +3,11 @@
     <div class="row mb-5">
       <div class="col-auto align-self-end">
         <div class="text-start">
-          <img id="avatar" src="../assets/logo.png" alt="user avatar" class="p-3">
+          <img id="avatar" src="../assets/logo_592x557.png" alt="user avatar" class="p-3">
         </div>
       </div>
       <div class="col-auto align-self-end">
-        <h1 class="font-monospace fw-bolder display-4"></h1>
+        <h1 class="font-monospace fw-bolder display-4">{{this.global.state.user.firstname}} {{this.global.state.user.lastname}}</h1>
       </div>
     </div>
 
@@ -24,19 +24,19 @@
             <tbody>
               <tr>
                 <th scope="row"><strong>First Name</strong></th>
-                <td id="firstName">{{this.user.firstname}}</td>
+                <td id="firstName">{{this.global.state.user.firstname}}</td>
               </tr>
               <tr class="table-secondary">
                 <th scope="row"><strong>Last Name</strong></th>
-                <td id="lastName">{{this.user.lastname}}</td>
+                <td id="lastName">{{this.global.state.user.lastname}}</td>
               </tr>
               <tr>
                 <th scope="row"><strong>Email</strong></th>
-                <td id="email">{{this.user.email}}</td>
+                <td id="email">{{this.global.state.user.email}}</td>
               </tr>
               <tr class="table-secondary">
                 <th scope="row"><strong>Registered since</strong></th>
-                <td id="registrationDate">{{this.user.RegisterDate}}</td>
+                <td id="registrationDate">{{this.global.state.user.RegisterDate}}</td>
               </tr>
             </tbody>
           </table>
@@ -95,34 +95,16 @@
 </template>
 
 <script>
-import Vue from "vue";
 
 export default {
   name: "UserProfile",
-  data() {
+  data(){
     return {
-      users: [],
-      user: {
-        firstname: '',
-        lastname: '',
-        email: '',
-        RegisterDate: ''
-      }
+      global: this.$store
     }
-  },
-  created: function () {
-    const baseURI = 'users'
-    Vue.axios.get(baseURI, {
-
-    }).then((response) => {
-      this.users = response.data.users;
-      this.user = response.data.users[1];
-
-    }).catch(err => {
-      console.log(err.response);
-    });
-  },
+  }
 }
+
 
 /* counts rows in the table, excluding the header */
 window.onclick = function (){
