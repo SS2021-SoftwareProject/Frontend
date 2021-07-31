@@ -30,11 +30,11 @@
                     <tbody>
                       <tr>
                         <th scope="row"><strong>First Name</strong></th>
-                        <td id="firstName" v-if="this.global.state.user">{{this.global.state.user.firstname}}</td>
+                        <td id="firstName" v-if="this.global.state.user">{{this.global.state.user.fname}}</td>
                       </tr>
                       <tr class="table-secondary">
                         <th scope="row"><strong>Last Name</strong></th>
-                        <td id="lastName" v-if="this.global.state.user">{{this.global.state.user.lastname}}</td>
+                        <td id="lastName" v-if="this.global.state.user">{{this.global.state.user.lname}}</td>
                       </tr>
                       <tr>
                         <th scope="row"><strong>Email</strong></th>
@@ -42,7 +42,7 @@
                       </tr>
                       <tr class="table-secondary">
                         <th scope="row"><strong>Registered since</strong></th>
-                        <td id="registrationDate" v-if="this.global.state.user">{{this.global.state.user.RegisterDate}}</td>
+                        <td id="registrationDate" v-if="this.global.state.user">{{this.global.state.user.registered_since}}</td>
                       </tr>
                     </tbody>
                   </table>

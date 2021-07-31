@@ -104,6 +104,7 @@ export default {
   // Relog user if previous loged in and still valid
   async mounted(){
     this.global.dispatch('relog')
+    console.log(this.global.state.user);
   }
 }
 

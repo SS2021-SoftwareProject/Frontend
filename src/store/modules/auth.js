@@ -38,6 +38,7 @@ const actions = {
                     fname: res.data.users[0].firstname,
                     lname: res.data.users[0].lastname,
                     email: res.data.users[0].email,
+                    registered_since : res.data.users[0].RegisterDate,
                 }
 
                 store.state.user = user
@@ -63,6 +64,7 @@ const actions = {
                     fname: res.data.users[0].firstname,
                     lname: res.data.users[0].lastname,
                     email: res.data.users[0].email,
+                    registered_since : res.data.users[0].RegisterDate,
                 }
 
                 store.state.user = user
