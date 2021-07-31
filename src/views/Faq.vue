@@ -87,10 +87,43 @@
       <div class="accordion-item p-1">
         <h2 class="accordion-header" id="headingSix">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+            How do I know the project I contributed to was completed?
+          </button>
+        </h2>
+        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+          <div class="accordion-body text-start">
+            Each project will be updated as its status changes, and donors who contributed to that project will receive (email) notifications at key milestones, including project completion.
+            Donors can log back on to our website to see photos, written updates, and sometimes videos of the completed project.
+          </div>
+        </div>
+      </div>
+      <!--- item end --->
+
+      <!--- item start --->
+      <div class="accordion-item p-1">
+        <h2 class="accordion-header" id="headingSeven">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+            Is my donation tax deductible?
+          </button>
+        </h2>
+        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+          <div class="accordion-body text-start">
+            Yes, if the nonprofit is a tax-exempt registered nonprofit in their country and you are a tax payer in that country.
+            However, as the tax laws and regulations differ from country to country, we cannot provide information for each specific case.
+            Donors are responsible to consult with their tax attorney for legal or financial advice.
+          </div>
+        </div>
+      </div>
+      <!--- item end --->
+
+      <!--- item start --->
+      <div class="accordion-item p-1">
+        <h2 class="accordion-header" id="headingTen">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
             Further Questions?
           </button>
         </h2>
-        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+        <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
           <div class="accordion-body text-start">
             For any further questions, inquiries and / or other concers, feel free to email or call us at <a href="mailto:contact@charitable.com">contact@charitable.com</a> and + 01 234 567 88, respectively.
           </div>
