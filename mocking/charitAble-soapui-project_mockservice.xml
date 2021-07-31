@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="b2eb9782-3b1f-449a-accc-99ff530deb4c" activeEnvironment="Default" name="charitAble" resourceRoot="" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:restMockService id="baf4aec1-0008-43dd-ba04-8627ed39a9cf" port="8081" path="/" host="stephan-PC" name="REST MockService 1" docroot=""><con:settings/><con:properties/><con:onRequestScript/><con:restMockAction name="projects" method="GET" resourcePath="/projects" id="b8a02f5e-bcda-412b-a0dc-d9a15a80efda"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
+// Script dispatcher is used to select a response based on the incoming request.&#13;
+// Here are few examples showing how to match based on path, query param, header and body&#13;
+&#13;
+// Match based on path&#13;
+def requestPath = mockRequest.getPath()&#13;
+log.info "Path: "+ requestPath&#13;
+&#13;
+if( requestPath.contains("json") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "JSON Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on query parameter&#13;
+def queryString = mockRequest.getRequest().getQueryString()&#13;
+log.info "QueryString: " + queryString&#13;
+&#13;
+if( queryString.contains("stockholm") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response Stockholm"&#13;
+}&#13;
+else if( queryString.contains("london") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response London"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on header&#13;
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")&#13;
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList&#13;
+&#13;
+if( acceptEncodingHeaderList.contains("gzip,deflate") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "GZiped Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on body&#13;
+def requestBody = mockRequest.getRequestContent()&#13;
+log.info "Request body: " + requestBody&#13;
+&#13;
+if( requestBody.contains("some data") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response N"&#13;
+}&#13;
+*/&#13;
+</con:dispatchPath><con:response name="Response 1" id="718f55b7-f7e0-4527-9250-d1ba9a14154f" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "projects" : [
+        {
+				"id": "1",
+				"name":"testprojekt2",
+				"beschreibung":"lore ipsum..",
+				"status":"funding(33 days left)",
+				"istBetrag":1,
+				"sollBetrag":2,
+				"bild":"https://www.ruhr-uni-bochum.de/imperiadoku/mam/images/dummy-bild-datei.jpeg"
+        },
+        {
+				"id": "2",
+				"name":"asdfg",
+				"beschreibung":"fuaqofgqioufgiqfq",
+				"status":"finished",
+				"istBetrag":3,
+				"sollBetrag":55,
+				"bild":"https://www.ruhr-uni-bochum.de/imperiadoku/mam/images/dummy-bild-datei.jpeg"
+        },
+        {
+        			"id": "3",
+				"name":"neue schuhe",
+				"beschreibung":"these boots are made for walking",
+				"status":"funding(1 days left)",
+				"istBetrag":0,
+				"sollBetrag":1,
+				"bild":"https://www.ruhr-uni-bochum.de/imperiadoku/mam/images/dummy-bild-datei.jpeg"
+        },
+        {
+        			"id": "4",
+				"name":"ali nix schuld",
+				"beschreibung":"--------------------",
+				"status":"funding(22 days left)",
+				"istBetrag":22,
+				"sollBetrag":34,
+				"bild":"https://www.ruhr-uni-bochum.de/imperiadoku/mam/images/dummy-bild-datei.jpeg"
+        },
+        {
+				"id": "5",
+				"name":"testprojekt2",
+				"beschreibung":"lore ipsum..",
+				"status":"funding(33 days left)",
+				"istBetrag":1,
+				"sollBetrag":2,
+				"bild":"https://www.ruhr-uni-bochum.de/imperiadoku/mam/images/dummy-bild-datei.jpeg"
+        },
+        {
+				"id": "6",
+				"name":"asdfg",
+				"beschreibung":"fuaqofgqioufgiqfq",
+				"status":"finished",
+				"istBetrag":3,
+				"sollBetrag":55,
+				"bild":"https://www.ruhr-uni-bochum.de/imperiadoku/mam/images/dummy-bild-datei.jpeg"
+        },
+        {
+        			"id": "7",
+				"name":"neue schuhe",
+				"beschreibung":"these boots are made for walking",
+				"status":"funding(1 days left)",
+				"istBetrag":0,
+				"sollBetrag":1,
+				"bild":"https://www.ruhr-uni-bochum.de/imperiadoku/mam/images/dummy-bild-datei.jpeg"
+        },
+        {
+        			"id": "8",
+				"name":"ali nix schuld",
+				"beschreibung":"--------------------",
+				"status":"funding(22 days left)",
+				"istBetrag":22,
+				"sollBetrag":34,
+				"bild":"https://www.ruhr-uni-bochum.de/imperiadoku/mam/images/dummy-bild-datei.jpeg"
+        },
+        {
+				"id": "9",
+				"name":"testprojekt2",
+				"beschreibung":"lore ipsum..",
+				"status":"funding(33 days left)",
+				"istBetrag":1,
+				"sollBetrag":2,
+				"bild":"https://www.ruhr-uni-bochum.de/imperiadoku/mam/images/dummy-bild-datei.jpeg"
+        },
+        {
+				"id": "10",
+				"name":"asdfg",
+				"beschreibung":"fuaqofgqioufgiqfq",
+				"status":"finished",
+				"istBetrag":3,
+				"sollBetrag":55,
+				"bild":"https://www.ruhr-uni-bochum.de/imperiadoku/mam/images/dummy-bild-datei.jpeg"
+        },
+        {
+        			"id": "11",
+				"name":"neue schuhe",
+				"beschreibung":"these boots are made for walking",
+				"status":"funding(1 days left)",
+				"istBetrag":0,
+				"sollBetrag":1,
+				"bild":"https://www.ruhr-uni-bochum.de/imperiadoku/mam/images/dummy-bild-datei.jpeg"
+        },
+        {
+        			"id": "12",
+				"name":"ali nix schuld",
+				"beschreibung":"--------------------",
+				"status":"funding(22 days left)",
+				"istBetrag":22,
+				"sollBetrag":34,
+				"bild":"https://www.ruhr-uni-bochum.de/imperiadoku/mam/images/dummy-bild-datei.jpeg"
+        }
+    ]
+}</con:responseContent><con:header><con:name>Access-Control-Allow-Origin</con:name><con:value>http://localhost:8080</con:value></con:header><con:header><con:name>Vary</con:name><con:value>Origin</con:value></con:header></con:response></con:restMockAction><con:restMockAction name="/login POST" method="POST" resourcePath="/login" id="7ff25155-4627-4eeb-9d68-bbb73e4421f8"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>
+// Script dispatcher is used to select a response based on the incoming request.&#13;
+// Here are few examples showing how to match based on path, query param, header and body&#13;
+&#13;
+// Match based on path&#13;
+def requestPath = mockRequest.getPath()&#13;
+log.info "Path: "+ requestPath&#13;
+&#13;
+if( requestPath.contains("json") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "JSON Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on query parameter&#13;
+def queryString = mockRequest.getRequest().getQueryString()&#13;
+log.info "QueryString: " + queryString&#13;
+&#13;
+if( queryString.contains("stockholm") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response Stockholm"&#13;
+}&#13;
+else if( queryString.contains("london") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response London"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on header&#13;
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")&#13;
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList&#13;
+&#13;
+if( acceptEncodingHeaderList.contains("gzip,deflate") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "GZiped Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on body&#13;
+def requestBody = mockRequest.getRequestContent()&#13;
+log.info "Request body: " + requestBody&#13;
+&#13;
+if( requestBody.contains("some data") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response N"&#13;
+}&#13;
+
+</con:dispatchPath><con:response name="Response 1" id="f47dffb5-0483-4dcd-9dc9-1da7dae693ce" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+	"id": 1,
+	"firstname": "Mutombo",
+	"lastname": "Nbedi",
+	"email": "everardo2004@hotmail.com",
+	"PasswordToken": "",
+	"Publickey": "",
+	"Privatekey": "",
+	"RegisterDate": "02-02-2020"
+}</con:responseContent><con:header><con:name>Access-Control-Allow-Origin</con:name><con:value>*</con:value></con:header><con:header><con:name>Conten-Type</con:name><con:value>application/json</con:value></con:header></con:response></con:restMockAction><con:restMockAction name="/login OPTION" method="OPTIONS" resourcePath="/login" id="5f7e6513-19a1-4927-a0b9-26ba6f6068cb"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
+// Script dispatcher is used to select a response based on the incoming request.&#13;
+// Here are few examples showing how to match based on path, query param, header and body&#13;
+&#13;
+// Match based on path&#13;
+def requestPath = mockRequest.getPath()&#13;
+log.info "Path: "+ requestPath&#13;
+&#13;
+if( requestPath.contains("json") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "JSON Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on query parameter&#13;
+def queryString = mockRequest.getRequest().getQueryString()&#13;
+log.info "QueryString: " + queryString&#13;
+&#13;
+if( queryString.contains("stockholm") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response Stockholm"&#13;
+}&#13;
+else if( queryString.contains("london") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response London"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on header&#13;
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")&#13;
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList&#13;
+&#13;
+if( acceptEncodingHeaderList.contains("gzip,deflate") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "GZiped Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on body&#13;
+def requestBody = mockRequest.getRequestContent()&#13;
+log.info "Request body: " + requestBody&#13;
+&#13;
+if( requestBody.contains("some data") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response N"&#13;
+}&#13;
+*/&#13;
+</con:dispatchPath><con:response name="Response 1" id="337bce53-9d57-49c9-80c6-75f306393aed" httpResponseStatus="200"><con:settings/><con:responseContent/><con:header><con:name>Access-Control-Allow-Origin</con:name><con:value>http://localhost:8080</con:value></con:header><con:header><con:name>Access-Control-Allow-Headers</con:name><con:value>*</con:value></con:header></con:response></con:restMockAction><con:restMockAction name="users" method="GET" resourcePath="/users" id="b6a3e0e5-53f6-4e1a-9bcc-a9a7e0a57f54"><con:settings/><con:defaultResponse xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
+// Script dispatcher is used to select a response based on the incoming request.&#13;
+// Here are few examples showing how to match based on path, query param, header and body&#13;
+&#13;
+// Match based on path&#13;
+def requestPath = mockRequest.getPath()&#13;
+log.info "Path: "+ requestPath&#13;
+&#13;
+if( requestPath.contains("json") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "JSON Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on query parameter&#13;
+def queryString = mockRequest.getRequest().getQueryString()&#13;
+log.info "QueryString: " + queryString&#13;
+&#13;
+if( queryString.contains("stockholm") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response Stockholm"&#13;
+}&#13;
+else if( queryString.contains("london") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response London"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on header&#13;
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")&#13;
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList&#13;
+&#13;
+if( acceptEncodingHeaderList.contains("gzip,deflate") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "GZiped Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on body&#13;
+def requestBody = mockRequest.getRequestContent()&#13;
+log.info "Request body: " + requestBody&#13;
+&#13;
+if( requestBody.contains("some data") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response N"&#13;
+}&#13;
+*/&#13;
+</con:dispatchPath><con:response name="Response 1" id="dd0442f3-4f56-41e5-bd68-3bd4a95dc9cc" httpResponseStatus="200"><con:settings/><con:responseContent>{
+	"users": [{
+			"id": 1,
+			"firstname": "Roberta G",
+			"lastname": "Johnson",
+			"email": "everardo2004@hotmail.com",
+			"PasswordToken": "",
+			"Publickey": "",
+			"Privatekey": "",
+			"RegisterDate": "02-02-2020"
+		},
+		{
+			"id": 1,
+			"firstname": "Roberta G",
+			"lastname": "Johnson",
+			"email": "everardo2004@hotmail.com",
+			"PasswordToken": "",
+			"Publickey": "",
+			"Privatekey": "",
+			"RegisterDate": "02-02-2020"
+		},
+		{
+			"id": 1,
+			"firstname": "Roberta G",
+			"lastname": "Johnson",
+			"email": "everardo2004@hotmail.com",
+			"PasswordToken": "",
+			"Publickey": "",
+			"Privatekey": "",
+			"RegisterDate": "02-02-2020"
+		}
+	]
+}</con:responseContent><con:header><con:name>Access-Control-Allow-Origin</con:name><con:value>http://localhost:8080</con:value></con:header><con:header><con:name>Vary</con:name><con:value>Origin</con:value></con:header></con:response></con:restMockAction><con:restMockAction name="/contributions" method="GET" resourcePath="/contributions" id="b1e41090-9abf-4abe-bedb-5547accb4f1e"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
+// Script dispatcher is used to select a response based on the incoming request.&#13;
+// Here are few examples showing how to match based on path, query param, header and body&#13;
+&#13;
+// Match based on path&#13;
+def requestPath = mockRequest.getPath()&#13;
+log.info "Path: "+ requestPath&#13;
+&#13;
+if( requestPath.contains("json") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "JSON Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on query parameter&#13;
+def queryString = mockRequest.getRequest().getQueryString()&#13;
+log.info "QueryString: " + queryString&#13;
+&#13;
+if( queryString.contains("stockholm") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response Stockholm"&#13;
+}&#13;
+else if( queryString.contains("london") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response London"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on header&#13;
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")&#13;
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList&#13;
+&#13;
+if( acceptEncodingHeaderList.contains("gzip,deflate") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "GZiped Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on body&#13;
+def requestBody = mockRequest.getRequestContent()&#13;
+log.info "Request body: " + requestBody&#13;
+&#13;
+if( requestBody.contains("some data") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response N"&#13;
+}&#13;
+*/&#13;
+</con:dispatchPath><con:response name="Response 1" id="d5032690-96a0-4302-9372-90b06eb406ad" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+	"contributions": [{
+		"id": "1",
+		"date": "01/02/2021",
+		"time": "10:12 pm",
+		"project": "sample project 1",
+		"amount": "0.0012042737266009615"
+
+	},
+	{
+		"id": "2",
+		"date": "09/11/2001",
+		"time": "06:09 pm",
+		"project": "sample project 2",
+		"amount": "0.11111009615"
+
+	},
+	{
+		"id": "3",
+		"date": "02/02/2002",
+		"time": "02:22 am",
+		"project": "sample project 3",
+		"amount": "0.9615096151112660"
+
+	}
+	
+	]
+}</con:responseContent><con:header><con:name>Access-Control-Allow-Origin</con:name><con:value>http://localhost:8080</con:value></con:header><con:header><con:name>Vary</con:name><con:value>Origin</con:value></con:header></con:response></con:restMockAction><con:restMockAction name="/donate OPTION" method="OPTIONS" resourcePath="/donate" id="f03c142c-e259-4a73-b4c0-04677decc61d"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
+// Script dispatcher is used to select a response based on the incoming request.&#13;
+// Here are few examples showing how to match based on path, query param, header and body&#13;
+&#13;
+// Match based on path&#13;
+def requestPath = mockRequest.getPath()&#13;
+log.info "Path: "+ requestPath&#13;
+&#13;
+if( requestPath.contains("json") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "JSON Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on query parameter&#13;
+def queryString = mockRequest.getRequest().getQueryString()&#13;
+log.info "QueryString: " + queryString&#13;
+&#13;
+if( queryString.contains("stockholm") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response Stockholm"&#13;
+}&#13;
+else if( queryString.contains("london") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response London"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on header&#13;
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")&#13;
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList&#13;
+&#13;
+if( acceptEncodingHeaderList.contains("gzip,deflate") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "GZiped Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on body&#13;
+def requestBody = mockRequest.getRequestContent()&#13;
+log.info "Request body: " + requestBody&#13;
+&#13;
+if( requestBody.contains("some data") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response N"&#13;
+}&#13;
+*/&#13;
+</con:dispatchPath><con:response name="Response 1" id="389d12fe-774a-424c-a073-72277098dca3" httpResponseStatus="200"><con:settings/><con:responseContent/><con:header><con:name>Access-Control-Allow-Origin</con:name><con:value>http://localhost:8080</con:value></con:header><con:header><con:name>Access-Control-Allow-Headers</con:name><con:value>*</con:value></con:header></con:response></con:restMockAction><con:restMockAction name="/donate POST" method="POST" resourcePath="/donate" id="195452ed-997a-4267-bd68-670b3e5bfd90"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
+// Script dispatcher is used to select a response based on the incoming request.&#13;
+// Here are few examples showing how to match based on path, query param, header and body&#13;
+&#13;
+// Match based on path&#13;
+def requestPath = mockRequest.getPath()&#13;
+log.info "Path: "+ requestPath&#13;
+&#13;
+if( requestPath.contains("json") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "JSON Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on query parameter&#13;
+def queryString = mockRequest.getRequest().getQueryString()&#13;
+log.info "QueryString: " + queryString&#13;
+&#13;
+if( queryString.contains("stockholm") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response Stockholm"&#13;
+}&#13;
+else if( queryString.contains("london") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response London"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on header&#13;
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")&#13;
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList&#13;
+&#13;
+if( acceptEncodingHeaderList.contains("gzip,deflate") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "GZiped Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on body&#13;
+def requestBody = mockRequest.getRequestContent()&#13;
+log.info "Request body: " + requestBody&#13;
+&#13;
+if( requestBody.contains("some data") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response N"&#13;
+}&#13;
+*/&#13;
+</con:dispatchPath><con:response name="Response 1" id="8e2e4c28-0f2c-4bfc-9bad-35b292601cc1" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent/><con:header><con:name>Access-Control-Allow-Origin</con:name><con:value>*</con:value></con:header><con:header><con:name>Content-Type</con:name><con:value>application/json</con:value></con:header></con:response></con:restMockAction><con:restMockAction name="/register OPTIONS" method="OPTIONS" resourcePath="/register" id="e66a47d7-35b8-42f2-be8d-9a3845176c9d"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
+// Script dispatcher is used to select a response based on the incoming request.&#13;
+// Here are few examples showing how to match based on path, query param, header and body&#13;
+&#13;
+// Match based on path&#13;
+def requestPath = mockRequest.getPath()&#13;
+log.info "Path: "+ requestPath&#13;
+&#13;
+if( requestPath.contains("json") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "JSON Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on query parameter&#13;
+def queryString = mockRequest.getRequest().getQueryString()&#13;
+log.info "QueryString: " + queryString&#13;
+&#13;
+if( queryString.contains("stockholm") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response Stockholm"&#13;
+}&#13;
+else if( queryString.contains("london") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response London"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on header&#13;
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")&#13;
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList&#13;
+&#13;
+if( acceptEncodingHeaderList.contains("gzip,deflate") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "GZiped Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on body&#13;
+def requestBody = mockRequest.getRequestContent()&#13;
+log.info "Request body: " + requestBody&#13;
+&#13;
+if( requestBody.contains("some data") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response N"&#13;
+}&#13;
+*/&#13;
+</con:dispatchPath><con:response name="Response 1" id="c79e4dab-1bc5-41a7-8c09-45e8a307f223" httpResponseStatus="200"><con:settings/><con:responseContent/><con:header><con:name>Access-Control-Allow-Origin</con:name><con:value>http://localhost:8080</con:value></con:header><con:header><con:name>Access-Control-Allow-Headers</con:name><con:value>*</con:value></con:header></con:response></con:restMockAction><con:restMockAction name="/register" method="POST" resourcePath="/register" id="6c4d8bba-1479-4af0-9086-c774639e9002"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
+// Script dispatcher is used to select a response based on the incoming request.&#13;
+// Here are few examples showing how to match based on path, query param, header and body&#13;
+&#13;
+// Match based on path&#13;
+def requestPath = mockRequest.getPath()&#13;
+log.info "Path: "+ requestPath&#13;
+&#13;
+if( requestPath.contains("json") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "JSON Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on query parameter&#13;
+def queryString = mockRequest.getRequest().getQueryString()&#13;
+log.info "QueryString: " + queryString&#13;
+&#13;
+if( queryString.contains("stockholm") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response Stockholm"&#13;
+}&#13;
+else if( queryString.contains("london") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response London"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on header&#13;
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")&#13;
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList&#13;
+&#13;
+if( acceptEncodingHeaderList.contains("gzip,deflate") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "GZiped Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on body&#13;
+def requestBody = mockRequest.getRequestContent()&#13;
+log.info "Request body: " + requestBody&#13;
+&#13;
+if( requestBody.contains("some data") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response N"&#13;
+}&#13;
+*/&#13;
+</con:dispatchPath><con:response name="Response 1" id="de49bb06-1843-4461-b9a8-54aa21a41abc" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+	"id": 1,
+	"firstname": "Mutombo",
+	"lastname": "Nbedi",
+	"email": "everardo2004@hotmail.com",
+	"PasswordToken": "",
+	"Publickey": "",
+	"Privatekey": "",
+	"RegisterDate": "02-02-2020"
+}</con:responseContent><con:header><con:name>Access-Control-Allow-Origin</con:name><con:value>*</con:value></con:header><con:header><con:name>Content-Type</con:name><con:value>application/json</con:value></con:header></con:response></con:restMockAction><con:restMockAction name="/overview" method="GET" resourcePath="/overview" id="f9261d40-672f-4401-bf55-d9fe38c0c0c7"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
+// Script dispatcher is used to select a response based on the incoming request.&#13;
+// Here are few examples showing how to match based on path, query param, header and body&#13;
+&#13;
+// Match based on path&#13;
+def requestPath = mockRequest.getPath()&#13;
+log.info "Path: "+ requestPath&#13;
+&#13;
+if( requestPath.contains("json") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "JSON Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on query parameter&#13;
+def queryString = mockRequest.getRequest().getQueryString()&#13;
+log.info "QueryString: " + queryString&#13;
+&#13;
+if( queryString.contains("stockholm") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response Stockholm"&#13;
+}&#13;
+else if( queryString.contains("london") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response London"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on header&#13;
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")&#13;
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList&#13;
+&#13;
+if( acceptEncodingHeaderList.contains("gzip,deflate") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "GZiped Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on body&#13;
+def requestBody = mockRequest.getRequestContent()&#13;
+log.info "Request body: " + requestBody&#13;
+&#13;
+if( requestBody.contains("some data") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response N"&#13;
+}&#13;
+*/&#13;
+</con:dispatchPath><con:response name="Response 1" id="a5680b85-2a62-4065-bf02-0e49bd48214f" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+	"summary": "lore ipsum 123",
+	"problems": "houston we have a problem",
+	"solution": "money!",
+	"image1": "https://previews.123rf.com/images/fordzolo/fordzolo1506/fordzolo150600296/41026708-example-white-stamp-text-on-red-backgroud.jpg",
+	"image2": "https://previews.123rf.com/images/fordzolo/fordzolo1506/fordzolo150600296/41026708-example-white-stamp-text-on-red-backgroud.jpg",
+	"image3": "https://previews.123rf.com/images/fordzolo/fordzolo1506/fordzolo150600296/41026708-example-white-stamp-text-on-red-backgroud.jpg"
+
+}</con:responseContent><con:header><con:name>Access-Control-Allow-Origin</con:name><con:value>http://localhost:8080</con:value></con:header><con:header><con:name>Vary</con:name><con:value>Origin</con:value></con:header></con:response></con:restMockAction><con:restMockAction name="/milestones" method="GET" resourcePath="/milestones" id="f0870479-5e85-494f-86dc-f2d58ca3de01"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
+// Script dispatcher is used to select a response based on the incoming request.&#13;
+// Here are few examples showing how to match based on path, query param, header and body&#13;
+&#13;
+// Match based on path&#13;
+def requestPath = mockRequest.getPath()&#13;
+log.info "Path: "+ requestPath&#13;
+&#13;
+if( requestPath.contains("json") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "JSON Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on query parameter&#13;
+def queryString = mockRequest.getRequest().getQueryString()&#13;
+log.info "QueryString: " + queryString&#13;
+&#13;
+if( queryString.contains("stockholm") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response Stockholm"&#13;
+}&#13;
+else if( queryString.contains("london") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response London"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on header&#13;
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")&#13;
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList&#13;
+&#13;
+if( acceptEncodingHeaderList.contains("gzip,deflate") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "GZiped Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on body&#13;
+def requestBody = mockRequest.getRequestContent()&#13;
+log.info "Request body: " + requestBody&#13;
+&#13;
+if( requestBody.contains("some data") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response N"&#13;
+}&#13;
+*/&#13;
+</con:dispatchPath><con:response name="Response 1" id="d2294d94-b78f-4125-9216-156f62445ee8" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+	"Meilenstein1": {
+		"titel": "ms1-titel",
+		"betrag": "2 Euro!",
+		"meilenstein-text:": "Kein Schwein ruft mich an"
+	},
+	"Meilenstein2": {
+		"titel": "ms2-titel",
+		"betrag": "123131!",
+		"meilenstein-text:": "Alles hat ein Ende nur die Wurst hat 2"
+	},
+	"Meilenstein3": {
+		"titel": "ms3-titel",
+		"betrag": "0.1",
+		"meilenstein-text:": "Spüren sie es Mr. Krabs?"
+	}
+}</con:responseContent><con:header><con:name>Access-Control-Allow-Origin</con:name><con:value>http://localhost:8080</con:value></con:header><con:header><con:name>Vary</con:name><con:value>Origin</con:value></con:header></con:response></con:restMockAction></con:restMockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
