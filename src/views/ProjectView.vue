@@ -40,7 +40,13 @@
           <button class="btn btn-primary ms-4 me-1"
                   @click="$router.push({ name: 'Checkout', params: {id : this.id  }})">Donate</button>
           -->
-          <button class="btn btn-primary ms-4 me-1" @click="$router.push({ name: 'Checkout', params: {id : id }})">Donate</button>
+          <button class="btn btn-primary ms-4 me-1"
+                  v-if="this.global.state.user"
+                  @click="$router.push({ name: 'Checkout', params: {id : id }})">Donate</button>
+
+          <button class="btn btn-primary ms-4 me-1"
+                  v-if="!this.global.state.user"
+                  data-bs-toggle="modal" data-bs-target="#loginModal">Donate</button>
 
         </div>
 
@@ -241,6 +247,7 @@ export default {
   components: {MilestoneCard},
   data() {
     return {
+      global: this.$store,
       id: '',
       bild: '',
       project: '',
