@@ -13,7 +13,7 @@
                 </div>
               </div>
               <div class="col-auto align-self-end">
-                <h1 class="font-monospace fw-bolder display-4" v-if="this.global.state.user">{{this.global.state.user.firstname}} {{this.global.state.user.lastname}}</h1>
+                <h1 class="font-monospace fw-bolder display-4" v-if="this.global.state.user">{{this.global.state.user.fname}} {{this.global.state.user.lname}}</h1>
               </div>
             </div>
 
