@@ -61,38 +61,17 @@
                     </tr>
                     </thead>
                     <tbody class="text-center">
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>01/01/2021</td>
-                      <td>10:03 am</td>
-                      <td>Sample Project 1</td>
-                      <td>0.0004817094906403846 Ξ</td>
-                    </tr>
-                    <tr class="table-secondary">
-                      <th scope="row">2</th>
-                      <td>01/01/2021</td>
-                      <td>10:03 am</td>
-                      <td>Sample Project 2</td>
-                      <td>0.002408547453201923 Ξ</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>01/01/2021</td>
-                      <td>10:03 am</td>
-                      <td>Sample Project 3</td>
-                      <td>0.0012042737266009615 Ξ</td>
-                    </tr>
-                    <tr class="table-secondary">
-                      <th scope="row">4</th>
-                      <td>01/01/2021</td>
-                      <td>10:03 am</td>
-                      <td>Sample Project 2</td>
-                      <td>0.002408547453201923 Ξ</td>
+                    <tr v-for="contribution in contributions" :key="contribution.id">
+                      <th scope="row">{{contribution.id}}</th>
+                      <td>{{contribution.date}}</td>
+                      <td>{{contribution.time}}</td>
+                      <td>{{contribution.project}}</td>
+                      <td>{{contribution.amount}}</td>
                     </tr>
                     </tbody>
                   </table>
 
-                  <p class="text-start text-muted">You made <span id="total"></span> donations.</p>
+                  <p class="text-start text-muted">You've made <span id="total"></span> donation(s).</p>
                 </div>
 
               </div>
@@ -106,14 +85,28 @@
 </template>
 
 <script>
+import Vue from 'vue'
 
 export default {
   name: "UserProfile",
   data(){
     return {
-      global: this.$store
+      global: this.$store,
+      contributions: [],
+      contribution: ''
     }
-  }
+  },
+  created: function () {
+    const baseURI = 'contributions'
+    Vue.axios.get(baseURI, {
+
+    }).then((response) => {
+      this.contributions = response.data.contributions;
+      console.log(this.contributions);
+    }).catch(err => {
+      console.log(err.response);
+    });
+  },
 }
 
 
