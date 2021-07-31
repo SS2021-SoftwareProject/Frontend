@@ -161,7 +161,7 @@ import axios from 'axios'
 export default {
   methods: {
     submit(){
-      axios.post("checkout", this.checkout_form,
+      axios.post("donate", this.checkout_form,
 
       )
       .then((response) => {
@@ -179,7 +179,6 @@ export default {
     return {
       global : this.$store,
       checkout_form:{
-        //no idea which amount
         email: "test@mail.com",
         fname: "vn",
         lname: 'ln',
