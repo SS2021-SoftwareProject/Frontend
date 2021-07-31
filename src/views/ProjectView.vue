@@ -29,7 +29,7 @@
         <br>
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <a href="#milestones">
+          <a @click="scrollMeTo('milestones')">
             <button class="btn btn-primary me-md-2" type="button" value="Milestones">Milestones
             </button>
           </a>
@@ -163,7 +163,7 @@
     <br><br><br><br><br><br><br><br>
     <br><br><br><br>
 
-  <section id="milestones"></section>
+  <section id="milestones" ref="milestones"></section>
     <br><br><br><br>
 
     <h1 class="font-monospace" >The Milestones</h1>
@@ -253,6 +253,17 @@ export default {
 
     }
   },
+
+  //scrolls to the refName Element (in our case used by an reference to milestones)
+  methods: {
+    scrollMeTo(refName) {
+      const element = this.$refs[refName];
+      const top = element.offsetTop;
+
+      window.scrollTo(0, top);
+    }
+  },
+
   created() {
 
     let projectID = this.$route.params.id-1;
