@@ -26,7 +26,12 @@
 
 
         <button class="btn btn-primary ms-4 me-1"
+                v-if="this.global.state.user"
                 @click="$router.push({ name: 'Checkout', params: {id : id }})">Donate</button>
+
+        <button class="btn btn-primary ms-4 me-1"
+                v-if="!this.global.state.user"
+                data-bs-toggle="modal" data-bs-target="#loginModal">Donate</button>
 
         <!--<button class="btn btn-primary me-1 ms-4" data-bs-toggle="modal" data-bs-target="#donatePopop">Donate</button> -->
       </div>
@@ -79,6 +84,7 @@ export default {
   props: ['id','titleText', 'descText', 'statusText', 'progressCurrent', 'progressMax', "imageUrl"],
   data(){
     return {
+      global: this.$store,
       percent : ((100 * this.progressCurrent)/this.progressMax).toFixed(2),
       //path : '../assets/' + this.imageName + ".jpg",
       message: '',
