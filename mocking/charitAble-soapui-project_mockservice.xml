@@ -594,7 +594,7 @@ if( requestBody.contains("some data") )&#13;
     return "Response N"&#13;
 }&#13;
 */&#13;
-</con:dispatchPath><con:response name="Response 1" id="c79e4dab-1bc5-41a7-8c09-45e8a307f223" httpResponseStatus="200"><con:settings/><con:responseContent/><con:header><con:name>Access-Control-Allow-Origin</con:name><con:value>http://localhost:8080</con:value></con:header><con:header><con:name>Access-Controll-Allow-Headers</con:name><con:value>*</con:value></con:header></con:response></con:restMockAction><con:restMockAction name="/register" method="POST" resourcePath="/register" id="6c4d8bba-1479-4af0-9086-c774639e9002"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
+</con:dispatchPath><con:response name="Response 1" id="c79e4dab-1bc5-41a7-8c09-45e8a307f223" httpResponseStatus="200"><con:settings/><con:responseContent/><con:header><con:name>Access-Control-Allow-Origin</con:name><con:value>http://localhost:8080</con:value></con:header><con:header><con:name>Access-Control-Allow-Headers</con:name><con:value>*</con:value></con:header></con:response></con:restMockAction><con:restMockAction name="/register" method="POST" resourcePath="/register" id="6c4d8bba-1479-4af0-9086-c774639e9002"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
 // Script dispatcher is used to select a response based on the incoming request.&#13;
 // Here are few examples showing how to match based on path, query param, header and body&#13;
 &#13;

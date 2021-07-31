@@ -44,6 +44,7 @@ export default {
   name: "RegisterModal",
   data(){
     return {
+      global: this.$store,
       fname: "",
       lname: "",
       email: "",
