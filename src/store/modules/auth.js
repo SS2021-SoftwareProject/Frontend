@@ -34,11 +34,11 @@ const actions = {
 
                 // Construct user from response
                 let user = {
-                    id: res.data.users[0].id,
-                    fname: res.data.users[0].firstname,
-                    lname: res.data.users[0].lastname,
-                    email: res.data.users[0].email,
-                    registered_since : res.data.users[0].RegisterDate,
+                    id: res.data.id,
+                    fname: res.data.firstname,
+                    lname: res.data.lastname,
+                    email: res.data.email,
+                    registered_since : res.data.RegisterDate,
                 }
 
                 store.state.user = user
@@ -60,12 +60,14 @@ const actions = {
 
                 // Construct user from response
                 let user = {
-                    id: res.data.users[0].id,
-                    fname: res.data.users[0].firstname,
-                    lname: res.data.users[0].lastname,
-                    email: res.data.users[0].email,
-                    registered_since : res.data.users[0].RegisterDate,
+                    id: res.data.id,
+                    fname: res.data.firstname,
+                    lname: res.data.lastname,
+                    email: res.data.email,
+                    registered_since : res.data.RegisterDate,
                 }
+
+                console.log(user);
 
                 store.state.user = user
                 localStorage.setItem(userKey, JSON.stringify(user))
