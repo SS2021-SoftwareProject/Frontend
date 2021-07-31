@@ -1,10 +1,10 @@
 <template>
 
-  <div class="container-md">
-    <div class="accordion" id="accordionExample">
+  <div class="container-md mt-5 pt-5">
+    <div class="accordion align-middle" id="accordionExample">
 
       <!--- item start --->
-      <div class="accordion-item ">
+      <div class="accordion-item p-1">
         <h2 class="accordion-header" id="headingOne">
           <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
             What is CharitAble?
@@ -20,7 +20,7 @@
       <!--- item end --->
 
       <!--- item start --->
-      <div class="accordion-item">
+      <div class="accordion-item p-1">
         <h2 class="accordion-header" id="headingTwo">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
             How does donating with CharitAble work?
@@ -35,7 +35,7 @@
       <!--- item end --->
 
       <!--- item start --->
-      <div class="accordion-item">
+      <div class="accordion-item p-1">
         <h2 class="accordion-header" id="headingThree">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
             What is Etherum?
@@ -51,7 +51,7 @@
       <!--- item end --->
 
       <!--- item start --->
-      <div class="accordion-item">
+      <div class="accordion-item p-1">
         <h2 class="accordion-header" id="headingFour">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
             What is Blockchain?
@@ -68,7 +68,7 @@
       <!--- item end --->
 
       <!--- item start --->
-      <div class="accordion-item">
+      <div class="accordion-item p-1">
         <h2 class="accordion-header" id="headingFive">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
             What happens if a project isn't fully funded?
@@ -83,7 +83,23 @@
       </div>
       <!--- item end --->
 
+      <!--- item start --->
+      <div class="accordion-item p-1">
+        <h2 class="accordion-header" id="headingSix">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+            Further Questions?
+          </button>
+        </h2>
+        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+          <div class="accordion-body text-start">
+            For any further questions, inquiries and / or other concers, feel free to email or call us at <a href="mailto:contact@charitable.com">contact@charitable.com</a> and + 01 234 567 88, respectively.
+          </div>
+        </div>
+      </div>
+      <!--- item end --->
+
     </div>
+
   </div>
 
 </template>
