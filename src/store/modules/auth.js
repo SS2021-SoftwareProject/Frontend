@@ -67,8 +67,6 @@ const actions = {
                     registered_since : res.data.RegisterDate,
                 }
 
-                console.log(user);
-
                 store.state.user = user
                 localStorage.setItem(userKey, JSON.stringify(user))
                 return true
