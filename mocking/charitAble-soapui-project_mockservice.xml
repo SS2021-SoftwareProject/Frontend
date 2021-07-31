@@ -215,17 +215,14 @@ if( requestBody.contains("some data") )&#13;
 }&#13;
 
 </con:dispatchPath><con:response name="Response 1" id="f47dffb5-0483-4dcd-9dc9-1da7dae693ce" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
-    "users": [{
-            "id": 1,
-            "firstname": "Roberta G",
-            "lastname": "Johnson",
-            "email": "everardo2004@hotmail.com",
-            "PasswordToken": "",
-            "Publickey": "",
-            "Privatekey": "",
-            "RegisterDate": "02-02-2020"
-        }
-    ]
+	"id": 1,
+	"firstname": "Mutombo",
+	"lastname": "Nbedi",
+	"email": "everardo2004@hotmail.com",
+	"PasswordToken": "",
+	"Publickey": "",
+	"Privatekey": "",
+	"RegisterDate": "02-02-2020"
 }</con:responseContent><con:header><con:name>Access-Control-Allow-Origin</con:name><con:value>*</con:value></con:header><con:header><con:name>Conten-Type</con:name><con:value>application/json</con:value></con:header></con:response></con:restMockAction><con:restMockAction name="/login OPTION" method="OPTIONS" resourcePath="/login" id="5f7e6513-19a1-4927-a0b9-26ba6f6068cb"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
 // Script dispatcher is used to select a response based on the incoming request.&#13;
 // Here are few examples showing how to match based on path, query param, header and body&#13;
@@ -649,7 +646,16 @@ if( requestBody.contains("some data") )&#13;
     return "Response N"&#13;
 }&#13;
 */&#13;
-</con:dispatchPath><con:response name="Response 1" id="de49bb06-1843-4461-b9a8-54aa21a41abc" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent/><con:header><con:name>Access-Control-Allow-Origin</con:name><con:value>*</con:value></con:header><con:header><con:name>Content-Type</con:name><con:value>application/json</con:value></con:header></con:response></con:restMockAction><con:restMockAction name="/overview" method="GET" resourcePath="/overview" id="f9261d40-672f-4401-bf55-d9fe38c0c0c7"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
+</con:dispatchPath><con:response name="Response 1" id="de49bb06-1843-4461-b9a8-54aa21a41abc" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+	"id": 1,
+	"firstname": "Mutombo",
+	"lastname": "Nbedi",
+	"email": "everardo2004@hotmail.com",
+	"PasswordToken": "",
+	"Publickey": "",
+	"Privatekey": "",
+	"RegisterDate": "02-02-2020"
+}</con:responseContent><con:header><con:name>Access-Control-Allow-Origin</con:name><con:value>*</con:value></con:header><con:header><con:name>Content-Type</con:name><con:value>application/json</con:value></con:header></con:response></con:restMockAction><con:restMockAction name="/overview" method="GET" resourcePath="/overview" id="f9261d40-672f-4401-bf55-d9fe38c0c0c7"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
 // Script dispatcher is used to select a response based on the incoming request.&#13;
 // Here are few examples showing how to match based on path, query param, header and body&#13;
 &#13;
