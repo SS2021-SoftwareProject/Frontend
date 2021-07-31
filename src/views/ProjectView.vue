@@ -64,25 +64,15 @@
         <br>
         <h2 class="font-monospace">Summary</h2>
         <br>
-        <h5 class="text-start">The Malkohi internally displaced persons (IDP) camp in Adamawa State, Nigeria,
-          currently has just one hand-pump water borehole (well and hand pump). <br><br>
-
-          It serves a population of 2,000-plus IDPs, most of whom are children and adolescents.
-          ChildVoice is building a new Youth Empowerment Center to
-          provide rehabilitative and skills training services for up to 200 ChildVoice students living in the camp.<br><br>
-
-
-          <b>But this one existing well is simply not sufficient to meet the needs a skills training facility.</b>
-          To meet those needs, <b>ChildVoice seeks to raise $5,600 to drill a
-          new water well for its new Youth Empowerment Center.</b></h5>
-        <br><br>
+        <h5 class="text-start">{{this.summary}}
+        </h5>
       </div>
 
       <div class="col-md-2"></div>
 
       <div class="col-md-3">
         <br>
-        <img class="thumbnail img-responsive" src="../assets/africa.jpg" alt=""/>
+        <img class="thumbnail img-responsive" :src=this.image1 alt=""/>
       </div>
     </div>
 
@@ -94,33 +84,7 @@
         <br>
         <h2 class="font-monospace">Problems to Address</h2>
         <br>
-        <h5 class="text-start">ChildVoice has been providing counseling, skills training,
-          and related services to traumatized adolescent girls and their children in Nigeria for three years now.
-          The organization is now on the verge of solidifying their presence in the Malkohi IDP camp with a new
-          Youth Empowerment Center, making their students’ dreams of having expanded agricultural and other
-          vocational training programs a reality.<br><br>
-
-          While this is an amazing development, the fact is <b>without a reliable water source to supply the new center,
-            these enhanced programs will simply remain dreams.</b><br><br>
-
-          A reliable water well is a critical part of the new Youth Empowerment Center. Last year, the camp’s only
-          borehole pump failed -- a life-threatening problem in a country where the temperatures can exceed 100 degrees
-          Fahrenheit during the dry season. The NGO responsible for its installation was unable to effect repairs due
-          to the COVID-19 pandemic. Residents became increasingly desperate for this single source of fresh water
-          to be restored. Because ChildVoice continued to maintain a presence in the camp during the pandemic,
-          it handled the repairs.<br><br>
-
-          But as ChildVoice began planning the construction of a new training center,
-          a stark reality quickly became clear: <b>the camp’s single hand-pump well simply can’t
-          produce enough water to meet the needs of their expanded agriculture program and
-            other vocational programs that require water.</b><br><br>
-
-          The agriculture program is especially important given ongoing hunger issues in the camp and beyond.
-          One of the most important features of the program that requires a reliable water source will be drip
-          irrigation, which will allow ChildVoice to teach dry season farming. Demonstration plots
-          will also rely heavily on water. Because water is essential for these agriculture programs to
-          be successful, it’s no understatement that for ChildVoice's students living in the IDP camp,
-          <b>water is life.</b><br><br>
+        <h5 class="text-start"> {{this.problems}}
 
         </h5>
         <br><br>
@@ -130,7 +94,7 @@
 
       <div class="col-md-3">
         <br><br><br><br><br><br>
-        <img class="thumbnail img-responsive" src="../assets/afrika3.jpg" alt=""/>
+        <img class="thumbnail img-responsive" :src=this.image2 alt=""/>
       </div>
     </div>
 
@@ -141,18 +105,7 @@
         <br>
         <h2 class="font-monospace">Solution</h2>
         <br>
-        <h5 class="text-start">ChildVoice has solidified plans to expand its presence in the camp, and recently
-          received a grant to build a new Youth Empowerment Center.
-          For ChildVoice's students living in the Malkohi IDP camp – many of whom are victims of Boko Haram
-          and other violent insurgent groups – <b>water is a vital component of the programs they have developed
-          to help war-affected youth recover from trauma and overwhelming loss. Without reliable access to water,
-          ChildVoice simply will not be able to run their agriculture, culinary, and other water-dependent
-            skills training programs.</b><br><br>
-
-          As a crucial part of their new Youth Empowerment Center in the IDP camp, a new water well -- consisting of a
-          borehole, solar-powered pump, storage tank, and taps -- will address a fundamental rehabilitative and economic
-          development need that will otherwise go unmet. <b>Water is essential for ChildVoice to provide life-changing
-            agricultural and other vocational training programs for hundreds of their students.</b><br><br>
+        <h5 class="text-start">{{this.solution}}
 
         </h5>
         <br><br>
@@ -162,7 +115,7 @@
 
       <div class="col-md-3">
         <br><br><br><br>
-        <img class="thumbnail img-responsive" src="../assets/africa.jpg" alt=""/>
+        <img class="thumbnail img-responsive" :src=this.image3 alt=""/>
       </div>
     </div>
 
@@ -256,8 +209,13 @@ export default {
       status: '',
       percent: '',
       istBetrag: '',
-      sollBetrag: ''
-
+      sollBetrag: '',
+      summary: '',
+      problems: '',
+      solution: '',
+      image1: '',
+      image2: '',
+      image3: ''
     }
   },
 
@@ -300,6 +258,27 @@ export default {
     }).catch(err => {
       console.log(err.response);
     });
+
+
+
+    //
+
+    const overview = 'overview'
+
+    Vue.axios.get(overview, {}).then((response) => {
+
+      this.summary = response.data.summary
+      this.problems = response.data.problems
+      this.solution = response.data.solution
+      this.image1 = response.data.image1
+      this.image2 = response.data.image2
+      this.image3 = response.data.image3
+
+
+    }).catch(err => {
+      console.log(err.response);
+    });
+
   },
 }
 
