@@ -160,13 +160,19 @@ import axios from 'axios'
 
 export default {
   methods: {
-    submit(){
-      axios.post("donate", this.checkout_form,
 
+    submit(submitEvent){
+
+      // sets user data to preset form value
+      this.checkout_form.email = submitEvent.target.elements.email.value;
+      this.checkout_form.fname = submitEvent.target.elements.firstName.value;
+      this.checkout_form.lname = submitEvent.target.elements.lastName.value;
+
+      axios.post("donate", this.checkout_form,
       )
       .then((response) => {
         //perform success action
-        console.log(response)
+        window.alert("Spende erfolgreich getätigt!");
       })
       .catch((error) => {
       })
@@ -179,10 +185,10 @@ export default {
     return {
       global : this.$store,
       checkout_form:{
-        email: "test@mail.com",
-        fname: "vn",
-        lname: 'ln',
-        amount: "",
+        email:"" ,
+        fname:"" ,
+        lname:"" ,
+        amount:"",
 
       },
       donationAmount: 0,
@@ -205,7 +211,7 @@ export default {
 
     if(!this.global.state.user){
       window.alert("Bitte Loggen Sie sich erst ein!")
-      window.alert(this.global.state.user)
+      //window.alert(this.global.state.user)
 
       //$router.go(-1)
     }
