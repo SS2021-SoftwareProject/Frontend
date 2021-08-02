@@ -5,7 +5,7 @@ Software repository for artefacts referring towards the frontend part of our pro
 Name | Github | Role
 ------------ | ------------ | ------------
 Jan Ehreke | Epixware | Project lead
-Lars Matthäus | Lars | Lead Frontend Developer
+Lars Matthäus | Lars/genaray | Lead Frontend Developer
 Franziska Niemeyer | pflanzi | Frontend Developer
 Paul Fortmann | pfortmann | Frontend Developer
 Stephan Dresselmann | rettetDieWale | Frontend Developer
