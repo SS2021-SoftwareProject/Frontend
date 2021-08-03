@@ -210,13 +210,26 @@ export default {
       this.solution = this.project.descSolution
       this.problems = this.project.descProblem
 
-
-
       this.percent = ((100 * this.project.istBetrag)/this.project.sollBetrag).toFixed(2)
 
     }).catch(err => {
       console.log(err.response);
     });
+
+
+    //Get Overview data
+
+    Vue.axios.get('projects/description/'+projectID, {}).then((response) => {
+
+      this.imgage1 = response.data.imageSum
+      this.image2 = response.data.imageSol
+      this.image3 = response.data.imageProb
+
+    }).catch(err => {
+      console.log(err.response);
+    });
+
+
 
 
     //Get Milestones
