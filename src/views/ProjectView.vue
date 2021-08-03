@@ -209,9 +209,6 @@ export default {
 
       this.percent = ((100 * this.project.istBetrag)/this.project.sollBetrag).toFixed(2)
 
-      //window.alert(this.project) Provide water for up to 200 ChildVoice students living in Nigeria
-      console.log(this.project)
-
     }).catch(err => {
       console.log(err.response);
     });
@@ -231,7 +228,6 @@ export default {
       this.image2 = response.data.image2
       this.image3 = response.data.image3
 
-
     }).catch(err => {
       console.log(err.response);
     });
@@ -243,7 +239,6 @@ export default {
 
     Vue.axios.get(milestones, {}).then((response) => {
 
-      console.log(response.data.milestones)
       this.milestones = response.data.milestones
 
     }).catch(err => {

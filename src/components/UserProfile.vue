@@ -102,7 +102,6 @@ export default {
 
     }).then((response) => {
       this.contributions = response.data.contributions;
-      console.log(this.contributions);
     }).catch(err => {
       console.log(err.response);
     });

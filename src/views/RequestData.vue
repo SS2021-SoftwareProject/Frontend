@@ -22,7 +22,6 @@ export default {
   created: function () {
           const baseURI = 'https://jsonplaceholder.typicode.com/users'
           Vue.axios.get(baseURI).then((response) =>{
-            console.log(response.data)
             this.users = response.data;
       });},
 }
