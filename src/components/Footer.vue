@@ -63,11 +63,26 @@
                 <a href="#" class="text-decoration-none text-reset">Your Profile</a>
               </router-link>
             </p> -->
+
+            <p>
+              <router-link class="text-muted" aria-current="page" to="/Explore">
+                <a href="#" class="text-decoration-none text-reset">Explore</a>
+              </router-link>
+            </p>
+
+            <p>
+              <router-link class="text-muted" aria-current="page" to="/About">
+                <a href="#" class="text-decoration-none text-reset">About</a>
+              </router-link>
+            </p>
+
             <p>
              <router-link class="text-muted" aria-current="page" to="/faq">
                <a href="#" class="text-decoration-none text-reset">FAQ</a>
              </router-link>
            </p>
+
+
          </div>
          <!-- Grid column -->
 
