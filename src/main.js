@@ -26,12 +26,12 @@ Vue.use(VueAxios, axios);
 //axios.defaults.withCredentials = true;
 
 // base url to be used for every http request
-axios.defaults.baseURL = 'http://localhost:8081/';
+axios.defaults.baseURL = 'http://localhost:5000/api/';
 
 //Allow all Methods and Origins during POST
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 axios.defaults.headers.post['Access-Control-Allow-Methods'] = '*';
-
+axios.defaults.headers.post['Allow'] = '*';
 
 Vue.use(VueRouter, mdb, Input);
 

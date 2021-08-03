@@ -58,7 +58,7 @@ export default {
     async register() {
 
       // Assign valid user object and save it to the localstorage
-      let result = await this.global.dispatch('register', {fname: this.fname, lname: this.lname, mail: this.email, password: this.password})
+      let result = await this.global.dispatch('register', {fname: this.fname, lname: this.lname, email: this.email, password: this.password})
       if(result === false) alert('Could not login... wrong username or password')
       else {
         this.$router.push("/Explore");

@@ -24,12 +24,12 @@ const actions = {
     },
 
     // Logs in the user
-    async login(commit, {mail, password}){
+    async login(commit, {email, password}){
 
         // If login is possible, login otherwhise return false
         try {
 
-            let res = await Vue.axios.post('login', null, { params: { mail, password}})
+            let res = await Vue.axios.post('/users/login', null, { params: { email, password}})
             if (res.status == 200) {
 
                 // Construct user from response
@@ -50,12 +50,12 @@ const actions = {
     },
 
     // Registers the user
-    async register(commit, {fname, lname, mail, password}){
+    async register(commit, {fname, lname, email, password}){
 
         // If login is possible, login otherwhise return false
         try {
 
-            let res = await Vue.axios.post('register', null, { params: { fname, lname, mail, password}})
+            let res = await Vue.axios.post('/users/register', null, { params: { fname, lname, email, password}})
             if (res.status == 200) {
 
                 // Construct user from response

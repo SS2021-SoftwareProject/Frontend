@@ -24,8 +24,8 @@
                 <div class="modal-body">
 
                   <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&enablejsapi=1" id="video"
-                            allowscriptaccess="always" allow="autoplay"></iframe>
+                    <!-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&enablejsapi=1" id="video"
+                            allowscriptaccess="always" allow="autoplay"></iframe> -->
                   </div>
 
                 </div>
@@ -48,10 +48,10 @@
           <HomeCard
               :id=project.id
               :title-text=project.name
-              :desc-text=project.beschreibung
+              :desc-text=project.name
               :status-text=project.status
-              :progress-current=project.istBetrag
-              :progress-max=project.sollBetrag
+              :progress-current=project.amount
+              :progress-max=project.shouldAmount
               :imageUrl=project.bild
           >
           </HomeCard>
