@@ -160,7 +160,6 @@ import axios from 'axios'
 
 export default {
   methods: {
-
     submit(submitEvent){
 
       // sets user data to preset form value
@@ -215,9 +214,6 @@ export default {
 
       //$router.go(-1)
     }
-    // getting userdata
-
-
   }
 }
 
