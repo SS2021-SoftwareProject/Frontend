@@ -221,7 +221,7 @@ export default {
 
     Vue.axios.get('projects/descriptions/'+projectID+1, {}).then((response) => {
 
-      this.imgage1 = response.data.imageSum
+      this.image1 = response.data.imageSum
       this.image2 = response.data.imageSol
       this.image3 = response.data.imageProb
 
