@@ -207,13 +207,6 @@ export default {
         .catch(e => {
           this.errors.push(e)
         })
-
-    if(!this.global.state.user){
-      window.alert("Bitte Loggen Sie sich erst ein!")
-      //window.alert(this.global.state.user)
-
-      //$router.go(-1)
-    }
   }
 }
 
