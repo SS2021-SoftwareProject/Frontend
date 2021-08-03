@@ -1,6 +1,6 @@
 <template>
 
-  <div>
+  <div style="  overflow-x: scroll;">
 
     <div class="container">
       <div class="row">
@@ -52,6 +52,9 @@ export default {
     }
   },
   created: function () {
+
+    document.body.className = '';
+
     const baseURI = 'projects'
     Vue.axios.get(baseURI, {
 
@@ -65,5 +68,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
