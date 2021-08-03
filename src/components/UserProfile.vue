@@ -13,7 +13,7 @@
                 </div>
               </div>
               <div class="col-auto align-self-end">
-                <h1 class="font-monospace fw-bolder display-4" v-if="this.global.state.user">{{this.global.state.user.fname}} {{this.global.state.user.lname}}</h1>
+                <h1 class="font-monospace fw-bolder display-4" v-if="this.global.state.user">{{this.global.state.user.firstname}} {{this.global.state.user.lastname}}</h1>
               </div>
             </div>
 
@@ -30,11 +30,11 @@
                     <tbody>
                       <tr>
                         <th scope="row"><strong>First Name</strong></th>
-                        <td id="firstName" v-if="this.global.state.user">{{this.global.state.user.fname}}</td>
+                        <td id="firstName" v-if="this.global.state.user">{{this.global.state.user.firstname}}</td>
                       </tr>
                       <tr class="table-secondary">
                         <th scope="row"><strong>Last Name</strong></th>
-                        <td id="lastName" v-if="this.global.state.user">{{this.global.state.user.lname}}</td>
+                        <td id="lastName" v-if="this.global.state.user">{{this.global.state.user.lastname}}</td>
                       </tr>
                       <tr>
                         <th scope="row"><strong>Email</strong></th>

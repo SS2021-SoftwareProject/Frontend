@@ -59,7 +59,7 @@ export default {
     Vue.axios.get(baseURI, {
 
     }).then((response) => {
-      this.projects = response.data.projects;
+      this.projects = response.data;
     }).catch(err => {
       console.log(err.response);
     });

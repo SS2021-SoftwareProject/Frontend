@@ -48,10 +48,10 @@
           <HomeCard
               :id=project.id
               :title-text=project.name
-              :desc-text=project.name
+              :desc-text=project.beschreibung
               :status-text=project.status
-              :progress-current=project.amount
-              :progress-max=project.shouldAmount
+              :progress-current=project.istBetrag
+              :progress-max=project.sollBetrag
               :imageUrl=project.bild
           >
           </HomeCard>
@@ -82,9 +82,9 @@ export default {
     }).then((response) => {
       let MAX_PROJECT_COUNT = 9;
       for(let i = 0; i < MAX_PROJECT_COUNT; i++){
-        if(i < response.data.projects.length)
+        if(i < response.data.length)
         {
-          this.projects.push(response.data.projects[i]);
+          this.projects.push(response.data[i]);
         }
       }
     }).catch(err => {

@@ -12,10 +12,10 @@
 
               <!-- The fields -->
               <div class="mb-3">
-                <input type="text" class="form-control" id="firstName" placeholder="First Name" v-model="fname">
+                <input type="text" class="form-control" id="firstName" placeholder="First Name" v-model="firstname">
               </div>
               <div class="mb-3">
-                <input type="text" class="form-control" id="lastName" placeholder="Last Name" v-model="lname">
+                <input type="text" class="form-control" id="lastName" placeholder="Last Name" v-model="lastname">
               </div>
               <div class="mb-3">
                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" v-model="email">
@@ -45,8 +45,8 @@ export default {
   data(){
     return {
       global: this.$store,
-      fname: "",
-      lname: "",
+      firstname: "",
+      lastname: "",
       email: "",
       password: ""
     };
@@ -58,7 +58,7 @@ export default {
     async register() {
 
       // Assign valid user object and save it to the localstorage
-      let result = await this.global.dispatch('register', {fname: this.fname, lname: this.lname, email: this.email, password: this.password})
+      let result = await this.global.dispatch('register', {firstname: this.firstname, lastname: this.lastname, email: this.email, password: this.password})
       if(result === false) alert('Could not login... wrong username or password')
       else {
         this.$router.push("/Explore");

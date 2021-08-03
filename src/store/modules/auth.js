@@ -32,17 +32,19 @@ const actions = {
             let res = await Vue.axios.post('/users/login', null, { params: { email, password}})
             if (res.status == 200) {
 
+                console.log("res: ");
+                console.log(res);
                 // Construct user from response
                 let user = {
-                    id: res.data.id,
-                    fname: res.data.firstname,
-                    lname: res.data.lastname,
-                    email: res.data.email,
-                    registered_since : res.data.RegisterDate,
+                    id: res.data.user.id,
+                    firstname: res.data.user.firstname,
+                    lastname: res.data.user.lastname,
+                    email: res.data.user.email,
+                    // registered_since : res.data.RegisterDate, TODO: CHANGE
                 }
 
                 store.state.user = user
-                localStorage.setItem(userKey, JSON.stringify(user))
+                localStorage.setItem(userKey, JSON.stringify (user))
                 return true;
             } else return false;
 
@@ -50,19 +52,19 @@ const actions = {
     },
 
     // Registers the user
-    async register(commit, {fname, lname, email, password}){
+    async register(commit, {firstname, lastname, email, password}){
 
         // If login is possible, login otherwhise return false
         try {
 
-            let res = await Vue.axios.post('/users/register', null, { params: { fname, lname, email, password}})
+            let res = await Vue.axios.post('/users/signup', null, { params: { firstname, lastname, email, password}})
             if (res.status == 200) {
 
                 // Construct user from response
                 let user = {
                     id: res.data.id,
-                    fname: res.data.firstname,
-                    lname: res.data.lastname,
+                    firstname: res.data.firstname,
+                    lastname: res.data.lastname,
                     email: res.data.email,
                     registered_since : res.data.RegisterDate,
                 }

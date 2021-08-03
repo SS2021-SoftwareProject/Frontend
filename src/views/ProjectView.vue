@@ -198,7 +198,7 @@ export default {
 
     Vue.axios.get(baseURI, {}).then((response) => {
 
-      this.project = response.data.projects[projectID];
+      this.project = response.data[projectID];
 
       this.title = this.project.name
       this.desc = this.project.beschreibung
@@ -206,6 +206,11 @@ export default {
       this.istBetrag = this.project.istBetrag
       this.sollBetrag = this.project.sollBetrag
       this.bild = this.project.bild
+      this.summary = this.project.descSummary
+      this.solution = this.project.descSolution
+      this.problems = this.project.descProblem
+
+
 
       this.percent = ((100 * this.project.istBetrag)/this.project.sollBetrag).toFixed(2)
 
@@ -214,32 +219,12 @@ export default {
     });
 
 
-
-    //Get Overview data
-
-    const overview = 'overview'
-
-    Vue.axios.get(overview, {}).then((response) => {
-
-      this.summary = response.data.summary
-      this.problems = response.data.problems
-      this.solution = response.data.solution
-      this.image1 = response.data.image1
-      this.image2 = response.data.image2
-      this.image3 = response.data.image3
-
-    }).catch(err => {
-      console.log(err.response);
-    });
-
-
-
     //Get Milestones
-    const milestones = 'milestones'
+    const milestones = 'milestone'
 
     Vue.axios.get(milestones, {}).then((response) => {
 
-      this.milestones = response.data.milestones
+      this.milestones = response.data
 
     }).catch(err => {
       console.log(err.response);

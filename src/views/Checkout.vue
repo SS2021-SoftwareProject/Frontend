@@ -67,14 +67,14 @@
         <div class="col-md-3">
           <div class="form-group">
             <label for="firstName">First Name</label>
-            <input class="form-control" type="text" :value=this.global.state.user.fname readonly id="firstName" name="firstName">
+            <input class="form-control" type="text" :value=this.global.state.user.firstname readonly id="firstName" name="firstName">
           </div><br><br>
         </div>
 
         <div class="col-md-3">
           <div class="form-group">
             <label for="lastName">Last Name</label>
-            <input class="form-control" type="text" :value=this.global.state.user.lname readonly id="lastName" name="lastName">
+            <input class="form-control" type="text" :value=this.global.state.user.lastname readonly id="lastName" name="lastName">
           </div><br><br>
         </div>
 
@@ -164,8 +164,8 @@ export default {
 
       // sets user data to preset form value
       this.checkout_form.email = submitEvent.target.elements.email.value;
-      this.checkout_form.fname = submitEvent.target.elements.firstName.value;
-      this.checkout_form.lname = submitEvent.target.elements.lastName.value;
+      this.checkout_form.firstname = submitEvent.target.elements.firstName.value;
+      this.checkout_form.lastname = submitEvent.target.elements.lastName.value;
 
       axios.post("donate", this.checkout_form,
       )
@@ -185,8 +185,8 @@ export default {
       global : this.$store,
       checkout_form:{
         email:"" ,
-        fname:"" ,
-        lname:"" ,
+        firstname:"" ,
+        lastname:"" ,
         amount:"",
 
       },
