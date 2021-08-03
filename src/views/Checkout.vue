@@ -200,7 +200,6 @@ export default {
     axios.get('https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,IOT&tsyms=USD')
         .then(response => {
           this.cryptos = response.data
-          console.log(response.data['ETH']['USD'])
           //window.alert(response.data['ETH']['USD']) // This will give you access to the full object
           this.ethPrice = response.data['ETH']['USD']
         })

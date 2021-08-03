@@ -87,8 +87,6 @@ export default {
           this.projects.push(response.data.projects[i]);
         }
       }
-      console.log(this.projects);
-
     }).catch(err => {
       console.log(err.response);
     });

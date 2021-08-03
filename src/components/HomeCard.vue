@@ -56,8 +56,6 @@ export default {
     }
   },
   created(){
-    //window.alert(this.id)
-    //console.log(this.percent)
   }
 }
 
