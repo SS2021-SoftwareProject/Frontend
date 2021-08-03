@@ -768,21 +768,21 @@ if( requestBody.contains("some data") )&#13;
 }&#13;
 */&#13;
 </con:dispatchPath><con:response name="Response 1" id="d2294d94-b78f-4125-9216-156f62445ee8" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
-	"milestones": [
-		{
-			"titel": "ms1-titel",
-			"betrag": "2 Euro!",
-			"beschreibung": "Kein Schwein ruft mich an"
-		},
-		{
-			"titel": "ms2-titel",
-			"betrag": "123131!",
-			"beschreibung": "Alles hat ein Ende nur die Wurst hat 2"
-		},
-		{
-			"titel": "ms3-titel",
-			"betrag": "0.1",
-			"beschreibung": "Spüren sie es Mr. Krabs?"
-		}
-	]
+    "milestones": [
+        {
+            "titel": "ms1-titel",
+            "betrag": "2 Euro!",
+            "beschreibung": "Kein Schwein ruft mich an"
+        },
+        {
+            "titel": "ms2-titel",
+            "betrag": "123131!",
+            "beschreibung": "Alles hat ein Ende nur die Wurst hat 2"
+        },
+        {
+            "titel": "ms3-titel",
+            "betrag": "0.1",
+            "beschreibung": "Spüren sie es Mr. Krabs?"
+        }
+    ]
 }</con:responseContent><con:header><con:name>Access-Control-Allow-Origin</con:name><con:value>http://localhost:8080</con:value></con:header><con:header><con:name>Vary</con:name><con:value>Origin</con:value></con:header></con:response></con:restMockAction></con:restMockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
