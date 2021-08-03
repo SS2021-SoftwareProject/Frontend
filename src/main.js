@@ -15,7 +15,6 @@ import Checkout from "@/views/Checkout";
 import Explore from "@/views/Explore"
 import ProjectView from "@/views/ProjectView";
 import Faq from "@/views/Faq";
-import RequestData from "@/views/RequestData";
 
 // requests & auth
 import axios from 'axios';
@@ -42,7 +41,6 @@ const routes = [
   { path: "/Explore", name: "Explore", component: Explore },
   { path: "/project/:id", name : "project", component: ProjectView },
   { path: "/faq", component: Faq },
-  { path: "/dataTest", component: RequestData },
   { path: "/Checkout/:id", name: "Checkout", component: Checkout }
 ];
 
