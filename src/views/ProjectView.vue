@@ -129,52 +129,11 @@
     <br><br><br><br><br><br>
 
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4" v-for="milestone in milestones" :key="milestone.betrag">
         <MilestoneCard
-          milestoneNumber="1"
-          title="Water for the people"
-          desc="Poor access to improved water and sanitation in Nigeria remains a major
-                contributing factor to high morbidity and mortality rates among children under five.
-                 Only 26.5 per cent of the population"
-          >
-        </MilestoneCard>
-      </div>
-
-      <div class="col-md-4">
-        <MilestoneCard
-            milestoneNumber="2"
-            title="Nigeria crisis briefing"
-            desc="Nigeria, the most populous country in Africa, has endured decades of political instability
-            and economic inequality. Ongoing violence continues to force people to flee their homes in the
-            northeast and other conflict zones to seek safety in other parts of the country"
-        >
-        </MilestoneCard>
-      </div>
-
-
-      <div class="col-md-4">
-        <MilestoneCard
-            milestoneNumber="3"
-            title="Women in Nigeria"
-            desc="Their motivations are personal. “I looked at the little opportunity I had compared to the men around
-            me,” 29-year-old Catherine explains. “I had limited time to study, because I was responsible for all the
-            chores as a woman. I always had high expectations on my shoulders — but looking at where I am now,
-            I’ve been able to overcome all of this."
-        >
-        </MilestoneCard>
-      </div>
-    </div>
-
-    <br>
-
-    <div class="row">
-      <div class="col-md-4">
-        <MilestoneCard
-            milestoneNumber="4"
-            title="Hunger in Nigeria"
-            desc="n Nigeria's Borno state, 300,000 children are expected to suffer from severe acute malnutrition
-             over the coming year. ... Long-term conflict is the common factor linking the hunger crises in Yemen,
-              South Sudan, Somalia and Nigeria; the emergency is man-made"
+            :amount=milestone.betrag
+            :title=milestone.titel
+            :desc= milestone.beschreibung
         >
         </MilestoneCard>
       </div>
@@ -184,7 +143,6 @@
 
   </div>
 </template>
-
 
 
 <script>
@@ -215,7 +173,8 @@ export default {
       solution: '',
       image1: '',
       image2: '',
-      image3: ''
+      image3: '',
+      milestones: [],
     }
   },
 
@@ -261,7 +220,7 @@ export default {
 
 
 
-    //
+    //Get Overview data
 
     const overview = 'overview'
 
@@ -278,6 +237,21 @@ export default {
     }).catch(err => {
       console.log(err.response);
     });
+
+
+
+    //Get Milestones
+    const milestones = 'milestones'
+
+    Vue.axios.get(milestones, {}).then((response) => {
+
+      console.log(response.data.milestones)
+      this.milestones = response.data.milestones
+
+    }).catch(err => {
+      console.log(err.response);
+    });
+
 
   },
 }

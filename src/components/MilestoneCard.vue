@@ -2,7 +2,7 @@
   <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title text-primary">{{title}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Milestone - {{this.milestoneNumber}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">{{this.amount}}</h6>
       <br>
       <p class="card-text">{{desc}}</p>
     </div>
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  props: ['milestoneNumber','title','desc' ],
+  props: ['amount','title','desc' ],
   data(){
     return {
     }
