@@ -160,7 +160,6 @@ import axios from 'axios'
 
 export default {
   methods: {
-
     submit(submitEvent){
 
       // sets user data to preset form value
@@ -213,7 +212,6 @@ export default {
       window.alert("Bitte Loggen Sie sich erst ein!")
       //window.alert(this.global.state.user)
 
-      //$router.go(-1)
     }
     // getting userdata
 

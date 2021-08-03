@@ -77,7 +77,6 @@ const actions = {
 
     // Logs the user out
     async logout(){
-
         store.state.user = null
         return localStorage.removeItem('user')
     }

@@ -163,7 +163,7 @@
 export default {
 
   created(){
-
+    document.getElementById('app').title
   }
 
 }

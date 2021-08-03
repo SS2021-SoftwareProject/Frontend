@@ -44,7 +44,7 @@
 
               <button class="btn btn-link green text-capitalize" v-if="!this.global.state.user" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
               <button class="btn btn-link green text-capitalize" v-if="!this.global.state.user" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
-              <button class="btn btn-link green text-capitalize" v-if="this.global.state.user" @click="this.logout">Logout</button>
+              <button class="btn btn-link green text-capitalize" v-if="this.global.state.user" @click="logoutRedirect() ">Logout</button>
               <button ref="profileButton" class="btn btn-link green text-capitalize" v-if="this.global.state.user" data-bs-toggle="modal" data-bs-target="#userModal">Profile</button>
 
             </div>
@@ -99,7 +99,12 @@ export default {
   // Clone method from auth.js into app for being used in html
   methods:{
     ...mapActions(['logout']),
+    logoutRedirect: function (){
+      this.logout()
+      this.$router.push({name: "Home"})
+    },
   },
+
 
   // Relog user if previous loged in and still valid
   async mounted(){

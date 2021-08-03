@@ -194,8 +194,6 @@ export default {
 
     this.id = this.$route.params.id;
 
-    //window.alert(this.id)
-
     const baseURI = 'projects'
 
     Vue.axios.get(baseURI, {}).then((response) => {
