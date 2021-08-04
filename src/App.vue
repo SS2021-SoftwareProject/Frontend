@@ -78,6 +78,7 @@ import LoginModal from "@/components/LoginModal";
 import RegisterModal from "@/components/RegisterModal";
 import UserProfile from "@/components/UserProfile";
 import { mapActions } from 'vuex'
+import Vue from "vue";
 
 // Logic
 export default {
@@ -102,7 +103,7 @@ export default {
     logoutRedirect: function (){
       this.logout()
       this.$router.push({name: "Home"})
-    },
+    }
   },
 
 

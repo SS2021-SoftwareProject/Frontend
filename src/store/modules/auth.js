@@ -6,13 +6,14 @@ const userKey = 'user'
 
 // calculate data based on store state
 const getters = {
-    isAuthenticated: () => true
+    isAuthenticated: () => true,
+    currentUser: () => store.state.user
 };
 
 //function to commit or dispatch a mutation
 const actions = {
 
-    // Checks if user is still loged in and relogs him in
+    // Checks if user is still logged in and relogs him in
     async relog(commit){
 
         if(localStorage.getItem(userKey) !== null) {
@@ -26,7 +27,7 @@ const actions = {
     // Logs in the user
     async login(commit, {email, password}){
 
-        // If login is possible, login otherwhise return false
+        // If login is possible, login otherwise return false
         try {
 
             let res = await Vue.axios.post('/users/login', null, { params: { email, password}})
@@ -40,7 +41,7 @@ const actions = {
                     firstname: res.data.user.firstname,
                     lastname: res.data.user.lastname,
                     email: res.data.user.email,
-                    // registered_since : res.data.RegisterDate, TODO: CHANGE
+                    registered_since : res.data.user.RegisterDate
                 }
 
                 store.state.user = user
@@ -54,7 +55,7 @@ const actions = {
     // Registers the user
     async register(commit, {firstname, lastname, email, password}){
 
-        // If login is possible, login otherwhise return false
+        // If login is possible, login otherwise return false
         try {
 
             let res = await Vue.axios.post('/users/signup', null, { params: { firstname, lastname, email, password}})
@@ -62,11 +63,11 @@ const actions = {
 
                 // Construct user from response
                 let user = {
-                    id: res.data.id,
-                    firstname: res.data.firstname,
-                    lastname: res.data.lastname,
-                    email: res.data.email,
-                    registered_since : res.data.RegisterDate,
+                    id: res.data.user.id,
+                    firstname: res.data.user.firstname,
+                    lastname: res.data.user.lastname,
+                    email: res.data.user.email,
+                    registered_since : res.data.user.RegisterDate
                 }
 
                 store.state.user = user

@@ -136,7 +136,7 @@
         <div class="col-md-3">
             <div class="form-group">
               <button class="btn btn-primary btn-block"
-                      type="submit"
+                      type="button"
                       @click="submit()">Donate
               </button>
             </div>
@@ -162,13 +162,10 @@ export default {
   methods: {
     submit(submitEvent){
 
-      // sets user data to preset form value
-      this.checkout_form.email = submitEvent.target.elements.email.value;
-      this.checkout_form.firstname = submitEvent.target.elements.firstName.value;
-      this.checkout_form.lastname = submitEvent.target.elements.lastName.value;
-
-      axios.post("donate", this.checkout_form,
-      )
+      this.checkout_form.idUser = this.global.state.user.id;
+      // this.checkout_form.amount = this.donationAmount/this.ethPrice;
+      this.checkout_form.idProject = this.$route.params.id;
+      axios.post("payment?amount=" + this.checkout_form.amount + "&idUser=" + this.global.state.user.id + "&idProject=" + this.$route.params.id)
       .then((response) => {
         //perform success action
         window.alert("Spende erfolgreich getätigt!");
@@ -184,15 +181,16 @@ export default {
     return {
       global : this.$store,
       checkout_form:{
-        email:"" ,
-        firstname:"" ,
-        lastname:"" ,
+        idUser:"",
+        idProject:"",
+        // email:"" ,
+        // firstname:"" ,
+        // lastname:"" ,
         amount:"",
 
       },
       donationAmount: 0,
       ethPrice: 0,
-      user: "",
     }
   },
   created(){

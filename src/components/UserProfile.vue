@@ -20,7 +20,7 @@
             <div class="d-flex align-items-start">
               <div class="nav flex-column nav-pills me-5" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <button class="nav-link active fs-6" id="v-pills-overview-tab" data-bs-toggle="pill" data-bs-target="#v-pills-overview" type="button" role="tab" aria-controls="v-pills-overview" aria-selected="true">Overview</button>
-                <button class="nav-link fs-6" id="v-pills-contributions-tab" data-bs-toggle="pill" data-bs-target="#v-pills-contributions" type="button" role="tab" aria-controls="v-pills-contributions" aria-selected="false">Contributions</button>
+                <button @click="fetchContribution()" class="nav-link fs-6" id="v-pills-contributions-tab" data-bs-toggle="pill" data-bs-target="#v-pills-contributions" type="button" role="tab" aria-controls="v-pills-contributions" aria-selected="false">Contributions</button>
               </div>
 
               <div class="tab-content" id="v-pills-tabContent">
@@ -88,25 +88,29 @@
 import Vue from 'vue'
 
 export default {
+  methods: {
+    fetchContribution() {
+      const baseURI = 'users/contributions/' + this.global.state.user.id;
+      console.log("test");
+
+      Vue.axios.get(baseURI, {}).then((response) => {
+        this.contributions = response.data;
+        console.log(response.data);
+      }).catch(err => {
+        console.log(err.response);
+      });
+    }
+  },
   name: "UserProfile",
-  data(){
+  data() {
     return {
       global: this.$store,
       contributions: [],
       contribution: ''
     }
-  },
-  created: function () {
-    const baseURI = 'contributions'
-    Vue.axios.get(baseURI, {
-
-    }).then((response) => {
-      this.contributions = response.data.contributions;
-    }).catch(err => {
-      console.log(err.response);
-    });
-  },
+  }
 }
+
 
 
 /* counts rows in the table, excluding the header */
