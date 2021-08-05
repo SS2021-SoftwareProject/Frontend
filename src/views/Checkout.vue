@@ -186,7 +186,6 @@ export default {
             axios.put("projects/" + this.$route.params.id + "?amountProject=" + newAmount)
                 .then((response) => {
                   //perform success action
-                  window.alert("It worked!");
 
                 })
                 .catch((error) => {

@@ -219,7 +219,7 @@ export default {
 
     //Get Overview data
 
-    Vue.axios.get('projects/descriptions/'+projectID+1, {}).then((response) => {
+    Vue.axios.get('projects/descriptions/'+projectID++, {}).then((response) => {
 
       this.image1 = response.data.imageSum
       this.image2 = response.data.imageSol
