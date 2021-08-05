@@ -163,8 +163,9 @@ export default {
     submit(submitEvent){
 
       this.checkout_form.idUser = this.global.state.user.id;
-      // this.checkout_form.amount = this.donationAmount/this.ethPrice;
       this.checkout_form.idProject = this.$route.params.id;
+      let oldAmount = 0;
+      let newAmount = 0;
       axios.post("payment?amount=" + this.checkout_form.amount + "&idUser=" + this.global.state.user.id + "&idProject=" + this.$route.params.id)
       .then((response) => {
         //perform success action
@@ -175,6 +176,32 @@ export default {
       .finally(() => {
         //perform action always
       })
+      axios.get("projects/" + this.$route.params.id)
+          .then((response) => {
+            oldAmount = parseInt(response.data.istBetrag);
+            newAmount = oldAmount + parseInt(this.checkout_form.amount);
+            console.log(oldAmount);
+            console.log(newAmount);
+
+            axios.put("projects/" + this.$route.params.id + "?amountProject=" + newAmount)
+                .then((response) => {
+                  //perform success action
+                  window.alert("It worked!");
+
+                })
+                .catch((error) => {
+                })
+                .finally(() => {
+                  //perform action always
+                })
+            //perform success action
+
+          })
+          .catch((error) => {
+          })
+          .finally(() => {
+            //perform action always
+          })
     }
   },
   data(){
