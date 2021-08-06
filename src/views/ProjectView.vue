@@ -190,7 +190,7 @@ export default {
 
   created() {
 
-    let projectID = this.$route.params.id-1;
+    let projectID = this.$route.params.id;
 
     this.id = this.$route.params.id;
 

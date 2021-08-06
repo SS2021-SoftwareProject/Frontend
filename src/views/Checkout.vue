@@ -89,7 +89,7 @@
             <label for="lastName">Choose Amount</label>
 
             <div class="input-group mb-3">
-              <input type="number" min="0.00" step="0.50" value="1.00" class="form-control mb-2 w-75" v-model="checkout_form.amount">
+              <input type="number" min="0.00" step="1" value="1.00" class="form-control mb-2 w-75" v-model="checkout_form.amount">
               <select class="form-select form-select-sm mb-2 btn-primary" aria-label=".form-select-sm example" disabled>
                 <option value="Dollar">$</option>
               </select>
@@ -137,6 +137,7 @@
             <div class="form-group">
               <button class="btn btn-primary btn-block"
                       type="button"
+                      data-bs-toggle="modal" data-bs-target="#exampleModal"
                       @click="submit()">Donate
               </button>
             </div>
@@ -146,6 +147,24 @@
         <div class="col-md-3"></div>
       </div>
       </form>
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Payment is getting processed...</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="spinner-border text-success" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
 
@@ -157,6 +176,8 @@
 
 <script>
 import axios from 'axios'
+import $ from 'jquery'
+import swal from 'sweetalert'
 
 export default {
   methods: {
@@ -169,7 +190,11 @@ export default {
       axios.post("payment?amount=" + this.checkout_form.amount + "&idUser=" + this.global.state.user.id + "&idProject=" + this.$route.params.id)
       .then((response) => {
         //perform success action
-        window.alert("Spende erfolgreich getätigt!");
+        $("#exampleModal.modal").hide();
+        $(".modal-backdrop").remove();
+        swal("Success!","Spende erfolgreich getätigt!", "success");
+        this.$router.push("/");
+        document.body.className="";
       })
       .catch((error) => {
       })
@@ -180,8 +205,6 @@ export default {
           .then((response) => {
             oldAmount = parseInt(response.data.istBetrag);
             newAmount = oldAmount + parseInt(this.checkout_form.amount);
-            console.log(oldAmount);
-            console.log(newAmount);
 
             axios.put("projects/" + this.$route.params.id + "?amountProject=" + newAmount)
                 .then((response) => {
